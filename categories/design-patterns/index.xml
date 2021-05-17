@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Design-Patterns on 行百里者半九十</title>
+    <link>https://xblzbjs.cn/categories/design-patterns/</link>
+    <description>Recent content in Design-Patterns on 行百里者半九十</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;xblzbjs&lt;/a&gt;</copyright>
+    <lastBuildDate>Sat, 20 Mar 2021 13:45:56 +0800</lastBuildDate><atom:link href="https://xblzbjs.cn/categories/design-patterns/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>创建型设计模式</title>
+      <link>https://xblzbjs.cn/article/2021/03/%E5%88%9B%E5%BB%BA%E5%9E%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Sat, 20 Mar 2021 13:45:56 +0800</pubDate>
+      
+      <guid>https://xblzbjs.cn/article/2021/03/%E5%88%9B%E5%BB%BA%E5%9E%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</guid>
+      <description>常见创建型设计模式  工厂模式（Factory）：解决对象创建问题 构造模式（Builder）：控制复杂对象的创建 原型模式（Prototype）：通过原型的克隆创建新的实例 单例（Borg/Singleton）：一个类只能创建同一个对象 对象池模式（Pool）：预先分配同一类型的一组实例 惰性计算模式（Lazy Evaluation）：延迟计算（python的property）  1.工厂模式 解决了什么问题：
+ 解决对象创建问题 解耦对象的创建和使用 包括工厂方法和抽象工厂  # 工厂方法 class DogToy: def speak(self): print(&amp;#34;wang wang&amp;#34;) class CatToy: def speak(self): print(&amp;#34;miao miao&amp;#34;) def toy_factory(toy_type): if toy_type == &amp;#39;dog&amp;#39;: return DogToy() elif toy_type == &amp;#39;cat&amp;#39;: return CatToy() 2.构造模式 什么是构造模式：
+ 用来控制复杂对象的构造 创建和表示分离。比如你要买电脑，工厂模式直接给你需要的电脑 但是构造模式允许你自己定义电脑的配置，组装完成后给你  3.原型模式 什么是原型模式：
+ 通过克隆原型来创建新的实例 可以通过相同的原型，通过修改部分属性来创建新的实例 用途：对于一些创建实例开销比较高的地方可以用原型模式  4.单例模式（重点） 单例模式的实现由多种方式
+ 单例模式：一个类创建出来的对象都是同一个 Python的模块其实就是单例的，只会导入一次（import） 使用共享同一个实例的方式来创建单例模式  # 单例模式 class Singleton: def __new__(cls, *args, **kwargs): if not hasattr(cls, &amp;#39;_instance&amp;#39;): _instance = super().</description>
+    </item>
+    
+  </channel>
+</rss>

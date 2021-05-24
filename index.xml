@@ -26,6 +26,24 @@
     </item>
     
     <item>
+      <title>启示录-打造用户喜爱的产品(流程篇)</title>
+      <link>https://xblzbjs.cn/article/2021/05/%E5%90%AF%E7%A4%BA%E5%BD%95-%E6%89%93%E9%80%A0%E7%94%A8%E6%88%B7%E5%96%9C%E7%88%B1%E7%9A%84%E4%BA%A7%E5%93%81%E6%B5%81%E7%A8%8B%E7%AF%87/</link>
+      <pubDate>Mon, 24 May 2021 09:17:09 +0800</pubDate>
+      
+      <guid>https://xblzbjs.cn/article/2021/05/%E5%90%AF%E7%A4%BA%E5%BD%95-%E6%89%93%E9%80%A0%E7%94%A8%E6%88%B7%E5%96%9C%E7%88%B1%E7%9A%84%E4%BA%A7%E5%93%81%E6%B5%81%E7%A8%8B%E7%AF%87/</guid>
+      <description>开发富有创意的产品时反复应用的流程和成功的实践经验
+评估产品机会 确定待解决的问题 产品经理应该能回答如下十个问题
+ 产品要解决什么问题？（产品价值※） 为谁解决这个问题？（目标市场） 成功的机会有多大？（市场规模） 怎样判断产品成功与否？（度量指标或收益指标） 有哪些同类产品？（竞争格局） 为什么我们最适合做这个产品？（竞争优势） 时机合适码？（市场时机） 如何把产品推向市场？（营销组合策略） 成功的必要条件是什么？（解决方案要满足的条件） 根据以上问题，给出评估结论（继续或放弃）  产品探索 定义正确的产品   在探索产品的阶段，产品经理负责分析各种创意，广泛搜集用户需求，了解如何运用新技术，拿出产品原型并加以测试，从全局视角思考产品方向，兼顾短期需求和长期规划。
+  产品经理必须在执行阶段转换工作中心；否则，产品经理自己很可能成为产品上市的最大障碍。
+  采用流水线方式并行开发产品。也就是说，一旦1.0版本的产品进入项目执行阶段，就开始定义2.0的产品。
+  产品原则 产品原则是对团队信仰和价值观的总结，用来指导产品团队作出正确的决策和取舍。
+确定什么最重要  罗列出产品原则，并按原则的重要性排序 切记原则过于空泛 切记将设计原则当成产品原则  解决意见冲突 在做产品决策之前，应该先确定决策要解决什么问题，让大家在以下几个要点上达成共识。
+ 究竟要解决什么问题？ 要为哪类人物角色解决这个问题？ 产品要达到什么目标 每项目标的优先级是什么？  产品评审团 制定决策通常是既耗时又费力的。产品公司需要一套机制让决策者和相关人员及时作出明智的产品决策，成立产品评审团是最好的解决途径之一。
+工作目标  决定产品战略方向，从宏观上监督公司产品的研发流程，合理地配置资源。 不制定公司的商业战略，而是在给定商业战略的条件下，提出与之相匹配的产品战略。  成员组成  首席执行官/首席运营官/部门总经理 产品管理总监/副总监 用户体验设计总监/副总监 市场总监/副总监 技术总监/副总监 网站运营总监/副总监 客户服务总监/副总监  主要职责 根据研发产品的四个里程碑来评审产品，制定决策
+ 评审产品战略和产品路线图，选择值得投入经理的产品，请产品经理开始评估产品机会 根据评估产品机会的结果，决定是否开始定义产品的解决方案 评审产品原型、用户测试结果、成本估算明细，决定是否开始开发产品。 评审最终产品、产品品质、发布计划、社会效应，决定是否发布产品  特约用户（不是特别重要） 市场调研 常用的市场调研工具和方法  用户调查 产品使用分析 数据挖掘 拜访用户 人物角色 可用性测试 同类产品分析  利用市场调研工具和方法时需要时刻思考以下几个关键问题</description>
+    </item>
+    
+    <item>
       <title>常见的HTTP返回状态码</title>
       <link>https://xblzbjs.cn/article/2021/05/%E5%B8%B8%E8%A7%81%E7%9A%84http%E8%BF%94%E5%9B%9E%E7%8A%B6%E6%80%81%E7%A0%81/</link>
       <pubDate>Sun, 23 May 2021 09:17:09 +0800</pubDate>
@@ -120,19 +138,6 @@ func TestMain(m *testing.M) 有什么作用🤔 如果测试文件中包含该�
       <guid>https://xblzbjs.cn/article/2021/03/python%E8%A1%8C%E4%B8%BA%E5%9E%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</guid>
       <description>常见学习行为型设计模式  迭代器模式（Iterator）：通过统一的接口迭代对象 观察者模式（Observer）：对象发生改变的时候，观察者执行相应动作 策略模式（Strategy）：针对不同规模输入使用不同的策略  迭代器模式  Python内置对迭代器模式的支持 可用for遍历各种Iterable的数据类型 可以实现__next__和__iter__实现迭代器  class Stack(object): # 使用组合的例子 def __init__(self): self._deque = deque() def push(self, value): return self._deque.append(value) def pop(self): return self._deque.pop() def empty(self): return len(self._deque) == 0 def __iter__(self): res = [] for i in self._deque: res.append(i) for i in reversed(res): yield i s = Stack() s.push(1) s.push(2) for i in s: print(i) 观察者模式  发布订阅是一种最常用的实现方式 发布订阅用于解耦逻辑 可以通过回调等方式实现，当发生事件，执行回调函数  ==TODO：代码实现==
 策略模式  根据不同的输入采用不同的策略 对外暴露统一的接口，内部采用不同的策略计算  ==TODO：代码实现==</description>
-    </item>
-    
-    <item>
-      <title>创建型设计模式</title>
-      <link>https://xblzbjs.cn/article/2021/03/%E5%88%9B%E5%BB%BA%E5%9E%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link>
-      <pubDate>Sat, 20 Mar 2021 13:45:56 +0800</pubDate>
-      
-      <guid>https://xblzbjs.cn/article/2021/03/%E5%88%9B%E5%BB%BA%E5%9E%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</guid>
-      <description>常见创建型设计模式  工厂模式（Factory）：解决对象创建问题 构造模式（Builder）：控制复杂对象的创建 原型模式（Prototype）：通过原型的克隆创建新的实例 单例（Borg/Singleton）：一个类只能创建同一个对象 对象池模式（Pool）：预先分配同一类型的一组实例 惰性计算模式（Lazy Evaluation）：延迟计算（python的property）  1.工厂模式 解决了什么问题：
- 解决对象创建问题 解耦对象的创建和使用 包括工厂方法和抽象工厂  # 工厂方法 class DogToy: def speak(self): print(&amp;#34;wang wang&amp;#34;) class CatToy: def speak(self): print(&amp;#34;miao miao&amp;#34;) def toy_factory(toy_type): if toy_type == &amp;#39;dog&amp;#39;: return DogToy() elif toy_type == &amp;#39;cat&amp;#39;: return CatToy() 2.构造模式 什么是构造模式：
- 用来控制复杂对象的构造 创建和表示分离。比如你要买电脑，工厂模式直接给你需要的电脑 但是构造模式允许你自己定义电脑的配置，组装完成后给你  3.原型模式 什么是原型模式：
- 通过克隆原型来创建新的实例 可以通过相同的原型，通过修改部分属性来创建新的实例 用途：对于一些创建实例开销比较高的地方可以用原型模式  4.单例模式（重点） 单例模式的实现由多种方式
- 单例模式：一个类创建出来的对象都是同一个 Python的模块其实就是单例的，只会导入一次（import） 使用共享同一个实例的方式来创建单例模式  # 单例模式 class Singleton: def __new__(cls, *args, **kwargs): if not hasattr(cls, &amp;#39;_instance&amp;#39;): _instance = super().</description>
     </item>
     
   </channel>

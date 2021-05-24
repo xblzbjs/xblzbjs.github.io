@@ -9,6 +9,21 @@
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;xblzbjs&lt;/a&gt;</copyright>
     <lastBuildDate>Mon, 24 May 2021 09:17:09 +0800</lastBuildDate><atom:link href="https://xblzbjs.cn/article/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>启示录-打造用户喜爱的产品(产品篇)</title>
+      <link>https://xblzbjs.cn/article/2021/05/%E5%90%AF%E7%A4%BA%E5%BD%95-%E6%89%93%E9%80%A0%E7%94%A8%E6%88%B7%E5%96%9C%E7%88%B1%E7%9A%84%E4%BA%A7%E5%93%81%E4%BA%A7%E5%93%81%E7%AF%87/</link>
+      <pubDate>Mon, 24 May 2021 09:17:09 +0800</pubDate>
+      
+      <guid>https://xblzbjs.cn/article/2021/05/%E5%90%AF%E7%A4%BA%E5%BD%95-%E6%89%93%E9%80%A0%E7%94%A8%E6%88%B7%E5%96%9C%E7%88%B1%E7%9A%84%E4%BA%A7%E5%93%81%E4%BA%A7%E5%93%81%E7%AF%87/</guid>
+      <description>产品篇 苹果公司值得学习的四点  硬件为软件服务 软件为用户体验服务 用户体验为情感服务 产品为真正的需求服务  提防有特殊要求的产品 客户在描述需求时，习惯提出自己的解决方案，但不一定抓住了需求的本质。产品经理应该与客户一起梳理需求，发现问题的本质，提供更合理的解决方案。多数用户其实不喜欢定制软件，他们更喜欢通用产品，因为通用产品的兼容性、数据移植性更好，改进速度更快，也更容易获得技术支持。
+新瓶装老酒 成功的产品往往不是什么新鲜事物，只是新瓶装老酒，之所以成功，是因为这个“新瓶”做得更好、更方便、更便宜，改变了消费者对“老酒”的印象。
+想在成熟的市场抢占一席之地，精明的公司至少要手握两件“法宝”：
+ 对目标市场了如指掌，对现有产品的缺陷洞若观火。通过产品可用性测试掌握产品情况 跟踪最新的技术趋势。  大众网络服务产品 电子商务、社交网络、搜索引擎、网络游戏
+ 可用性 人物角色 扩展性 持续可用性 客户服务 保护用户隐私 口碑营销 全球化 平滑部署 用户社区管理  最佳实践经验 打造富有创意产品最重要的十个要点
+ 产品管理的职责 用户体验 机会评估 特约用户 产品原则 人物角色 探索产品 使用原型 用户参与原型测试 根据数据改进产品  产品经理的反省清单 出色的产品经理会时刻关注产品的现状与未来。以下是产品经理无时无刻不在思考的问题
+ 产品能吸引目标消费者的关注吗？ 产品的设计是否人性化，是否易于操作？ 产品能在竞争中取胜吗？即使是面对未来风云变化的市场，依旧有取胜的把握吗？ 我了解目标用户吗？产品（不是理想的产品，而是实际开发出来的产品）是否能得到他们的认可？ 产品是否有别于市面上的其他产品？我能在两分钟内向公司高管清楚地阐明这些差别吗？能在一分钟内向客户解释清楚吗？能在半分钟内向经验丰富的行业分析师解释清楚吗？ 产品能正常运行吗？ 产品是否完整？用户对产品的印象如何？销售业绩如何？销售任务能否顺利完成？ 产品的特色是否与目标用户的需求一致？产品特色是否鲜明？ 产品值钱吗？值多少钱？为什么值这么多钱？用户会选择更便宜的产品吗？ 我了解其他团队成员对产品的看法吗？他们觉得产品好在哪里？他们的看法是否与我的观点一致。  </description>
+    </item>
+    
+    <item>
       <title>启示录-打造用户喜爱的产品(人员篇)</title>
       <link>https://xblzbjs.cn/article/2021/05/%E5%90%AF%E7%A4%BA%E5%BD%95-%E6%89%93%E9%80%A0%E7%94%A8%E6%88%B7%E5%96%9C%E7%88%B1%E7%9A%84%E4%BA%A7%E5%93%81%E4%BA%BA%E5%91%98%E7%AF%87/</link>
       <pubDate>Mon, 24 May 2021 09:17:09 +0800</pubDate>
@@ -128,16 +143,6 @@ func TestMain(m *testing.M) 有什么作用🤔 如果测试文件中包含该�
       <description>结构型模式 常见的结构型设计模式：
  工厂模式（Factory）：解决对象创建问题 构造模式（Builder）：控制复杂对象的创建 原型模式（Prototype）：通过原型的克隆创建新的实例 单例（Borg/Singleton）：一个类只能创建同一个对象 对象池模式（Pool）：预先分配同一类型的一组实例 惰性计算模式（Lazy Evaluation）：延迟计算（python的property）  装饰器模式 什么是装饰器（Decorator）
  Python中一切皆对象，函数也可以当作参数传递 装饰器是接受函数作为参数，添加功能后返回一个新函数的函数（类） 通过@使用装饰器  import time def log_time(func): # 接受一个函数作为参数 def _log(*args, **kwargs): beg = time.time() res = func(*args, **kwargs) print(&amp;#39;use time:{}&amp;#39;.format(time.time()-beg)) return res return _log @log_time # @:装饰器语法糖 def mysleep(): time.sleep(1) newsleep = log_time(mysleep) # 等价于mysleep() newsleep() mysleep() import time # 装饰器类实现 class LogTime: def __init__(self, use_int=False): self.use_int = use_int # 增加参数 def __call__(self,func): def _log(*args, **kwargs): beg = time.</description>
-    </item>
-    
-    <item>
-      <title>Python｜行为型设计模式</title>
-      <link>https://xblzbjs.cn/article/2021/03/python%E8%A1%8C%E4%B8%BA%E5%9E%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link>
-      <pubDate>Sat, 20 Mar 2021 13:45:56 +0800</pubDate>
-      
-      <guid>https://xblzbjs.cn/article/2021/03/python%E8%A1%8C%E4%B8%BA%E5%9E%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</guid>
-      <description>常见学习行为型设计模式  迭代器模式（Iterator）：通过统一的接口迭代对象 观察者模式（Observer）：对象发生改变的时候，观察者执行相应动作 策略模式（Strategy）：针对不同规模输入使用不同的策略  迭代器模式  Python内置对迭代器模式的支持 可用for遍历各种Iterable的数据类型 可以实现__next__和__iter__实现迭代器  class Stack(object): # 使用组合的例子 def __init__(self): self._deque = deque() def push(self, value): return self._deque.append(value) def pop(self): return self._deque.pop() def empty(self): return len(self._deque) == 0 def __iter__(self): res = [] for i in self._deque: res.append(i) for i in reversed(res): yield i s = Stack() s.push(1) s.push(2) for i in s: print(i) 观察者模式  发布订阅是一种最常用的实现方式 发布订阅用于解耦逻辑 可以通过回调等方式实现，当发生事件，执行回调函数  ==TODO：代码实现==
-策略模式  根据不同的输入采用不同的策略 对外暴露统一的接口，内部采用不同的策略计算  ==TODO：代码实现==</description>
     </item>
     
   </channel>

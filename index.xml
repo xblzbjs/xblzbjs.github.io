@@ -7,7 +7,24 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;xblzbjs&lt;/a&gt;</copyright>
-    <lastBuildDate>Wed, 31 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xblzbjs.cn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 24 May 2021 09:17:09 +0800</lastBuildDate><atom:link href="https://xblzbjs.cn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>启示录-打造用户喜爱的产品(人员篇)</title>
+      <link>https://xblzbjs.cn/article/2021/05/%E5%90%AF%E7%A4%BA%E5%BD%95-%E6%89%93%E9%80%A0%E7%94%A8%E6%88%B7%E5%96%9C%E7%88%B1%E7%9A%84%E4%BA%A7%E5%93%81%E4%BA%BA%E5%91%98%E7%AF%87/</link>
+      <pubDate>Mon, 24 May 2021 09:17:09 +0800</pubDate>
+      
+      <guid>https://xblzbjs.cn/article/2021/05/%E5%90%AF%E7%A4%BA%E5%BD%95-%E6%89%93%E9%80%A0%E7%94%A8%E6%88%B7%E5%96%9C%E7%88%B1%E7%9A%84%E4%BA%A7%E5%93%81%E4%BA%BA%E5%91%98%E7%AF%87/</guid>
+      <description>关键角色及其职责 1. 产品经理 主要职责
+ 评估产品机会（product opportunity）  产品需求文档(market requirements document, MRD)结合产品原型 机会评估(opportunity assessment)   定义要开发的产品  基本的产品特征和功能 产品的用户的体验 产品的发布标准    2. 用户体验设计师 主要职责
+ 与产品经理密切合作，将功能与设计相结合，满足用户需求，确保产品同时具有可用性和价值  注：产品的用户体验是公司的核心竞争力；交互设计不能外包，质量检验更适合外包
+3. 项目管理人员 主要职责
+ 制定计划 跟踪进度  4. 开发团队 注：IT团队通常指的是为内部员工提供技术支持的团队，而开发团队指的是为外部客户开发和维护产品的团队。
+5. 运维团队 6. 产品营销人员 主要职责
+ 对外发布信息、宣传产品 组织重点营销活动 促进产品销售提供支持  注：不推荐让一个人同时负责产品管理和产品营销
+团队成员的构成比例  通常，每五到十位开发人员配备一位产品经理 一位交互设计师支持两位产品经理的工作 一位视觉设计师支持四位交互设计师的工作 凡是超过十名开发人员参与的项目，就应该配备专职的项目经理  产品管理与软件开发 开发人员帮助产品经理完善产品定义的方式  邀请一名开发人员参加产品原型测试 产品经理可以向开发人员了解最新的技术发展动向，讨论哪些新技术可以用到产品里。 让开发人员在探索产品的初期阶段参与评估产品设计，协助策划方案。  注：产品经理常犯一类错误，即完成产品定义后，便扔给开发团队，置之不理。这样做只会贻误协调需求与可行性的最佳时机，等到发现问题时，为时已晚。
+产品经理页配合开发人员工作的方式  产品经理应该意识到，自己要定义的不是最终产品，而是满足基本要求的产品 一旦产品进入开发阶段，要尽可能避免修改产品的需求和设计 产品经理应该迅速采取行动，在维持产品基本功能、尽量避免修改的原则上，拿出解决方案  关于业务外包  外包不是为了节约成本，而是为了实现合理的人员配置 外包的关键是要挑选有能力的员工。聘用五位精英组成的团队比雇佣十五个平庸的人要更好  如何避免崩溃的软件架构  未雨绸缪，预留一定的技术能力，eBay称为余量（headroom） 为用户数量的增长预留空间，为事务增长预留空间，为新增功能预留空间 在产品管理上为开发团队预留**20%**的自主时间，让他们自由支配 把重写目标分成几大块，实现递增修改，让用户感受到产品的改进  招聘产品经理 技术可以学习，素质却难以培养。</description>
+    </item>
+    
     <item>
       <title>Vim｜补全</title>
       <link>https://xblzbjs.cn/article/2021/03/vim%E8%A1%A5%E5%85%A8/</link>
@@ -28,11 +45,11 @@
     </item>
     
     <item>
-      <title>读书笔记｜高效程序员的45个习惯:敏捷开发修炼之道</title>
-      <link>https://xblzbjs.cn/article/2021/03/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E9%AB%98%E6%95%88%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%8445%E4%B8%AA%E4%B9%A0%E6%83%AF%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91%E4%BF%AE%E7%82%BC%E4%B9%8B%E9%81%93/</link>
+      <title>高效程序员的45个习惯:敏捷开发修炼之道</title>
+      <link>https://xblzbjs.cn/article/2021/03/%E9%AB%98%E6%95%88%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%8445%E4%B8%AA%E4%B9%A0%E6%83%AF%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91%E4%BF%AE%E7%82%BC%E4%B9%8B%E9%81%93/</link>
       <pubDate>Thu, 25 Mar 2021 09:17:09 +0800</pubDate>
       
-      <guid>https://xblzbjs.cn/article/2021/03/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E9%AB%98%E6%95%88%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%8445%E4%B8%AA%E4%B9%A0%E6%83%AF%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91%E4%BF%AE%E7%82%BC%E4%B9%8B%E9%81%93/</guid>
+      <guid>https://xblzbjs.cn/article/2021/03/%E9%AB%98%E6%95%88%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%8445%E4%B8%AA%E4%B9%A0%E6%83%AF%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91%E4%BF%AE%E7%82%BC%E4%B9%8B%E9%81%93/</guid>
       <description>有关敏捷    &amp;ldquo;敏捷&amp;quot;是一种把以人为本、团队合作、快速响应变化和可工作的软件作为宗旨的开发方法
     反馈是敏捷的基础。一旦你意识到走错了方向，就要立即做出决策，改变方向。
     过程符合标准并不意味结果是正确的。敏捷团队重结果胜于重过程。
@@ -115,15 +132,6 @@ func TestMain(m *testing.M) 有什么作用🤔 如果测试文件中包含该�
       
       <guid>https://xblzbjs.cn/book-list/2021/golang/</guid>
       <description> 《The way to Go》 《Go高级编程》 《Go专家编程》(任洪彩著)  </description>
-    </item>
-    
-    <item>
-      <title>Other</title>
-      <link>https://xblzbjs.cn/book-list/2021/other/</link>
-      <pubDate>Sat, 20 Mar 2021 13:44:38 +0800</pubDate>
-      
-      <guid>https://xblzbjs.cn/book-list/2021/other/</guid>
-      <description> 《启示录:打造用户喜爱的产品》(Marty Cagan著)(强烈推荐) 《软技能:代码之外的生存指南》(John Z.Sonmez著) 《高效程序员的45个习惯:敏捷开发修炼之道》(Andy Hunt/Venkat Subramaniam著)  </description>
     </item>
     
   </channel>

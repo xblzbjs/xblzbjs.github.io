@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="[xblzbjs]">
+<meta name="description" content="关键角色及其职责 1. 产品经理 主要职责
+ 评估产品机会（product opportunity）  产品需求文档(market requirements document, MRD)结合产品原型 机会评估(opportunity assessment)   定义要开发的产品  基本的产品特征和功能 产品的用户的体验 产品的发布标准    2. 用户体验设计师 主要职责
+ 与产品经理密切合作，将功能与设计相结合，满足用户需求，确保产品同时具有可用性和价值  注：产品的用户体验是公司的核心竞争力；交互设计不能外包，质量检验更适合外包
+3. 项目管理人员 主要职责
+ 制定计划 跟踪进度  4. 开发团队 注：IT团队通常指的是为内部员工提供技术支持的团队，而开发团队指的是为外部客户开发和维护产品的团队。
+5. 运维团队 6. 产品营销人员 主要职责
+ 对外发布信息、宣传产品 组织重点营销活动 促进产品销售提供支持  注：不推荐让一个人同时负责产品管理和产品营销
+团队成员的构成比例  通常，每五到十位开发人员配备一位产品经理 一位交互设计师支持两位产品经理的工作 一位视觉设计师支持四位交互设计师的工作 凡是超过十名开发人员参与的项目，就应该配备专职的项目经理  产品管理与软件开发 开发人员帮助产品经理完善产品定义的方式  邀请一名开发人员参加产品原型测试 产品经理可以向开发人员了解最新的技术发展动向，讨论哪些新技术可以用到产品里。 让开发人员在探索产品的初期阶段参与评估产品设计，协助策划方案。  注：产品经理常犯一类错误，即完成产品定义后，便扔给开发团队，置之不理。这样做只会贻误协调需求与可行性的最佳时机，等到发现问题时，为时已晚。
+产品经理页配合开发人员工作的方式  产品经理应该意识到，自己要定义的不是最终产品，而是满足基本要求的产品 一旦产品进入开发阶段，要尽可能避免修改产品的需求和设计 产品经理应该迅速采取行动，在维持产品基本功能、尽量避免修改的原则上，拿出解决方案  关于业务外包  外包不是为了节约成本，而是为了实现合理的人员配置 外包的关键是要挑选有能力的员工。聘用五位精英组成的团队比雇佣十五个平庸的人要更好  如何避免崩溃的软件架构  未雨绸缪，预留一定的技术能力，eBay称为余量（headroom） 为用户数量的增长预留空间，为事务增长预留空间，为新增功能预留空间 在产品管理上为开发团队预留**20%**的自主时间，让他们自由支配 把重写目标分成几大块，实现递增修改，让用户感受到产品的改进  招聘产品经理 技术可以学习，素质却难以培养。" />
+<meta name="keywords" content=", book-notes" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://xblzbjs.cn/article/2021/05/%E5%90%AF%E7%A4%BA%E5%BD%95-%E6%89%93%E9%80%A0%E7%94%A8%E6%88%B7%E5%96%9C%E7%88%B1%E7%9A%84%E4%BA%A7%E5%93%81%E4%BA%BA%E5%91%98%E7%AF%87/" />
+
+
+    <title>
+        
+            启示录-打造用户喜爱的产品(人员篇) :: 行百里者半九十 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://xblzbjs.cn/main.d7bdd8ee18bfbf4c605488a7e5b1b92cd980dfeed2bdaeab4dd5e931a7a78bc0.css">
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://xblzbjs.cn/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://xblzbjs.cn/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://xblzbjs.cn/favicon-16x16.png">
+    <link rel="manifest" href="https://xblzbjs.cn/site.webmanifest">
+    <link rel="mask-icon" href="https://xblzbjs.cn/safari-pinned-tab.svg" color="#1b1c1d">
+    <link rel="shortcut icon" href="https://xblzbjs.cn/favicon.ico">
+    <meta name="msapplication-TileColor" content="#1b1c1d">
+    <meta name="theme-color" content="#1b1c1d">
+
+
+
+<meta itemprop="name" content="启示录-打造用户喜爱的产品(人员篇)">
+<meta itemprop="description" content="关键角色及其职责 1. 产品经理 主要职责
+ 评估产品机会（product opportunity）  产品需求文档(market requirements document, MRD)结合产品原型 机会评估(opportunity assessment)   定义要开发的产品  基本的产品特征和功能 产品的用户的体验 产品的发布标准    2. 用户体验设计师 主要职责
+ 与产品经理密切合作，将功能与设计相结合，满足用户需求，确保产品同时具有可用性和价值  注：产品的用户体验是公司的核心竞争力；交互设计不能外包，质量检验更适合外包
+3. 项目管理人员 主要职责
+ 制定计划 跟踪进度  4. 开发团队 注：IT团队通常指的是为内部员工提供技术支持的团队，而开发团队指的是为外部客户开发和维护产品的团队。
+5. 运维团队 6. 产品营销人员 主要职责
+ 对外发布信息、宣传产品 组织重点营销活动 促进产品销售提供支持  注：不推荐让一个人同时负责产品管理和产品营销
+团队成员的构成比例  通常，每五到十位开发人员配备一位产品经理 一位交互设计师支持两位产品经理的工作 一位视觉设计师支持四位交互设计师的工作 凡是超过十名开发人员参与的项目，就应该配备专职的项目经理  产品管理与软件开发 开发人员帮助产品经理完善产品定义的方式  邀请一名开发人员参加产品原型测试 产品经理可以向开发人员了解最新的技术发展动向，讨论哪些新技术可以用到产品里。 让开发人员在探索产品的初期阶段参与评估产品设计，协助策划方案。  注：产品经理常犯一类错误，即完成产品定义后，便扔给开发团队，置之不理。这样做只会贻误协调需求与可行性的最佳时机，等到发现问题时，为时已晚。
+产品经理页配合开发人员工作的方式  产品经理应该意识到，自己要定义的不是最终产品，而是满足基本要求的产品 一旦产品进入开发阶段，要尽可能避免修改产品的需求和设计 产品经理应该迅速采取行动，在维持产品基本功能、尽量避免修改的原则上，拿出解决方案  关于业务外包  外包不是为了节约成本，而是为了实现合理的人员配置 外包的关键是要挑选有能力的员工。聘用五位精英组成的团队比雇佣十五个平庸的人要更好  如何避免崩溃的软件架构  未雨绸缪，预留一定的技术能力，eBay称为余量（headroom） 为用户数量的增长预留空间，为事务增长预留空间，为新增功能预留空间 在产品管理上为开发团队预留**20%**的自主时间，让他们自由支配 把重写目标分成几大块，实现递增修改，让用户感受到产品的改进  招聘产品经理 技术可以学习，素质却难以培养。"><meta itemprop="datePublished" content="2021-05-24T09:17:09&#43;08:00" />
+<meta itemprop="dateModified" content="2021-05-24T09:17:09&#43;08:00" />
+<meta itemprop="wordCount" content="106"><meta itemprop="image" content="https://xblzbjs.cn"/>
+<meta itemprop="keywords" content="book-notes," />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://xblzbjs.cn"/>
+
+<meta name="twitter:title" content="启示录-打造用户喜爱的产品(人员篇)"/>
+<meta name="twitter:description" content="关键角色及其职责 1. 产品经理 主要职责
+ 评估产品机会（product opportunity）  产品需求文档(market requirements document, MRD)结合产品原型 机会评估(opportunity assessment)   定义要开发的产品  基本的产品特征和功能 产品的用户的体验 产品的发布标准    2. 用户体验设计师 主要职责
+ 与产品经理密切合作，将功能与设计相结合，满足用户需求，确保产品同时具有可用性和价值  注：产品的用户体验是公司的核心竞争力；交互设计不能外包，质量检验更适合外包
+3. 项目管理人员 主要职责
+ 制定计划 跟踪进度  4. 开发团队 注：IT团队通常指的是为内部员工提供技术支持的团队，而开发团队指的是为外部客户开发和维护产品的团队。
+5. 运维团队 6. 产品营销人员 主要职责
+ 对外发布信息、宣传产品 组织重点营销活动 促进产品销售提供支持  注：不推荐让一个人同时负责产品管理和产品营销
+团队成员的构成比例  通常，每五到十位开发人员配备一位产品经理 一位交互设计师支持两位产品经理的工作 一位视觉设计师支持四位交互设计师的工作 凡是超过十名开发人员参与的项目，就应该配备专职的项目经理  产品管理与软件开发 开发人员帮助产品经理完善产品定义的方式  邀请一名开发人员参加产品原型测试 产品经理可以向开发人员了解最新的技术发展动向，讨论哪些新技术可以用到产品里。 让开发人员在探索产品的初期阶段参与评估产品设计，协助策划方案。  注：产品经理常犯一类错误，即完成产品定义后，便扔给开发团队，置之不理。这样做只会贻误协调需求与可行性的最佳时机，等到发现问题时，为时已晚。
+产品经理页配合开发人员工作的方式  产品经理应该意识到，自己要定义的不是最终产品，而是满足基本要求的产品 一旦产品进入开发阶段，要尽可能避免修改产品的需求和设计 产品经理应该迅速采取行动，在维持产品基本功能、尽量避免修改的原则上，拿出解决方案  关于业务外包  外包不是为了节约成本，而是为了实现合理的人员配置 外包的关键是要挑选有能力的员工。聘用五位精英组成的团队比雇佣十五个平庸的人要更好  如何避免崩溃的软件架构  未雨绸缪，预留一定的技术能力，eBay称为余量（headroom） 为用户数量的增长预留空间，为事务增长预留空间，为新增功能预留空间 在产品管理上为开发团队预留**20%**的自主时间，让他们自由支配 把重写目标分成几大块，实现递增修改，让用户感受到产品的改进  招聘产品经理 技术可以学习，素质却难以培养。"/>
+
+
+
+
+    <meta property="og:title" content="启示录-打造用户喜爱的产品(人员篇)" />
+<meta property="og:description" content="关键角色及其职责 1. 产品经理 主要职责
+ 评估产品机会（product opportunity）  产品需求文档(market requirements document, MRD)结合产品原型 机会评估(opportunity assessment)   定义要开发的产品  基本的产品特征和功能 产品的用户的体验 产品的发布标准    2. 用户体验设计师 主要职责
+ 与产品经理密切合作，将功能与设计相结合，满足用户需求，确保产品同时具有可用性和价值  注：产品的用户体验是公司的核心竞争力；交互设计不能外包，质量检验更适合外包
+3. 项目管理人员 主要职责
+ 制定计划 跟踪进度  4. 开发团队 注：IT团队通常指的是为内部员工提供技术支持的团队，而开发团队指的是为外部客户开发和维护产品的团队。
+5. 运维团队 6. 产品营销人员 主要职责
+ 对外发布信息、宣传产品 组织重点营销活动 促进产品销售提供支持  注：不推荐让一个人同时负责产品管理和产品营销
+团队成员的构成比例  通常，每五到十位开发人员配备一位产品经理 一位交互设计师支持两位产品经理的工作 一位视觉设计师支持四位交互设计师的工作 凡是超过十名开发人员参与的项目，就应该配备专职的项目经理  产品管理与软件开发 开发人员帮助产品经理完善产品定义的方式  邀请一名开发人员参加产品原型测试 产品经理可以向开发人员了解最新的技术发展动向，讨论哪些新技术可以用到产品里。 让开发人员在探索产品的初期阶段参与评估产品设计，协助策划方案。  注：产品经理常犯一类错误，即完成产品定义后，便扔给开发团队，置之不理。这样做只会贻误协调需求与可行性的最佳时机，等到发现问题时，为时已晚。
+产品经理页配合开发人员工作的方式  产品经理应该意识到，自己要定义的不是最终产品，而是满足基本要求的产品 一旦产品进入开发阶段，要尽可能避免修改产品的需求和设计 产品经理应该迅速采取行动，在维持产品基本功能、尽量避免修改的原则上，拿出解决方案  关于业务外包  外包不是为了节约成本，而是为了实现合理的人员配置 外包的关键是要挑选有能力的员工。聘用五位精英组成的团队比雇佣十五个平庸的人要更好  如何避免崩溃的软件架构  未雨绸缪，预留一定的技术能力，eBay称为余量（headroom） 为用户数量的增长预留空间，为事务增长预留空间，为新增功能预留空间 在产品管理上为开发团队预留**20%**的自主时间，让他们自由支配 把重写目标分成几大块，实现递增修改，让用户感受到产品的改进  招聘产品经理 技术可以学习，素质却难以培养。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://xblzbjs.cn/article/2021/05/%E5%90%AF%E7%A4%BA%E5%BD%95-%E6%89%93%E9%80%A0%E7%94%A8%E6%88%B7%E5%96%9C%E7%88%B1%E7%9A%84%E4%BA%A7%E5%93%81%E4%BA%BA%E5%91%98%E7%AF%87/" /><meta property="og:image" content="https://xblzbjs.cn"/><meta property="article:section" content="article" />
+<meta property="article:published_time" content="2021-05-24T09:17:09&#43;08:00" />
+<meta property="article:modified_time" content="2021-05-24T09:17:09&#43;08:00" /><meta property="og:site_name" content="行百里者半九十" />
+
+
+
+
+
+
+
+    <meta property="article:published_time" content="2021-05-24 09:17:09 &#43;0800 CST" />
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://xblzbjs.cn/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">行百里者半九十</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://xblzbjs.cn/book-list">书单</a></li><li><a href="https://xblzbjs.cn/page/about/">关于</a></li><li><a href="https://xblzbjs.cn/page/archives/">归档</a></li><li><a href="https://xblzbjs.cn/article">随笔</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://xblzbjs.cn/article/2021/05/%E5%90%AF%E7%A4%BA%E5%BD%95-%E6%89%93%E9%80%A0%E7%94%A8%E6%88%B7%E5%96%9C%E7%88%B1%E7%9A%84%E4%BA%A7%E5%93%81%E4%BA%BA%E5%91%98%E7%AF%87/">启示录-打造用户喜爱的产品(人员篇)</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <h2 id="关键角色及其职责">关键角色及其职责</h2>
+<h3 id="1-产品经理">1. 产品经理</h3>
+<p>主要职责</p>
+<ol>
+<li>评估产品机会（product opportunity）
+<ul>
+<li>产品需求文档(market requirements document, MRD)结合产品原型</li>
+<li>机会评估(opportunity assessment)</li>
+</ul>
+</li>
+<li>定义要开发的产品
+<ul>
+<li>基本的产品特征和功能</li>
+<li>产品的用户的体验</li>
+<li>产品的发布标准</li>
+</ul>
+</li>
+</ol>
+<h3 id="2-用户体验设计师">2. 用户体验设计师</h3>
+<p>主要职责</p>
+<ol>
+<li>与产品经理密切合作，将功能与设计相结合，满足用户需求，确保产品同时具有可用性和价值</li>
+</ol>
+<p><strong>注：产品的用户体验是公司的核心竞争力；交互设计不能外包，质量检验更适合外包</strong></p>
+<h3 id="3-项目管理人员">3. 项目管理人员</h3>
+<p>主要职责</p>
+<ol>
+<li>制定计划</li>
+<li>跟踪进度</li>
+</ol>
+<h3 id="4-开发团队">4. 开发团队</h3>
+<p><strong>注</strong>：IT团队通常指的是为内部员工提供技术支持的团队，而开发团队指的是为外部客户开发和维护产品的团队。</p>
+<h3 id="5-运维团队">5. 运维团队</h3>
+<h3 id="6-产品营销人员">6. 产品营销人员</h3>
+<p>主要职责</p>
+<ul>
+<li>对外发布信息、宣传产品</li>
+<li>组织重点营销活动</li>
+<li>促进产品销售提供支持</li>
+</ul>
+<p><strong>注：不推荐让一个人同时负责产品管理和产品营销</strong></p>
+<h3 id="团队成员的构成比例">团队成员的构成比例</h3>
+<ul>
+<li>通常，每<strong>五到十</strong>位开发人员配备一位产品经理</li>
+<li>一位交互设计师支持两位产品经理的工作</li>
+<li>一位视觉设计师支持四位交互设计师的工作</li>
+<li>凡是超过十名开发人员参与的项目，就应该配备专职的项目经理</li>
+</ul>
+<h2 id="产品管理与软件开发">产品管理与软件开发</h2>
+<h3 id="开发人员帮助产品经理完善产品定义的方式">开发人员帮助产品经理完善产品定义的方式</h3>
+<ol>
+<li>邀请一名开发人员参加产品原型测试</li>
+<li>产品经理可以向开发人员了解最新的技术发展动向，讨论哪些新技术可以用到产品里。</li>
+<li>让开发人员在探索产品的初期阶段参与评估产品设计，协助策划方案。</li>
+</ol>
+<p><strong>注：产品经理常犯一类错误，即完成产品定义后，便扔给开发团队，置之不理。这样做只会贻误协调需求与可行性的最佳时机，等到发现问题时，为时已晚。</strong></p>
+<h3 id="产品经理页配合开发人员工作的方式">产品经理页配合开发人员工作的方式</h3>
+<ol>
+<li>产品经理应该意识到，自己要定义的不是最终产品，而是满足基本要求的产品</li>
+<li>一旦产品进入开发阶段，要尽可能避免修改产品的需求和设计</li>
+<li>产品经理应该迅速采取行动，在维持产品基本功能、尽量避免修改的原则上，拿出解决方案</li>
+</ol>
+<h3 id="关于业务外包">关于业务外包</h3>
+<ul>
+<li>外包不是为了节约成本，而是为了实现合理的人员配置</li>
+<li>外包的关键是要挑选有能力的员工。聘用五位精英组成的团队比雇佣十五个平庸的人要更好</li>
+</ul>
+<h3 id="如何避免崩溃的软件架构">如何避免崩溃的软件架构</h3>
+<ul>
+<li>未雨绸缪，预留一定的技术能力，eBay称为余量（headroom）</li>
+<li>为用户数量的增长预留空间，为事务增长预留空间，为新增功能预留空间</li>
+<li>在产品管理上为开发团队预留**20%**的自主时间，让他们自由支配</li>
+<li>把重写目标分成几大块，实现递增修改，让用户感受到产品的改进</li>
+</ul>
+<h2 id="招聘产品经理">招聘产品经理</h2>
+<p>技术可以学习，素质却难以培养。</p>
+<h3 id="个人素质和态度">个人素质和态度：</h3>
+<ul>
+<li>
+<p>对产品的热情</p>
+</li>
+<li>
+<p>用户立场</p>
+</li>
+<li>
+<p>出色的洞察力和判断力</p>
+</li>
+<li>
+<p>职业操守</p>
+</li>
+<li>
+<p>正直</p>
+<p>在所有产品团队成员里，产品经理最能体现公司和产品的价值观；产品经理是产品团队、销售团队、公司高管之间的枢纽</p>
+</li>
+<li>
+<p>信心</p>
+</li>
+<li>
+<p>态度</p>
+<p>对自己的产品创意负责</p>
+</li>
+<li>
+<p>技能</p>
+<p>只要具备优秀的个人素质，所有技能都可以习得</p>
+</li>
+<li>
+<p>运用技术的能力</p>
+<p>出色的产品经理并不需要自己发明或实现新技术，但必须有能力理解技术，发掘技术的应用潜力</p>
+</li>
+<li>
+<p>注意力</p>
+<p>过滤多余的功能，缩短研发时间，降低生产成本，让产品更早上市</p>
+</li>
+<li>
+<p>时间管理</p>
+</li>
+<li>
+<p>沟通技能</p>
+<p>产品经理只能以理服人，绝不能靠职位压制他人</p>
+</li>
+<li>
+<p>商业技能</p>
+<p>产品经理既能与程序员讨论技术，又能与管理层和营销人员讨论成本结构、边际效应、市场份额、产品定位和品牌</p>
+</li>
+</ul>
+<h2 id="管理产品经理">管理产品经理</h2>
+<h3 id="建设产品管理团队">建设产品管理团队</h3>
+<ul>
+<li>新产品经理必须经过约三个月刻苦学习才能开始管理产品</li>
+<li>授权给不称职的人，那事推卸你作为产品产品总监的责任；如果你事必躬亲，那是替他们承担责任</li>
+</ul>
+<h3 id="怎样评估产品经理的工作">怎样评估产品经理的工作</h3>
+<ul>
+<li>
+<p>考察业绩新指标：用户净推荐值（net promoter score，NPS）</p>
+<p>NPS最重要的作用还是用来观察公司产品和服务的优化情况</p>
+</li>
+<li>
+<p>产品管理部门应该包含设计团队，因为产品管理和用户体验设计必须紧密合作</p>
+</li>
+</ul>
+<h2 id="管理上司">管理上司</h2>
+<h3 id="十条经验">十条经验</h3>
+<ol>
+<li>为项目波动做好准备</li>
+<li>注意沟通的方式与频率</li>
+<li>会前沟通</li>
+<li>多提间</li>
+<li>向上司借力</li>
+<li>充分准备</li>
+<li>缩短邮件篇幅</li>
+<li>多用数据和事实说话</li>
+<li>内部宣传</li>
+<li>做让领导省心的员工</li>
+</ol>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="https://xblzbjs.cn/tags/book-notes/">book-notes</a></span>
+        
+    </p>
+
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2021</span>
+            <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">xblzbjs</a></span><span><a href="https://xblzbjs.cn/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>粤ICP备2021007187号-1</span>
+          </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="https://xblzbjs.cn/bundle.min.2ce64ea6ea44a72b13dd812fc2eb5cca3efe878cce258a47c137c17edf46e0602a05e422b618a5b80b5939c731b7a293351c2f2222a21f6ee27e54a8448dd20e.js" integrity="sha512-LOZOpupEpysT3YEvwutcyj7&#43;h4zOJYpHwTfBft9G4GAqBeQithiluAtZOccxt6KTNRwvIiKiH27iflSoRI3SDg=="></script>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-192697137-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+    </body>
+</html>

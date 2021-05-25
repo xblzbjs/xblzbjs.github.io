@@ -199,7 +199,7 @@
 		<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">Log</span>(<span style="color:#a6e22e">k</span>, <span style="color:#a6e22e">v</span>)
 	}
 }
-</code></pre></div><h2 id="tip4--new和make创建map的差异">Tip4  <code>new</code>和<code>make</code>创建<code>Map</code>的差异</h2>
+</code></pre></div><h2 id="tip4--new和make创建map的差异">Tip4  <code>new</code>和<code>make</code>创建Map的差异</h2>
 <p>使用new来创建map时，返回的内容是一个<strong>指针</strong>，这个指针指向了一个所有字段全为0的值map对象，<strong>需要初始化</strong>后才能使用，而使用make来创建map时，返回的内容是一个<strong>引用</strong>，可以<strong>直接使用</strong>。</p>
 <h3 id="例子">例子</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">TestDiffMakeAndNew</span>(<span style="color:#a6e22e">t</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">testing</span>.<span style="color:#a6e22e">T</span>) {

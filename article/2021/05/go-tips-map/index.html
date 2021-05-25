@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="map[name:xblzbjs]">
+<meta name="description" content="Tip1 初始化方式 func TestTestInitMap(t *testing.T) { // 方法一（字面量初始化） 	m1 := map[string]int{&amp;#34;Go&amp;#34;: 1, &amp;#34;Java&amp;#34;: 2, &amp;#34;Python&amp;#34;: 3} m2 := map[int]int{} // 方法二（使用内置函数make初始化） 	m3 := make(map[int]int, 10) // 使用len函数打印map的长度, 不能用cap打印容量 	t.Logf(&amp;#34;len m1=%d&amp;#34;, len(m1)) m2[4] = 16 t.Logf(&amp;#34;len m2=%d&amp;#34;, len(m2)) t.Logf(&amp;#34;len m3=%d&amp;#34;, len(m3)) } 以上两者同样是初始化一个Map，有什么不同？
+ 方法二提前分配了Map的容量，减少内存分配的次数，相比方法一而言性能更好，但是可扩展性更差。  Tip2 增删查改（Create、Delete、Read、Update） func TestMapCRUD(t *testing.T) { m := make(map[string]int, 10) m[&amp;#34;other&amp;#34;] = 0 // Create 	m[&amp;#34;go&amp;#34;] = 1 t.Logf(&amp;#34;Before updating:%d&amp;#34;, m[&amp;#34;go&amp;#34;]) // Update 	m[&amp;#34;go&amp;#34;] = 100 t." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://xblzbjs.cn/article/2021/05/go-tips-map/" />
+
+
+    <title>
+        
+            Go Tips | Map :: 行百里者半九十 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://xblzbjs.cn/main.d7bdd8ee18bfbf4c605488a7e5b1b92cd980dfeed2bdaeab4dd5e931a7a78bc0.css">
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://xblzbjs.cn/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://xblzbjs.cn/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://xblzbjs.cn/favicon-16x16.png">
+    <link rel="manifest" href="https://xblzbjs.cn/site.webmanifest">
+    <link rel="mask-icon" href="https://xblzbjs.cn/safari-pinned-tab.svg" color="#1b1c1d">
+    <link rel="shortcut icon" href="https://xblzbjs.cn/favicon.ico">
+    <meta name="msapplication-TileColor" content="#1b1c1d">
+    <meta name="theme-color" content="#1b1c1d">
+
+
+
+<meta itemprop="name" content="Go Tips | Map">
+<meta itemprop="description" content="Tip1 初始化方式 func TestTestInitMap(t *testing.T) { // 方法一（字面量初始化） 	m1 := map[string]int{&#34;Go&#34;: 1, &#34;Java&#34;: 2, &#34;Python&#34;: 3} m2 := map[int]int{} // 方法二（使用内置函数make初始化） 	m3 := make(map[int]int, 10) // 使用len函数打印map的长度, 不能用cap打印容量 	t.Logf(&#34;len m1=%d&#34;, len(m1)) m2[4] = 16 t.Logf(&#34;len m2=%d&#34;, len(m2)) t.Logf(&#34;len m3=%d&#34;, len(m3)) } 以上两者同样是初始化一个Map，有什么不同？
+ 方法二提前分配了Map的容量，减少内存分配的次数，相比方法一而言性能更好，但是可扩展性更差。  Tip2 增删查改（Create、Delete、Read、Update） func TestMapCRUD(t *testing.T) { m := make(map[string]int, 10) m[&#34;other&#34;] = 0 // Create 	m[&#34;go&#34;] = 1 t.Logf(&#34;Before updating:%d&#34;, m[&#34;go&#34;]) // Update 	m[&#34;go&#34;] = 100 t."><meta itemprop="datePublished" content="2021-05-25T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-05-25T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="506"><meta itemprop="image" content="https://xblzbjs.cn"/>
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://xblzbjs.cn"/>
+
+<meta name="twitter:title" content="Go Tips | Map"/>
+<meta name="twitter:description" content="Tip1 初始化方式 func TestTestInitMap(t *testing.T) { // 方法一（字面量初始化） 	m1 := map[string]int{&#34;Go&#34;: 1, &#34;Java&#34;: 2, &#34;Python&#34;: 3} m2 := map[int]int{} // 方法二（使用内置函数make初始化） 	m3 := make(map[int]int, 10) // 使用len函数打印map的长度, 不能用cap打印容量 	t.Logf(&#34;len m1=%d&#34;, len(m1)) m2[4] = 16 t.Logf(&#34;len m2=%d&#34;, len(m2)) t.Logf(&#34;len m3=%d&#34;, len(m3)) } 以上两者同样是初始化一个Map，有什么不同？
+ 方法二提前分配了Map的容量，减少内存分配的次数，相比方法一而言性能更好，但是可扩展性更差。  Tip2 增删查改（Create、Delete、Read、Update） func TestMapCRUD(t *testing.T) { m := make(map[string]int, 10) m[&#34;other&#34;] = 0 // Create 	m[&#34;go&#34;] = 1 t.Logf(&#34;Before updating:%d&#34;, m[&#34;go&#34;]) // Update 	m[&#34;go&#34;] = 100 t."/>
+
+
+
+
+    <meta property="og:title" content="Go Tips | Map" />
+<meta property="og:description" content="Tip1 初始化方式 func TestTestInitMap(t *testing.T) { // 方法一（字面量初始化） 	m1 := map[string]int{&#34;Go&#34;: 1, &#34;Java&#34;: 2, &#34;Python&#34;: 3} m2 := map[int]int{} // 方法二（使用内置函数make初始化） 	m3 := make(map[int]int, 10) // 使用len函数打印map的长度, 不能用cap打印容量 	t.Logf(&#34;len m1=%d&#34;, len(m1)) m2[4] = 16 t.Logf(&#34;len m2=%d&#34;, len(m2)) t.Logf(&#34;len m3=%d&#34;, len(m3)) } 以上两者同样是初始化一个Map，有什么不同？
+ 方法二提前分配了Map的容量，减少内存分配的次数，相比方法一而言性能更好，但是可扩展性更差。  Tip2 增删查改（Create、Delete、Read、Update） func TestMapCRUD(t *testing.T) { m := make(map[string]int, 10) m[&#34;other&#34;] = 0 // Create 	m[&#34;go&#34;] = 1 t.Logf(&#34;Before updating:%d&#34;, m[&#34;go&#34;]) // Update 	m[&#34;go&#34;] = 100 t." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://xblzbjs.cn/article/2021/05/go-tips-map/" /><meta property="og:image" content="https://xblzbjs.cn"/><meta property="article:section" content="article" />
+<meta property="article:published_time" content="2021-05-25T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-05-25T00:00:00&#43;00:00" /><meta property="og:site_name" content="行百里者半九十" />
+
+
+
+
+
+
+    <meta property="article:section" content="Golang" />
+
+
+
+    <meta property="article:published_time" content="2021-05-25 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://xblzbjs.cn/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">行百里者半九十</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://xblzbjs.cn/book-list">书单</a></li><li><a href="https://xblzbjs.cn/page/about/">关于</a></li><li><a href="https://xblzbjs.cn/page/archives/">归档</a></li><li><a href="https://xblzbjs.cn/article">随笔</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://xblzbjs.cn/article/2021/05/go-tips-map/">Go Tips | Map</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <h2 id="tip1-初始化方式">Tip1 初始化方式</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">TestTestInitMap</span>(<span style="color:#a6e22e">t</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">testing</span>.<span style="color:#a6e22e">T</span>) {
+	<span style="color:#75715e">// 方法一（字面量初始化）
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">m1</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">int</span>{<span style="color:#e6db74">&#34;Go&#34;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#34;Java&#34;</span>: <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#34;Python&#34;</span>: <span style="color:#ae81ff">3</span>}
+	<span style="color:#a6e22e">m2</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#66d9ef">int</span>{}
+	<span style="color:#75715e">// 方法二（使用内置函数make初始化）
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">m3</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">10</span>)
+	<span style="color:#75715e">// 使用len函数打印map的长度, 不能用cap打印容量
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">Logf</span>(<span style="color:#e6db74">&#34;len m1=%d&#34;</span>, len(<span style="color:#a6e22e">m1</span>))
+	<span style="color:#a6e22e">m2</span>[<span style="color:#ae81ff">4</span>] = <span style="color:#ae81ff">16</span>
+	<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">Logf</span>(<span style="color:#e6db74">&#34;len m2=%d&#34;</span>, len(<span style="color:#a6e22e">m2</span>))
+	<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">Logf</span>(<span style="color:#e6db74">&#34;len m3=%d&#34;</span>, len(<span style="color:#a6e22e">m3</span>)) 
+}
+</code></pre></div><p>以上两者同样是初始化一个Map，有什么不同？</p>
+<ul>
+<li>方法二提前分配了Map的容量，减少内存分配的次数，相比方法一而言性能更好，但是可扩展性更差。</li>
+</ul>
+<h2 id="tip2-增删查改createdeletereadupdate">Tip2 增删查改（Create、Delete、Read、Update）</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">TestMapCRUD</span>(<span style="color:#a6e22e">t</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">testing</span>.<span style="color:#a6e22e">T</span>) {
+	<span style="color:#a6e22e">m</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">10</span>)
+	<span style="color:#a6e22e">m</span>[<span style="color:#e6db74">&#34;other&#34;</span>] = <span style="color:#ae81ff">0</span>
+	<span style="color:#75715e">// Create
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">m</span>[<span style="color:#e6db74">&#34;go&#34;</span>] = <span style="color:#ae81ff">1</span>
+	<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">Logf</span>(<span style="color:#e6db74">&#34;Before updating:%d&#34;</span>, <span style="color:#a6e22e">m</span>[<span style="color:#e6db74">&#34;go&#34;</span>])
+	<span style="color:#75715e">// Update
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">m</span>[<span style="color:#e6db74">&#34;go&#34;</span>] = <span style="color:#ae81ff">100</span>
+	<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">Logf</span>(<span style="color:#e6db74">&#34;After updating:%d&#34;</span>, <span style="color:#a6e22e">m</span>[<span style="color:#e6db74">&#34;go&#34;</span>])
+	<span style="color:#75715e">// Delete
+</span><span style="color:#75715e"></span>	delete(<span style="color:#a6e22e">m</span>, <span style="color:#e6db74">&#34;go&#34;</span>)
+	<span style="color:#75715e">// Read
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">val</span>, <span style="color:#a6e22e">exist</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">m</span>[<span style="color:#e6db74">&#34;go&#34;</span>]
+	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">exist</span> {
+		<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">Logf</span>(<span style="color:#e6db74">&#34;Exist! Value is %d&#34;</span>, <span style="color:#a6e22e">val</span>)
+	} <span style="color:#66d9ef">else</span> {
+		<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">Log</span>(<span style="color:#e6db74">&#34;Does not exist!&#34;</span>)
+	}
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">TestEmptyMap</span>(<span style="color:#a6e22e">t</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">testing</span>.<span style="color:#a6e22e">T</span>) {
+	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">m</span> <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">int</span>
+	<span style="color:#a6e22e">m</span>[<span style="color:#e6db74">&#34;string&#34;</span>] = <span style="color:#ae81ff">3</span>	<span style="color:#75715e">//会触发panic: assignment to entry in nil map
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p>注意：</p>
+<ul>
+<li>如果map为nil或者指定key不存在时，delete()不会报错，相当于空操作</li>
+<li>查询、修改键时，检查键是否存在。否则查询会操作零值，修改会创建新的键值对</li>
+<li><strong>未初始化的map值为nil，向值为nil的map添加元素时会出发panic</strong></li>
+</ul>
+<h2 id="tip3-遍历输出map的key与value">Tip3 遍历输出Map的key与value</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">TestTravelMap</span>(<span style="color:#a6e22e">t</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">testing</span>.<span style="color:#a6e22e">T</span>) {
+	<span style="color:#a6e22e">m1</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">1</span>: <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>: <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">3</span>: <span style="color:#ae81ff">9</span>}
+	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">k</span>, <span style="color:#a6e22e">v</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">m1</span> {
+		<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">Log</span>(<span style="color:#a6e22e">k</span>, <span style="color:#a6e22e">v</span>)
+	}
+}
+</code></pre></div><h2 id="tip4--new和make创建map的差异">Tip4  <code>new</code>和<code>make</code>创建<code>Map</code>的差异</h2>
+<p>使用new来创建map时，返回的内容是一个<strong>指针</strong>，这个指针指向了一个所有字段全为0的值map对象，<strong>需要初始化</strong>后才能使用，而使用make来创建map时，返回的内容是一个<strong>引用</strong>，可以<strong>直接使用</strong>。</p>
+<h3 id="例子">例子</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">TestDiffMakeAndNew</span>(<span style="color:#a6e22e">t</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">testing</span>.<span style="color:#a6e22e">T</span>) {
+	<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">Log</span>(<span style="color:#e6db74">&#34;========使用new创建Map=======&#34;</span>)
+	<span style="color:#a6e22e">m</span> <span style="color:#f92672">:=</span> new(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">int</span>)
+	<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">Log</span>(<span style="color:#a6e22e">m</span>, <span style="color:#e6db74">&#34;\t&#34;</span>, <span style="color:#a6e22e">reflect</span>.<span style="color:#a6e22e">TypeOf</span>(<span style="color:#a6e22e">m</span>))
+	<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">Log</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">m</span>, <span style="color:#e6db74">&#34;\t&#34;</span>, <span style="color:#a6e22e">reflect</span>.<span style="color:#a6e22e">TypeOf</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">m</span>))
+	<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">Log</span>(<span style="color:#f92672">*</span><span style="color:#a6e22e">m</span>, <span style="color:#e6db74">&#34;\t&#34;</span>, <span style="color:#a6e22e">reflect</span>.<span style="color:#a6e22e">TypeOf</span>(<span style="color:#f92672">*</span><span style="color:#a6e22e">m</span>))
+	<span style="color:#f92672">*</span><span style="color:#a6e22e">m</span> = <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">int</span>{}
+	<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">Log</span>(<span style="color:#f92672">*</span><span style="color:#a6e22e">m</span>, <span style="color:#e6db74">&#34;\t&#34;</span>, <span style="color:#a6e22e">reflect</span>.<span style="color:#a6e22e">TypeOf</span>(<span style="color:#f92672">*</span><span style="color:#a6e22e">m</span>))
+	(<span style="color:#f92672">*</span><span style="color:#a6e22e">m</span>)[<span style="color:#e6db74">&#34;a&#34;</span>] = <span style="color:#ae81ff">44</span>
+	<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">Log</span>(<span style="color:#f92672">*</span><span style="color:#a6e22e">m</span>, <span style="color:#e6db74">&#34;\t&#34;</span>, <span style="color:#a6e22e">reflect</span>.<span style="color:#a6e22e">TypeOf</span>((<span style="color:#f92672">*</span><span style="color:#a6e22e">m</span>)[<span style="color:#e6db74">&#34;a&#34;</span>]))
+
+	<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">Log</span>(<span style="color:#e6db74">&#34;========使用make创建Map=======&#34;</span>)
+	<span style="color:#f92672">*</span><span style="color:#a6e22e">m</span> = make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>)
+	<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">Log</span>(<span style="color:#f92672">*</span><span style="color:#a6e22e">m</span>, <span style="color:#e6db74">&#34;\t&#34;</span>, <span style="color:#a6e22e">reflect</span>.<span style="color:#a6e22e">TypeOf</span>(<span style="color:#f92672">*</span><span style="color:#a6e22e">m</span>))
+	(<span style="color:#f92672">*</span><span style="color:#a6e22e">m</span>)[<span style="color:#e6db74">&#34;b&#34;</span>] = <span style="color:#ae81ff">55</span>
+	<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">Log</span>(<span style="color:#f92672">*</span><span style="color:#a6e22e">m</span>, <span style="color:#e6db74">&#34;\t&#34;</span>, len(<span style="color:#f92672">*</span><span style="color:#a6e22e">m</span>))
+
+	<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">Log</span>(<span style="color:#e6db74">&#34;========性能差异=======&#34;</span>)
+	<span style="color:#a6e22e">makeMapTime</span>()
+	<span style="color:#a6e22e">newMapTime</span>()
+}
+
+</code></pre></div><h3 id="运行结果">运行结果</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">==</span>= <span style="color:#a6e22e">RUN</span>   <span style="color:#a6e22e">TestDiffMakeAndNew</span>
+    <span style="color:#a6e22e">map_test</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">43</span>: <span style="color:#f92672">========</span><span style="color:#a6e22e">使用new创建Map</span><span style="color:#f92672">======</span>=
+    <span style="color:#a6e22e">map_test</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">45</span>: <span style="color:#f92672">&amp;</span><span style="color:#66d9ef">map</span>[] 	 <span style="color:#f92672">*</span><span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">int</span>
+    <span style="color:#a6e22e">map_test</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">46</span>: <span style="color:#ae81ff">0xc00000e038</span> 	 <span style="color:#f92672">**</span><span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">int</span>
+    <span style="color:#a6e22e">map_test</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">47</span>: <span style="color:#66d9ef">map</span>[] 	 <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">int</span>
+    <span style="color:#a6e22e">map_test</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">49</span>: <span style="color:#66d9ef">map</span>[] 	 <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">int</span>
+    <span style="color:#a6e22e">map_test</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">51</span>: <span style="color:#66d9ef">map</span>[<span style="color:#a6e22e">a</span>:<span style="color:#ae81ff">44</span>] 	 <span style="color:#66d9ef">int</span>
+    <span style="color:#a6e22e">map_test</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">53</span>: <span style="color:#f92672">========</span><span style="color:#a6e22e">使用make创建Map</span><span style="color:#f92672">======</span>=
+    <span style="color:#a6e22e">map_test</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">55</span>: <span style="color:#66d9ef">map</span>[] 	 <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">int</span>
+    <span style="color:#a6e22e">map_test</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">57</span>: <span style="color:#66d9ef">map</span>[<span style="color:#a6e22e">b</span>:<span style="color:#ae81ff">55</span>] 	 <span style="color:#ae81ff">1</span>
+    <span style="color:#a6e22e">map_test</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">59</span>: <span style="color:#f92672">========</span><span style="color:#a6e22e">性能差异</span><span style="color:#f92672">======</span>=
+	<span style="color:#a6e22e">使用make函数执行完成耗时</span><span style="color:#960050;background-color:#1e0010">：</span> <span style="color:#ae81ff">4.940985678</span><span style="color:#a6e22e">s</span>
+	<span style="color:#a6e22e">使用new函数执行完成耗时</span><span style="color:#960050;background-color:#1e0010">：</span> <span style="color:#ae81ff">4.796069742</span><span style="color:#a6e22e">s</span>
+<span style="color:#f92672">---</span> <span style="color:#a6e22e">PASS</span>: <span style="color:#a6e22e">TestDiffMakeAndNew</span> (<span style="color:#ae81ff">9.74</span><span style="color:#a6e22e">s</span>)
+</code></pre></div><h3 id="辅助函数">辅助函数</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// newMapTime
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">newMapTime</span>() {
+	<span style="color:#a6e22e">m</span> <span style="color:#f92672">:=</span> new(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">int</span>)
+	<span style="color:#f92672">*</span><span style="color:#a6e22e">m</span> = <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">int</span>{}
+	<span style="color:#a6e22e">start</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Now</span>() <span style="color:#75715e">// 获取当前时间
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#ae81ff">10000000</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+		(<span style="color:#f92672">*</span><span style="color:#a6e22e">m</span>)[<span style="color:#a6e22e">strconv</span>.<span style="color:#a6e22e">Itoa</span>(<span style="color:#a6e22e">i</span>)] = <span style="color:#a6e22e">i</span>
+	}
+	<span style="color:#a6e22e">elapsed</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Now</span>().<span style="color:#a6e22e">Sub</span>(<span style="color:#a6e22e">start</span>)
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;\t使用new函数执行完成耗时：&#34;</span>, <span style="color:#a6e22e">elapsed</span>)
+}
+
+<span style="color:#75715e">// makeMapTime
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">makeMapTime</span>() {
+	<span style="color:#a6e22e">m</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">int</span>)
+	<span style="color:#a6e22e">start</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Now</span>() <span style="color:#75715e">// 获取当前时间
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#ae81ff">10000000</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+		<span style="color:#a6e22e">m</span>[<span style="color:#a6e22e">strconv</span>.<span style="color:#a6e22e">Itoa</span>(<span style="color:#a6e22e">i</span>)] = <span style="color:#a6e22e">i</span>
+	}
+	<span style="color:#a6e22e">elapsed</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Now</span>().<span style="color:#a6e22e">Sub</span>(<span style="color:#a6e22e">start</span>)
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;\t使用make函数执行完成耗时：&#34;</span>, <span style="color:#a6e22e">elapsed</span>)
+}
+</code></pre></div><h2 id="tip-5-应该优先考虑哪些类型作为map的key">Tip 5 应该优先考虑哪些类型作为Map的key？</h2>
+<p>先说结论：优先选用<strong>数值类型和指针类型</strong>。如果非要选择<strong>字符串类型的话，最好对键值的长度进行额外的约束。</strong></p>
+<p>只从性能上看的话，<strong>求哈希和判等操作的速度越快，对应的类型就越适合作为键类型。</strong></p>
+<p>所有的基本类型、指针类型，以及数组类型、结构体类型和接口类型，Go 语言都有一套算法与之对应，其中就包含了哈希和判等。以求哈希的操作为例，<strong>宽度</strong>越小的类型速度通常越快。<strong>宽度</strong>是指类型单个值需要占用的字节数。比如，bool、int8和uint8类型的一个值需要占用的字节数都是1，因此这些类型的宽度就都是1。</p>
+<p>注意，最好不要用高级数据类型作为Map的key，不仅仅是因为对它们的值求哈希，以及判等的速度较慢，更是因为在它们的值中存在变数。比如，对一个数组来说，我可以任意改变其中的元素值，但在变化前后，它却代表了两个不同的键值。</p>
+<h3 id="附录">附录</h3>
+<p><a href="https://golangbyexample.com/all-data-types-in-golang-with-examples/">All data types in Golang with examples</a></p>
+<h2 id="tip6-map类型的value实现并发">Tip6 Map类型的Value实现并发</h2>
+<p>由于map操作不是原子性的，所以多个携程同时操作map有可能产生读写冲突，会触发panic。Go团队在<a href="https://golang.org/doc/faq#atomic_maps">Why are map operations not defined to be atomic</a>对此进行了解释。</p>
+<p>如果有需求可以参考第三方封装的concurrent map和Go1.9以后内置的<code>sync.Map</code></p>
+<h3 id="syncmap使用场景">sync.Map使用场景</h3>
+<blockquote>
+<p>The Map type is optimized for two common use cases:</p>
+<ol>
+<li>when the entry for a given key is only ever written once but read many times, as in caches that only grow.</li>
+<li>when multiple goroutines read, write, and overwrite entries for disjoint sets of keys. In these two cases, use of a Map may <strong>significantly</strong> reduce lock contention compared to a Go map paired with a separate Mutex or RWMutex.</li>
+</ol>
+</blockquote>
+<ul>
+<li>写少读多的情况</li>
+<li>多goroutine，读、写、复写 不同数据的情况</li>
+<li>多核心情况使用</li>
+</ul>
+<h3 id="concurrentmap使用场景">Concurrent.map使用场景</h3>
+<ul>
+<li>读写都相对频繁</li>
+</ul>
+<h3 id="附录-1">附录</h3>
+<p><a href="https://github.com/orcaman/concurrent-map">concurrent map</a></p>
+<h2 id="tip7-map的key不能是哪些类型">Tip7 Map的key不能是哪些类型</h2>
+<p>Go 语言规范规定，在键类型的值之间必须可以施加操作符==和!=。换句话说，键类型的值必须要支持判等操作。由于函数类型、字典类型和切片类型的值并不支持判等操作，所以字典的键类型不能是这些类型。</p>
+<p>另外，如果键的类型是接口类型的，那么键值的实际类型也不能是上述三种类型，否则在程序运行过程中会引发 panic</p>
+<h2 id="tip8-map与json相互转换">Tip8 Map与JSON相互转换</h2>
+<p>我们经常会遇到JSON转换成Map或是Map转换为JSON的需求，这里推荐使用jsoniter替代原生的json包，其不仅支持原生的json，而且性能更快。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">import</span> (
+    <span style="color:#f92672">...</span>
+    <span style="color:#a6e22e">jsoniter</span> <span style="color:#e6db74">&#34;github.com/json-iterator/go&#34;</span>
+)
+
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">json</span> = <span style="color:#a6e22e">jsoniter</span>.<span style="color:#a6e22e">ConfigCompatibleWithStandardLibrary</span>
+
+
+<span style="color:#75715e">// JSONToMap return map and error
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">JSONToMap</span>(<span style="color:#a6e22e">jsonStr</span> <span style="color:#66d9ef">string</span>) (<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">string</span>, <span style="color:#66d9ef">error</span>) {
+	<span style="color:#a6e22e">m</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">string</span>)
+	<span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">json</span>.<span style="color:#a6e22e">Unmarshal</span>([]byte(<span style="color:#a6e22e">jsonStr</span>), <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">m</span>)
+	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;Unmarshal with error: %+v\n&#34;</span>, <span style="color:#a6e22e">err</span>)
+		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>, <span style="color:#a6e22e">err</span>
+	}
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">m</span>, <span style="color:#66d9ef">nil</span>
+}
+
+<span style="color:#75715e">// MapToJSON return json string and error
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">MapToJSON</span>(<span style="color:#a6e22e">m</span> <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">string</span>) (<span style="color:#66d9ef">string</span>, <span style="color:#66d9ef">error</span>) {
+	<span style="color:#a6e22e">jsonByte</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">json</span>.<span style="color:#a6e22e">Marshal</span>(<span style="color:#a6e22e">m</span>)
+	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;Marshal with error: %+v\n&#34;</span>, <span style="color:#a6e22e">err</span>)
+		<span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;</span>, <span style="color:#66d9ef">nil</span>
+	}
+	<span style="color:#66d9ef">return</span> string(<span style="color:#a6e22e">jsonByte</span>), <span style="color:#66d9ef">nil</span>
+}
+</code></pre></div><h3 id="附录-2">附录:</h3>
+<p><a href="https://github.com/json-iterator/go">json-iterator</a></p>
+<p><a href="https://jsoniter.com/benchmark.html">json性能对比</a></p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="https://xblzbjs.cn/categories/golang/">Golang</a></span>
+        
+    </p>
+
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2021</span>
+            <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">xblzbjs</a></span><span><a href="https://xblzbjs.cn/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>粤ICP备2021007187号-1</span>
+          </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="https://xblzbjs.cn/bundle.min.2ce64ea6ea44a72b13dd812fc2eb5cca3efe878cce258a47c137c17edf46e0602a05e422b618a5b80b5939c731b7a293351c2f2222a21f6ee27e54a8448dd20e.js" integrity="sha512-LOZOpupEpysT3YEvwutcyj7&#43;h4zOJYpHwTfBft9G4GAqBeQithiluAtZOccxt6KTNRwvIiKiH27iflSoRI3SDg=="></script>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-192697137-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+    </body>
+</html>

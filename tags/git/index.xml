@@ -6,24 +6,23 @@
     <description>Recent content in git on 行百里者半九十</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;xblzbjs&lt;/a&gt;</copyright>
-    <lastBuildDate>Wed, 31 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xblzbjs.cn/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 23 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xblzbjs.cn/tags/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Vim｜搜索替换</title>
-      <link>https://xblzbjs.cn/article/2021/03/vim%E6%90%9C%E7%B4%A2%E6%9B%BF%E6%8D%A2/</link>
-      <pubDate>Wed, 31 Mar 2021 00:00:00 +0000</pubDate>
+      <title>Git｜diff</title>
+      <link>https://xblzbjs.cn/posts/git/gitdiff/</link>
+      <pubDate>Tue, 23 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://xblzbjs.cn/article/2021/03/vim%E6%90%9C%E7%B4%A2%E6%9B%BF%E6%8D%A2/</guid>
-      <description>单个文件搜索替换操作 :[range]s[ubsitute]/{pattern}/{string}/[flags]
-参数  range: 表示范围。比如:10,20代表10-20行， %代表全部。 pattern: 替换的模式. string: 替换后的文本。 flags: 替换的标志。g表示全局范围内执行；c表示确认，可以确认或者拒绝修改；n报告匹配到的次数而不替换，可以用来查询匹配次数  举个🌰 # 把文件中world全部替换成WORLD:% s/world/WORLD/g# 统计1-20行 world单词出现的个数:1,5 s/world//n# 正则表达式精确匹配:% s/\&amp;lt;world\&amp;gt;/WORLD/</description>
+      <guid>https://xblzbjs.cn/posts/git/gitdiff/</guid>
+      <description>假设你的仓库下有两个分支main和dev    场景一：
+比较工作区    # 显示头和工作目录之间的差异。 git diff HEAD #  比较文件    # 比较工作区与最后一次commit提交的仓库的共同文件 git diff # 显示暂存区(已add但未commit文件)和最后一次commit(HEAD)之间的所有不相同文件的增删改 git diff --cached 比较分支    # 显示main和dev有差异的文件(显示更改代码) git diff main dev # 显示main和dev有差异的文件(不显示更改代码) git diff main dev --stat </description>
     </item>
     
     <item>
-      <title>Git｜合并分支</title>
-      <link>https://xblzbjs.cn/article/2021/03/git%E5%90%88%E5%B9%B6%E5%88%86%E6%94%AF/</link>
-      <pubDate>Fri, 19 Mar 2021 11:41:13 +0800</pubDate>
+      <title>Git｜merge</title>
+      <link>https://xblzbjs.cn/posts/git/gitmerge/</link>
+      <pubDate>Fri, 19 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://xblzbjs.cn/article/2021/03/git%E5%90%88%E5%B9%B6%E5%88%86%E6%94%AF/</guid>
+      <guid>https://xblzbjs.cn/posts/git/gitmerge/</guid>
       <description>首先查看当前项目有哪些分支git branch -a等同于 git branch -all
 git branch -a 输入后会看到当前项目的所有分支（其中带*的分支为当前分支）
 dev *main 假设你需要在dev分支上进行开发，则需要切换到该分支
@@ -34,6 +33,15 @@ git status   添加更改文件push到当前分支上
 git add . &amp;amp;&amp;amp; git commit -m &amp;#34;update&amp;#34;   将dev分支合并到main分支
 git merge dev   检查main分支是否和dev分支的区别（当前处于div分支）
 git diff main   </description>
+    </item>
+    
+    <item>
+      <title>Git｜基本概念</title>
+      <link>https://xblzbjs.cn/posts/git/git%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</link>
+      <pubDate>Fri, 19 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xblzbjs.cn/posts/git/git%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</guid>
+      <description>git 术语    Repository(仓库)    Working Directory(工作区)    Staging area(暂存区)    Revision(修订)    Tags(标记)    Push(推送)    Pull(拉取)    Indev(索引)    Commit(提交)    Conflict(冲突)    Merge(合并)    Branch(分支)    HEAD(头)    Checkout(检出)    commit(提交)    diff(差异)    fetch(获取)    main/master(主干)    merge request(合并请求)    git文件有四种状态分别是:</description>
     </item>
     
   </channel>

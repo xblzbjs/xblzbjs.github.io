@@ -15,7 +15,6 @@
     <meta name="author" content="行百里者半九十">
     <meta name="description" content="工作中为规范开发，保持代码提交记录以及git分支结构和commit message整体清晰易读、方便维护，公司一般都会根据不同的项目规格置顶不同的Git分支规范。
 命名规范    在A successful Git branching model文中有一图展示了常见的分支管理规范
-![img](/Users/xblzbjs/Desktop/Go Tips/Git | 分支规范.assets/git-model@2x.png)
 从上图（自右向左）分别为
  master：主分支。负责管理发布的状态，提交时使用标签记录发布版本号。 hotfix-修复的问题：紧急修复分支。发布的产品需要紧急修正时，就直接从master主分支切出一个分支紧急修改，通常会加上hotfix-前缀，改好后再合并到master分支和develop分支上。 release-版本：预发布分支。开发人员在develop分支开发到了感觉可以发布的状态会创建release分支，为release做最后的bug修正。当感觉release分支上没有问题时，就会将release分支合并到master分支上正式发布。通常一个项目会有多个release分支，例如release-1.0，release-2.0等 develop：开发分支。开发人员的日常开发分支。 feature-功能：功能分支。从develop分支分叉出来的针对新功能的开发分支，通常会有多个feature分支并行开发。完成功能的开发后就把分支合并回develop分支（通常来说，feature分支大多会保留，并不会merge之后就删除原分支）  日志规范     在一个团队协作的项目中，开发人员需要经常提交一些代码去修复bug或者实现新的feature。而项目中的文件和实现什么功能、解决什么问题都会渐渐淡忘，最后需要浪费时间去阅读代码。但是好的日志规范commit messages编写有帮助到我们，它也反映了一个开发人员是否是良好的协作者。
  编写良好的Commit messages的好处：
@@ -28,7 +27,6 @@
 <meta name="twitter:title" content="Git｜分支规范"/>
 <meta name="twitter:description" content="工作中为规范开发，保持代码提交记录以及git分支结构和commit message整体清晰易读、方便维护，公司一般都会根据不同的项目规格置顶不同的Git分支规范。
 命名规范    在A successful Git branching model文中有一图展示了常见的分支管理规范
-![img](/Users/xblzbjs/Desktop/Go Tips/Git | 分支规范.assets/git-model@2x.png)
 从上图（自右向左）分别为
  master：主分支。负责管理发布的状态，提交时使用标签记录发布版本号。 hotfix-修复的问题：紧急修复分支。发布的产品需要紧急修正时，就直接从master主分支切出一个分支紧急修改，通常会加上hotfix-前缀，改好后再合并到master分支和develop分支上。 release-版本：预发布分支。开发人员在develop分支开发到了感觉可以发布的状态会创建release分支，为release做最后的bug修正。当感觉release分支上没有问题时，就会将release分支合并到master分支上正式发布。通常一个项目会有多个release分支，例如release-1.0，release-2.0等 develop：开发分支。开发人员的日常开发分支。 feature-功能：功能分支。从develop分支分叉出来的针对新功能的开发分支，通常会有多个feature分支并行开发。完成功能的开发后就把分支合并回develop分支（通常来说，feature分支大多会保留，并不会merge之后就删除原分支）  日志规范     在一个团队协作的项目中，开发人员需要经常提交一些代码去修复bug或者实现新的feature。而项目中的文件和实现什么功能、解决什么问题都会渐渐淡忘，最后需要浪费时间去阅读代码。但是好的日志规范commit messages编写有帮助到我们，它也反映了一个开发人员是否是良好的协作者。
  编写良好的Commit messages的好处：
@@ -39,7 +37,6 @@
     <meta property="og:title" content="Git｜分支规范" />
 <meta property="og:description" content="工作中为规范开发，保持代码提交记录以及git分支结构和commit message整体清晰易读、方便维护，公司一般都会根据不同的项目规格置顶不同的Git分支规范。
 命名规范    在A successful Git branching model文中有一图展示了常见的分支管理规范
-![img](/Users/xblzbjs/Desktop/Go Tips/Git | 分支规范.assets/git-model@2x.png)
 从上图（自右向左）分别为
  master：主分支。负责管理发布的状态，提交时使用标签记录发布版本号。 hotfix-修复的问题：紧急修复分支。发布的产品需要紧急修正时，就直接从master主分支切出一个分支紧急修改，通常会加上hotfix-前缀，改好后再合并到master分支和develop分支上。 release-版本：预发布分支。开发人员在develop分支开发到了感觉可以发布的状态会创建release分支，为release做最后的bug修正。当感觉release分支上没有问题时，就会将release分支合并到master分支上正式发布。通常一个项目会有多个release分支，例如release-1.0，release-2.0等 develop：开发分支。开发人员的日常开发分支。 feature-功能：功能分支。从develop分支分叉出来的针对新功能的开发分支，通常会有多个feature分支并行开发。完成功能的开发后就把分支合并回develop分支（通常来说，feature分支大多会保留，并不会merge之后就删除原分支）  日志规范     在一个团队协作的项目中，开发人员需要经常提交一些代码去修复bug或者实现新的feature。而项目中的文件和实现什么功能、解决什么问题都会渐渐淡忘，最后需要浪费时间去阅读代码。但是好的日志规范commit messages编写有帮助到我们，它也反映了一个开发人员是否是良好的协作者。
  编写良好的Commit messages的好处：
@@ -193,7 +190,7 @@
   </a>
 </h2>
 <p>在<a href="http://nvie.com/posts/a-successful-git-branching-model/">A successful Git branching model</a>文中有一图展示了常见的分支管理规范</p>
-<p>![img](/Users/xblzbjs/Desktop/Go Tips/Git | 分支规范.assets/git-model@2x.png)</p>
+<p><img src="/img/git-model.png" alt="无法显示图片"></p>
 <p>从上图（自右向左）分别为</p>
 <ul>
 <li><code>master</code>：主分支。负责管理发布的状态，提交时使用标签记录发布版本号。</li>
@@ -273,7 +270,7 @@
 <ul>
 <li><a href="https://gist.github.com/lisawolderiksen/a7b99d94c92c6671181611be1641c733">Using Git Commit Message Templates to Write Better Commit Messages</a></li>
 <li><a href="https://gist.github.com/zakkak/7e06725ebd1336bfebebe254de3de825">another git commit message template</a></li>
-<li>[How to Write a Git Commit Message](</li>
+<li><a href="https://chris.beams.io/posts/git-commit/">How to Write a Git Commit Message</a></li>
 </ul>
 
       </div>

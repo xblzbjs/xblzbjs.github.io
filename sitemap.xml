@@ -113,9 +113,6 @@
     <loc>https://xblzbjs.cn/posts/linux/zsh%E4%B8%BB%E9%A2%98/</loc>
     <lastmod>2021-03-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://xblzbjs.cn/about/</loc>
-    <lastmod>2021-03-19T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://xblzbjs.cn/posts/linux/centos7-%E5%AE%89%E8%A3%85python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/</loc>
     <lastmod>2021-03-17T00:00:00+00:00</lastmod>
   </url><url>
@@ -147,5 +144,7 @@
     <lastmod>2019-12-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://xblzbjs.cn/authors/</loc>
+  </url><url>
+    <loc>https://xblzbjs.cn/about/</loc>
   </url>
 </urlset>

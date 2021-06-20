@@ -280,16 +280,6 @@ git diff main   </description>
     </item>
     
     <item>
-      <title>关于我</title>
-      <link>https://xblzbjs.cn/about/</link>
-      <pubDate>Fri, 19 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://xblzbjs.cn/about/</guid>
-      <description>喜欢历史和推理小说的全栈DevOps工程师
-记录一切美好的事情</description>
-    </item>
-    
-    <item>
       <title>CentOS7 | 安装Python虚拟环境</title>
       <link>https://xblzbjs.cn/posts/linux/centos7-%E5%AE%89%E8%A3%85python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/</link>
       <pubDate>Wed, 17 Mar 2021 00:00:00 +0000</pubDate>
@@ -419,6 +409,16 @@ Django    《Python Django开发实战(视频讲解版)》(张虎著)    结合D
       
       <guid>https://xblzbjs.cn/archive/</guid>
       <description>分类     设计模式(Go &amp;amp; Python)  标签     HTTP/HTTPS Django Linux Go Python 读书笔记 Git 数据库  系列     Go Tips MongoDB 入门  </description>
+    </item>
+    
+    <item>
+      <title>关于我</title>
+      <link>https://xblzbjs.cn/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://xblzbjs.cn/about/</guid>
+      <description>喜欢历史和推理小说的全栈DevOps工程师
+记录一切美好的事情</description>
     </item>
     
   </channel>

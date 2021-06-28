@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>linux on 行百里者半九十</title>
+    <title>Linux on 行百里者半九十</title>
     <link>https://xblzbjs.cn/tags/linux/</link>
-    <description>Recent content in linux on 行百里者半九十</description>
+    <description>Recent content in Linux on 行百里者半九十</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 19 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xblzbjs.cn/tags/linux/index.xml" rel="self" type="application/rss+xml" />
@@ -34,6 +34,18 @@
       <description>环境：腾讯云CentOS7.5 64位
 1. 查看Python的位置并安装相关依赖    [root@centos ~]# whereis python python2: /usr/bin/python2 /usr/bin/python2.7 /usr/lib/python2.7 /usr/lib64/python2.7 /usr/include/python2.7 /usr/share/man/man1/python2.1.gz python指向的是python2，python2指向的是python2.7，因此我们可以装个python3，然后将python指向python3，然后python2指向python2.7，那么两个版本的python就能共存了。
 yum install zlib-devel libffi-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gcc make 2. 使用wget下载Python3源码包    wget http://npm.taobao.org/mirrors/python/3.7.9/Python-3.7.9.tar.xz # 如果提示wget未找到命令, 那么就先使用yum安装wget yum -y install wget 3. 编译Python3源码包    #解压 xz -d Python-3.7.9.tar.xz tar -xf Python-3.7.9.tar #进入解压后的目录，依次执行下面命令进行手动编译 cd Python-3.7.9 ./configure prefix=/usr/local/python3 make &amp;amp;&amp;amp; make install # 如果出现can&amp;#39;t decompress data; zlib not available这个错误，则需要安装相关库 #安装依赖zlib、zlib-devel yum install zlib zlib yum install zlib zlib-devel 4.</description>
+    </item>
+    
+    <item>
+      <title>Network | Nmap 常用操作</title>
+      <link>https://xblzbjs.cn/posts/linux/network-nmap/</link>
+      <pubDate>Wed, 17 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xblzbjs.cn/posts/linux/network-nmap/</guid>
+      <description>Nmap 是由 Gordon Lyon 创建的免费开源网络扫描工具。
+安装    Debian系列的Linux，例如Ubuntu
+sudo apt-get install nmap Red Hat系列的Linux，例如Centos
+sudo yum install nmap 常用功能    主机扫描    单个主机    nmap baidu.com Starting Nmap 7.80 ( https://nmap.org ) at 2021-06-16 13:56 CST Nmap scan report for baidu.com (220.181.38.148) Host is up (0.046s latency). Other addresses for baidu.com (not scanned): 39.156.69.79 Not shown: 995 filtered ports PORT STATE SERVICE 25/tcp open smtp 80/tcp open http 110/tcp open pop3 143/tcp open imap 443/tcp open https Nmap done: 1 IP address (1 host up) scanned in 5.</description>
     </item>
     
   </channel>

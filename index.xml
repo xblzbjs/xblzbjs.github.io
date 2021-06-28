@@ -333,6 +333,18 @@ yum install zlib-devel libffi-devel bzip2-devel openssl-devel ncurses-devel sqli
     </item>
     
     <item>
+      <title>Network | Nmap 常用操作</title>
+      <link>https://xblzbjs.cn/posts/linux/network-nmap/</link>
+      <pubDate>Wed, 17 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xblzbjs.cn/posts/linux/network-nmap/</guid>
+      <description>Nmap 是由 Gordon Lyon 创建的免费开源网络扫描工具。
+安装    Debian系列的Linux，例如Ubuntu
+sudo apt-get install nmap Red Hat系列的Linux，例如Centos
+sudo yum install nmap 常用功能    主机扫描    单个主机    nmap baidu.com Starting Nmap 7.80 ( https://nmap.org ) at 2021-06-16 13:56 CST Nmap scan report for baidu.com (220.181.38.148) Host is up (0.046s latency). Other addresses for baidu.com (not scanned): 39.156.69.79 Not shown: 995 filtered ports PORT STATE SERVICE 25/tcp open smtp 80/tcp open http 110/tcp open pop3 143/tcp open imap 443/tcp open https Nmap done: 1 IP address (1 host up) scanned in 5.</description>
+    </item>
+    
+    <item>
       <title>程序员修炼之道</title>
       <link>https://xblzbjs.cn/book-notes/%E7%A8%8B%E5%BA%8F%E5%91%98%E4%BF%AE%E7%82%BC%E4%B9%8B%E9%81%93%E7%AC%AC2%E7%89%88/</link>
       <pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate>
@@ -400,25 +412,6 @@ Django    《Python Django开发实战(视频讲解版)》(张虎著)    结合D
 《Django 3 by Example》(Antonio Mele著)    例子丰富，适合刚有Django基础的人依葫芦画瓢找感觉
 《Two Scoops of Django 3.1》(Daniel Roy Greenfeld,Audrey Roy Greenfeld)    目前为止看到的最好的一本Django书
 《Django 3 Web Development Cookbook Actionable solutions to common problems in Python web development by Aidas Bendoraitis, Jake Kronika》    对得起书名。适合用Django建立复杂项目的朋友看。</description>
-    </item>
-    
-    <item>
-      <title>归档</title>
-      <link>https://xblzbjs.cn/archive/</link>
-      <pubDate>Mon, 30 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://xblzbjs.cn/archive/</guid>
-      <description>分类     设计模式(Go &amp;amp; Python)  标签     HTTP/HTTPS Django Linux Go Python 读书笔记 Git 数据库  系列     Go Tips MongoDB 入门  </description>
-    </item>
-    
-    <item>
-      <title>关于我</title>
-      <link>https://xblzbjs.cn/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://xblzbjs.cn/about/</guid>
-      <description>喜欢历史和推理小说的全栈DevOps工程师
-记录一切美好的事情</description>
     </item>
     
   </channel>

@@ -1,12 +1,32 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>行百里者半九十</title>
+    <title>xblzbjs</title>
     <link>https://xblzbjs.cn/</link>
-    <description>Recent content on 行百里者半九十</description>
+    <description>Recent content on xblzbjs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 19 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xblzbjs.cn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 02 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xblzbjs.cn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Terminator快捷键</title>
+      <link>https://xblzbjs.cn/posts/linux/terminator%E5%BF%AB%E6%8D%B7%E9%94%AE/</link>
+      <pubDate>Fri, 02 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xblzbjs.cn/posts/linux/terminator%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid>
+      <description>Terminator终端常用的快捷键如下
+   命令 含义     Ctrl + Shift + O 水平分割   Ctrl + Shift + E 垂直分割   Ctrl + Shift + S 隐藏/显示滚动条   Ctrl + Shift + F 搜索   Ctrl + Shift + W 关闭当前终端   Ctrl + Shift + Q 退出当前窗口   Ctrl + Tab 移动到下一个终端   Ctrl + Shift + Tab 移动到上一个终端   Ctrl + Shift + T 打开一个新的标签   Ctrl + PageDown 移动到下一个标签   Ctrl + UpDown 移动到上一个标签   Alt + Up/Down/Left/Right 移动到上/下/左/右的终端   Ctrl + Shift + C 复制选中的内容到剪贴板   Ctrl + Shift + Q 粘贴选中的内容到剪贴版   Ctrl + Plus(+) 增大字体   Ctrl + Minus(-) 减小字体   Ctrl + Zero(0) 恢复字体到原始大小   F11 全屏开关Alt    </description>
+    </item>
+    
+    <item>
+      <title>Ubuntu Shell环境配置</title>
+      <link>https://xblzbjs.cn/posts/linux/ubuntu-shell%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Fri, 02 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xblzbjs.cn/posts/linux/ubuntu-shell%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</guid>
+      <description>终端模拟器选择    推荐三个
+1. Gnome Terminal（原生）    2. Terminator（在用）    3. Guake    终端配置（Zsh + Oh My Zsh + PowerLevel10k）    1. 安装Zsh(https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)    # apt 打包安装 zsh sudo apt install zsh # 确认 zsh 成功安装 zsh --version # 设置为默认Shell并确认 chsh -s $(which zsh) echo $SHELL 2. 安装Oh My Zsh    # 推荐使用curl安装 sh -c &amp;#34;$(curl -fsSL https://raw.</description>
+    </item>
+    
     <item>
       <title>Git｜工作流设计</title>
       <link>https://xblzbjs.cn/posts/git/git%E5%B7%A5%E4%BD%9C%E6%B5%81%E8%AE%BE%E8%AE%A1/</link>
@@ -151,6 +171,16 @@ func TestMain(m *testing.M) 有什么作用🤔    如果测试文件中包含�
     </item>
     
     <item>
+      <title>关于我</title>
+      <link>https://xblzbjs.cn/about/</link>
+      <pubDate>Fri, 23 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xblzbjs.cn/about/</guid>
+      <description>Python &amp;amp; Go 开发者；Ubuntu重度使用者；DevOps 工程师（正在努力中）
+热衷敏捷开发与自动化（实际上就是懒人一个）</description>
+    </item>
+    
+    <item>
       <title>Go &amp; Python｜深拷贝与浅拷贝</title>
       <link>https://xblzbjs.cn/posts/design-patterns/go-python%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/</link>
       <pubDate>Wed, 24 Mar 2021 00:00:00 +0000</pubDate>
@@ -240,33 +270,6 @@ mysite/ ├── manage.py ├── my_app │ ├── __init__.py │ ├
     </item>
     
     <item>
-      <title>Git｜merge</title>
-      <link>https://xblzbjs.cn/posts/git/gitmerge/</link>
-      <pubDate>Fri, 19 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://xblzbjs.cn/posts/git/gitmerge/</guid>
-      <description>首先查看当前项目有哪些分支git branch -a等同于 git branch -all
-git branch -a 输入后会看到当前项目的所有分支（其中带*的分支为当前分支）
-dev *main 假设你需要在dev分支上进行开发，则需要切换到该分支
-git checkout dev 这个时候再使用git branch -a命令就会发现当前分支为dev分支
-*dev main 在dev分支上进行开发，提交测试没有问题想合并到main分支上，需要进行以下几步:
-  查看当前分支的状态并
-git status   添加更改文件push到当前分支上
-git add . &amp;amp;&amp;amp; git commit -m &amp;#34;update&amp;#34;   将dev分支合并到main分支
-git merge dev   检查main分支是否和dev分支的区别（当前处于div分支）
-git diff main   </description>
-    </item>
-    
-    <item>
-      <title>Git｜基本概念</title>
-      <link>https://xblzbjs.cn/posts/git/git%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</link>
-      <pubDate>Fri, 19 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://xblzbjs.cn/posts/git/git%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</guid>
-      <description>git 术语    Repository(仓库)    Working Directory(工作区)    Staging area(暂存区)    Revision(修订)    Tags(标记)    Push(推送)    Pull(拉取)    Indev(索引)    Commit(提交)    Conflict(冲突)    Merge(合并)    Branch(分支)    HEAD(头)    Checkout(检出)    commit(提交)    diff(差异)    fetch(获取)    main/master(主干)    merge request(合并请求)    git文件有四种状态分别是:</description>
-    </item>
-    
-    <item>
       <title>zsh｜主题</title>
       <link>https://xblzbjs.cn/posts/linux/zsh%E4%B8%BB%E9%A2%98/</link>
       <pubDate>Fri, 19 Mar 2021 00:00:00 +0000</pubDate>
@@ -329,15 +332,26 @@ yum install zlib-devel libffi-devel bzip2-devel openssl-devel ncurses-devel sqli
     </item>
     
     <item>
-      <title>Network | Nmap 常用操作</title>
-      <link>https://xblzbjs.cn/posts/linux/network-nmap/</link>
+      <title>Nmap 网络扫描工具常用操作</title>
+      <link>https://xblzbjs.cn/posts/linux/nmap-%E7%BD%91%E7%BB%9C%E6%89%AB%E6%8F%8F%E5%B7%A5%E5%85%B7%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/</link>
       <pubDate>Wed, 17 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://xblzbjs.cn/posts/linux/network-nmap/</guid>
+      <guid>https://xblzbjs.cn/posts/linux/nmap-%E7%BD%91%E7%BB%9C%E6%89%AB%E6%8F%8F%E5%B7%A5%E5%85%B7%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/</guid>
       <description>Nmap 是由 Gordon Lyon 创建的免费开源网络扫描工具。
 安装    Debian系列的Linux，例如Ubuntu
 sudo apt-get install nmap Red Hat系列的Linux，例如Centos
 sudo yum install nmap 常用功能    主机扫描    单个主机    nmap baidu.com Starting Nmap 7.80 ( https://nmap.org ) at 2021-06-16 13:56 CST Nmap scan report for baidu.com (220.181.38.148) Host is up (0.046s latency). Other addresses for baidu.com (not scanned): 39.156.69.79 Not shown: 995 filtered ports PORT STATE SERVICE 25/tcp open smtp 80/tcp open http 110/tcp open pop3 143/tcp open imap 443/tcp open https Nmap done: 1 IP address (1 host up) scanned in 5.</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu20.04蓝牙没作用</title>
+      <link>https://xblzbjs.cn/posts/linux/ubuntu20.04%E8%93%9D%E7%89%99%E6%B2%A1%E4%BD%9C%E7%94%A8/</link>
+      <pubDate>Tue, 02 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xblzbjs.cn/posts/linux/ubuntu20.04%E8%93%9D%E7%89%99%E6%B2%A1%E4%BD%9C%E7%94%A8/</guid>
+      <description>前言    我的笔记本电脑是联想小新Air14-2020-AMD版，从Windows转到Ubuntu20.04时发现蓝牙扫描不到周围的设备（特别是耳机）！
+执行了以下命令，蓝牙又重新工作了O(∩_∩)O~~
+sudo rmmod btusb sudo modprobe btusb 参考链接    Ubuntu 20.04 bluetooth not working</description>
     </item>
     
     <item>

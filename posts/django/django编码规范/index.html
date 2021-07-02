@@ -12,7 +12,7 @@
 
     
 
-    <meta name="author" content="行百里者半九十">
+    <meta name="author" content="xblzbjs">
     <meta name="description" content="1.编码风格 Coding Style    1.1 代码可读性    6个忠告:
 ➤ 避免缩写变量名
 ➤ 写函数参数名。
@@ -57,7 +57,7 @@ PEP8中文翻译文档
 
 
     <title>
-  Django｜编码规范 · 行百里者半九十
+  Django｜编码规范 · xblzbjs
 </title>
 
     
@@ -87,11 +87,14 @@ PEP8中文翻译文档
     
 
     <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16">
 
     <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 
+    
+      <script defer src="https://twemoji.maxcdn.com/v/13.0.2/twemoji.min.js"
+        integrity="sha384-wyB/MspSJ/r2bT2kCj44qtsYRYlpzO2oAPhRj5myrWD63dt6qWv4x8AZe7Fl3K3b" crossorigin="anonymous"></script>
     
 
     <meta name="generator" content="Hugo 0.83.1" />
@@ -102,7 +105,7 @@ PEP8中文翻译文档
     
   
   <body class="preload-transitions colorscheme-auto"
-        onload=""
+        onload=" twemoji.parse(document.body); "
   >
     
 <div class="float-container">
@@ -116,7 +119,7 @@ PEP8中文翻译文档
       <nav class="navigation">
   <section class="container">
     <a class="navigation-title" href="/">
-      行百里者半九十
+      xblzbjs
     </a>
     
       <input type="checkbox" id="menu-toggle" />
@@ -136,6 +139,10 @@ PEP8中文翻译文档
           
             <li class="navigation-item">
               <a class="navigation-link" href="/tags/">标签</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">关于</a>
             </li>
           
             <li class="navigation-item">
@@ -225,34 +232,34 @@ PEP8中文翻译文档
     <i class="fa fa-link" aria-hidden="true"></i>
   </a>
 </h3>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#4e4e4e"># future</span>
-<span style="color:#d75f00">from</span> __future__ <span style="color:#d75f00">import</span> unicode_literals
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#09f;font-style:italic"># future</span>
+<span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">__future__</span> <span style="color:#069;font-weight:bold">import</span> unicode_literals
 
-<span style="color:#4e4e4e"># 标准包</span>
-<span style="color:#d75f00">from</span> math <span style="color:#d75f00">import</span> sqrt
-<span style="color:#d75f00">from</span> os.path <span style="color:#d75f00">import</span> abspath
+<span style="color:#09f;font-style:italic"># 标准包</span>
+<span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">math</span> <span style="color:#069;font-weight:bold">import</span> sqrt
+<span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">os.path</span> <span style="color:#069;font-weight:bold">import</span> abspath
 
-<span style="color:#4e4e4e"># Django</span>
-<span style="color:#d75f00">from</span> django.db <span style="color:#d75f00">import</span> models
-<span style="color:#d75f00">from</span> django.utils.translation <span style="color:#d75f00">import</span> ugettext_lazy <span style="color:#5f8700">as</span> _
+<span style="color:#09f;font-style:italic"># Django</span>
+<span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">django.db</span> <span style="color:#069;font-weight:bold">import</span> models
+<span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">django.utils.translation</span> <span style="color:#069;font-weight:bold">import</span> ugettext_lazy <span style="color:#069;font-weight:bold">as</span> _
 
-<span style="color:#4e4e4e"># 第三方包</span>
-<span style="color:#d75f00">from</span> django_extensions.db.models <span style="color:#d75f00">import</span> TimeStampedModel
+<span style="color:#09f;font-style:italic"># 第三方包</span>
+<span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">django_extensions.db.models</span> <span style="color:#069;font-weight:bold">import</span> TimeStampedModel
 
-<span style="color:#4e4e4e"># 自己写的包</span>
-<span style="color:#d75f00">from</span> .models <span style="color:#d75f00">import</span> BananaSplit
+<span style="color:#09f;font-style:italic"># 自己写的包</span>
+<span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">.models</span> <span style="color:#069;font-weight:bold">import</span> BananaSplit
 
 
-<span style="color:#4e4e4e"># try/except</span>
-<span style="color:#5f8700">try</span>:
-    <span style="color:#d75f00">import</span> yaml
-<span style="color:#5f8700">except</span> <span style="color:#af8700">ImportError</span>:
-    yaml = <span style="color:#0087ff">None</span>
+<span style="color:#09f;font-style:italic"># try/except</span>
+<span style="color:#069;font-weight:bold">try</span>:
+    <span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">yaml</span>
+<span style="color:#069;font-weight:bold">except</span> <span style="color:#c00;font-weight:bold">ImportError</span>:
+    yaml <span style="color:#555">=</span> None
 
-CONSTANT = <span style="color:#00afaf">&#39;foo&#39;</span>
+CONSTANT <span style="color:#555">=</span> <span style="color:#c30">&#39;foo&#39;</span>
 
-<span style="color:#5f8700">class</span> <span style="color:#0087ff">Example</span>:
-    <span style="color:#4e4e4e"># ...</span>
+<span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">Example</span>:
+    <span style="color:#09f;font-style:italic"># ...</span>
 </code></pre></div><blockquote>
 <p>在Django文档中‘Django’包和第三方包是调转的</p>
 <p>在实际开发中不需要在导入包时进行注释</p>
@@ -267,53 +274,53 @@ CONSTANT = <span style="color:#00afaf">&#39;foo&#39;</span>
   </a>
 </h3>
 <p>不要使用硬编码方式导入包，例如下面这种：</p>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#4e4e4e"># myapp/views.py</span>
-<span style="color:#d75f00">from</span> django.views.generic <span style="color:#d75f00">import</span> CreateView
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#09f;font-style:italic"># myapp/views.py</span>
+<span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">django.views.generic</span> <span style="color:#069;font-weight:bold">import</span> CreateView
 
-<span style="color:#4e4e4e"># 不好的例子</span>
-<span style="color:#d75f00">from</span> cones.models <span style="color:#d75f00">import</span> WaffleCone
-<span style="color:#d75f00">from</span> cones.forms <span style="color:#d75f00">import</span> WaffleConeForm
-<span style="color:#d75f00">from</span> core.views <span style="color:#d75f00">import</span> FoodMixin
+<span style="color:#09f;font-style:italic"># 不好的例子</span>
+<span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">cones.models</span> <span style="color:#069;font-weight:bold">import</span> WaffleCone
+<span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">cones.forms</span> <span style="color:#069;font-weight:bold">import</span> WaffleConeForm
+<span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">core.views</span> <span style="color:#069;font-weight:bold">import</span> FoodMixin
 
-<span style="color:#5f8700">class</span> <span style="color:#0087ff">WaffleConeCreateView</span>(FoodMixin, CreateView):
-    model = WaffleCone
-    form_class = WaffleConeForm
+<span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">WaffleConeCreateView</span>(FoodMixin, CreateView):
+    model <span style="color:#555">=</span> WaffleCone
+    form_class <span style="color:#555">=</span> WaffleConeForm
 </code></pre></div><p>原因是硬编码方式会让代码的可重用性和可移植性变差</p>
 <p>将包含隐式相对导入的坏代码片段转换为包含显式相对导入的好代码片段。下面是更正后的例子:</p>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#4e4e4e"># cones/views.py</span>
-<span style="color:#d75f00">from</span> django.views.generic <span style="color:#d75f00">import</span> CreateView
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#09f;font-style:italic"># cones/views.py</span>
+<span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">django.views.generic</span> <span style="color:#069;font-weight:bold">import</span> CreateView
 
-<span style="color:#4e4e4e"># 好的例子</span>
-<span style="color:#d75f00">from</span> .models <span style="color:#d75f00">import</span> WaffleCone
-<span style="color:#d75f00">from</span> .forms <span style="color:#d75f00">import</span> WaffleConeForm
-<span style="color:#d75f00">from</span> core.views <span style="color:#d75f00">import</span> FoodMixin
+<span style="color:#09f;font-style:italic"># 好的例子</span>
+<span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">.models</span> <span style="color:#069;font-weight:bold">import</span> WaffleCone
+<span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">.forms</span> <span style="color:#069;font-weight:bold">import</span> WaffleConeForm
+<span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">core.views</span> <span style="color:#069;font-weight:bold">import</span> FoodMixin
 
-<span style="color:#5f8700">class</span> <span style="color:#0087ff">WaffleConeCreateView</span>(FoodMixin, CreateView):
-    model = WaffleCone
-    form_class = WaffleConeForm
+<span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">WaffleConeCreateView</span>(FoodMixin, CreateView):
+    model <span style="color:#555">=</span> WaffleCone
+    form_class <span style="color:#555">=</span> WaffleConeForm
 </code></pre></div><h3 id="15-避免使用import-与包冲突">
   1.5 避免使用import *与包冲突
   <a class="heading-link" href="#15-%e9%81%bf%e5%85%8d%e4%bd%bf%e7%94%a8import-%e4%b8%8e%e5%8c%85%e5%86%b2%e7%aa%81">
     <i class="fa fa-link" aria-hidden="true"></i>
   </a>
 </h3>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#4e4e4e"># 不好的例子</span>
-<span style="color:#d75f00">from</span> django.forms <span style="color:#d75f00">import</span> *
-<span style="color:#d75f00">from</span> django.db.models <span style="color:#d75f00">import</span> *
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#09f;font-style:italic"># 不好的例子</span>
+<span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">django.forms</span> <span style="color:#069;font-weight:bold">import</span> <span style="color:#555">*</span>
+<span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">django.db.models</span> <span style="color:#069;font-weight:bold">import</span> <span style="color:#555">*</span>
 
-<span style="color:#4e4e4e"># 好的例子</span>
-<span style="color:#d75f00">from</span> django <span style="color:#d75f00">import</span> forms
-<span style="color:#d75f00">from</span> django.db <span style="color:#d75f00">import</span> models
+<span style="color:#09f;font-style:italic"># 好的例子</span>
+<span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">django</span> <span style="color:#069;font-weight:bold">import</span> forms
+<span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">django.db</span> <span style="color:#069;font-weight:bold">import</span> models
 
 </code></pre></div><p>原因是为了避免隐式地将另一个Python模块的所有局部变量加载到当前模块的名称空间中</p>
 <p>包冲突</p>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#4e4e4e"># 不好的例子</span>
-<span style="color:#d75f00">from</span> django.db.models <span style="color:#d75f00">import</span> CharField
-<span style="color:#d75f00">from</span> django.forms <span style="color:#d75f00">import</span> CharField
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#09f;font-style:italic"># 不好的例子</span>
+<span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">django.db.models</span> <span style="color:#069;font-weight:bold">import</span> CharField
+<span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">django.forms</span> <span style="color:#069;font-weight:bold">import</span> CharField
 
-<span style="color:#4e4e4e"># 好的例子</span>
-<span style="color:#d75f00">from</span> django.db.models <span style="color:#d75f00">import</span> CharField <span style="color:#5f8700">as</span> ModelCharField
-<span style="color:#d75f00">from</span> django.forms <span style="color:#d75f00">import</span> CharField <span style="color:#5f8700">as</span> FormCharField
+<span style="color:#09f;font-style:italic"># 好的例子</span>
+<span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">django.db.models</span> <span style="color:#069;font-weight:bold">import</span> CharField <span style="color:#069;font-weight:bold">as</span> ModelCharField
+<span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">django.forms</span> <span style="color:#069;font-weight:bold">import</span> CharField <span style="color:#069;font-weight:bold">as</span> FormCharField
 </code></pre></div><h3 id="16-jshtmlcss编码风格扩展">
   1.6 JS,HTML,CSS编码风格(扩展)
   <a class="heading-link" href="#16-jshtmlcss%e7%bc%96%e7%a0%81%e9%a3%8e%e6%a0%bc%e6%89%a9%e5%b1%95">
@@ -365,6 +372,22 @@ CONSTANT = <span style="color:#00afaf">&#39;foo&#39;</span>
       </div>
 
       
+  <footer class="footer">
+    <section class="container">
+      
+        <p>粤ICP备2021007187号-1</p>
+      
+      
+        ©
+        
+        2021
+         xblzbjs 
+      
+      
+      
+    </section>
+  </footer>
+
 
     </main>
 
@@ -388,13 +411,13 @@ CONSTANT = <span style="color:#00afaf">&#39;foo&#39;</span>
     
 
     
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-192697137-1"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QYYHFCMJHS"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-192697137-1');
+  gtag('config', 'G-QYYHFCMJHS');
 </script>
 
   </body>

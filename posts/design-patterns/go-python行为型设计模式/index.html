@@ -12,7 +12,7 @@
 
     
 
-    <meta name="author" content="行百里者半九十">
+    <meta name="author" content="xblzbjs">
     <meta name="description" content="常见学习行为型设计模式     迭代器模式（Iterator）：通过统一的接口迭代对象 观察者模式（Observer）：对象发生改变的时候，观察者执行相应动作 策略模式（Strategy）：针对不同规模输入使用不同的策略  迭代器模式     Python内置对迭代器模式的支持 可用for遍历各种Iterable的数据类型 可以实现__next__和__iter__实现迭代器  class Stack(object): # 使用组合的例子 def __init__(self): self._deque = deque() def push(self, value): return self._deque.append(value) def pop(self): return self._deque.pop() def empty(self): return len(self._deque) == 0 def __iter__(self): res = [] for i in self._deque: res.append(i) for i in reversed(res): yield i s = Stack() s.push(1) s.push(2) for i in s: print(i) 观察者模式     发布订阅是一种最常用的实现方式 发布订阅用于解耦逻辑 可以通过回调等方式实现，当发生事件，执行回调函数  ==TODO：代码实现==">
     <meta name="keywords" content="blog,developer,personal">
 
@@ -30,7 +30,7 @@
 
 
     <title>
-  Go &amp; Python｜行为型设计模式 · 行百里者半九十
+  Go &amp; Python｜行为型设计模式 · xblzbjs
 </title>
 
     
@@ -60,11 +60,14 @@
     
 
     <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16">
 
     <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 
+    
+      <script defer src="https://twemoji.maxcdn.com/v/13.0.2/twemoji.min.js"
+        integrity="sha384-wyB/MspSJ/r2bT2kCj44qtsYRYlpzO2oAPhRj5myrWD63dt6qWv4x8AZe7Fl3K3b" crossorigin="anonymous"></script>
     
 
     <meta name="generator" content="Hugo 0.83.1" />
@@ -75,7 +78,7 @@
     
   
   <body class="preload-transitions colorscheme-auto"
-        onload=""
+        onload=" twemoji.parse(document.body); "
   >
     
 <div class="float-container">
@@ -89,7 +92,7 @@
       <nav class="navigation">
   <section class="container">
     <a class="navigation-title" href="/">
-      行百里者半九十
+      xblzbjs
     </a>
     
       <input type="checkbox" id="menu-toggle" />
@@ -109,6 +112,10 @@
           
             <li class="navigation-item">
               <a class="navigation-link" href="/tags/">标签</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">关于</a>
             </li>
           
             <li class="navigation-item">
@@ -190,31 +197,31 @@
 <li>可用for遍历各种Iterable的数据类型</li>
 <li>可以实现<code>__next__</code>和<code>__iter__</code>实现迭代器</li>
 </ul>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#5f8700">class</span> <span style="color:#0087ff">Stack</span>(<span style="color:#0087ff">object</span>): <span style="color:#4e4e4e"># 使用组合的例子</span>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">Stack</span>(<span style="color:#366">object</span>): <span style="color:#09f;font-style:italic"># 使用组合的例子</span>
 	
-	<span style="color:#5f8700">def</span> __init__(<span style="color:#0087ff">self</span>):
-		<span style="color:#0087ff">self</span>._deque = deque()
+	<span style="color:#069;font-weight:bold">def</span> __init__(self):
+		self<span style="color:#555">.</span>_deque <span style="color:#555">=</span> deque()
 	
-	<span style="color:#5f8700">def</span> <span style="color:#0087ff">push</span>(<span style="color:#0087ff">self</span>, value):
-		<span style="color:#5f8700">return</span> <span style="color:#0087ff">self</span>._deque.append(value)
+	<span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">push</span>(self, value):
+		<span style="color:#069;font-weight:bold">return</span> self<span style="color:#555">.</span>_deque<span style="color:#555">.</span>append(value)
 		
-	<span style="color:#5f8700">def</span> <span style="color:#0087ff">pop</span>(<span style="color:#0087ff">self</span>):
-		<span style="color:#5f8700">return</span> <span style="color:#0087ff">self</span>._deque.pop()
+	<span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">pop</span>(self):
+		<span style="color:#069;font-weight:bold">return</span> self<span style="color:#555">.</span>_deque<span style="color:#555">.</span>pop()
 	
-	<span style="color:#5f8700">def</span> <span style="color:#0087ff">empty</span>(<span style="color:#0087ff">self</span>):
-		<span style="color:#5f8700">return</span> <span style="color:#0087ff">len</span>(<span style="color:#0087ff">self</span>._deque) == <span style="color:#00afaf">0</span>
+	<span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">empty</span>(self):
+		<span style="color:#069;font-weight:bold">return</span> <span style="color:#366">len</span>(self<span style="color:#555">.</span>_deque) <span style="color:#555">==</span> <span style="color:#f60">0</span>
 		
-	<span style="color:#5f8700">def</span> __iter__(<span style="color:#0087ff">self</span>):
-		res = []
-		<span style="color:#5f8700">for</span> i <span style="color:#5f8700">in</span> <span style="color:#0087ff">self</span>._deque:
-			res.append(i)
-		<span style="color:#5f8700">for</span> i <span style="color:#5f8700">in</span> <span style="color:#0087ff">reversed</span>(res):
-			<span style="color:#5f8700">yield</span> i 
-s = Stack()
-s.push(<span style="color:#00afaf">1</span>)
-s.push(<span style="color:#00afaf">2</span>)
-<span style="color:#5f8700">for</span> i <span style="color:#5f8700">in</span> s:
-	<span style="color:#5f8700">print</span>(i)
+	<span style="color:#069;font-weight:bold">def</span> __iter__(self):
+		res <span style="color:#555">=</span> []
+		<span style="color:#069;font-weight:bold">for</span> i <span style="color:#000;font-weight:bold">in</span> self<span style="color:#555">.</span>_deque:
+			res<span style="color:#555">.</span>append(i)
+		<span style="color:#069;font-weight:bold">for</span> i <span style="color:#000;font-weight:bold">in</span> <span style="color:#366">reversed</span>(res):
+			<span style="color:#069;font-weight:bold">yield</span> i 
+s <span style="color:#555">=</span> Stack()
+s<span style="color:#555">.</span>push(<span style="color:#f60">1</span>)
+s<span style="color:#555">.</span>push(<span style="color:#f60">2</span>)
+<span style="color:#069;font-weight:bold">for</span> i <span style="color:#000;font-weight:bold">in</span> s:
+	<span style="color:#069;font-weight:bold">print</span>(i)
 </code></pre></div><h3 id="观察者模式">
   观察者模式
   <a class="heading-link" href="#%e8%a7%82%e5%af%9f%e8%80%85%e6%a8%a1%e5%bc%8f">
@@ -258,6 +265,22 @@ s.push(<span style="color:#00afaf">2</span>)
       </div>
 
       
+  <footer class="footer">
+    <section class="container">
+      
+        <p>粤ICP备2021007187号-1</p>
+      
+      
+        ©
+        
+        2021
+         xblzbjs 
+      
+      
+      
+    </section>
+  </footer>
+
 
     </main>
 
@@ -281,13 +304,13 @@ s.push(<span style="color:#00afaf">2</span>)
     
 
     
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-192697137-1"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QYYHFCMJHS"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-192697137-1');
+  gtag('config', 'G-QYYHFCMJHS');
 </script>
 
   </body>

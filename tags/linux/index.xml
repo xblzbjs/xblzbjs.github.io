@@ -1,12 +1,32 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Linux on 行百里者半九十</title>
+    <title>Linux on xblzbjs</title>
     <link>https://xblzbjs.cn/tags/linux/</link>
-    <description>Recent content in Linux on 行百里者半九十</description>
+    <description>Recent content in Linux on xblzbjs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 19 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xblzbjs.cn/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 02 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xblzbjs.cn/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Terminator快捷键</title>
+      <link>https://xblzbjs.cn/posts/linux/terminator%E5%BF%AB%E6%8D%B7%E9%94%AE/</link>
+      <pubDate>Fri, 02 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xblzbjs.cn/posts/linux/terminator%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid>
+      <description>Terminator终端常用的快捷键如下
+   命令 含义     Ctrl + Shift + O 水平分割   Ctrl + Shift + E 垂直分割   Ctrl + Shift + S 隐藏/显示滚动条   Ctrl + Shift + F 搜索   Ctrl + Shift + W 关闭当前终端   Ctrl + Shift + Q 退出当前窗口   Ctrl + Tab 移动到下一个终端   Ctrl + Shift + Tab 移动到上一个终端   Ctrl + Shift + T 打开一个新的标签   Ctrl + PageDown 移动到下一个标签   Ctrl + UpDown 移动到上一个标签   Alt + Up/Down/Left/Right 移动到上/下/左/右的终端   Ctrl + Shift + C 复制选中的内容到剪贴板   Ctrl + Shift + Q 粘贴选中的内容到剪贴版   Ctrl + Plus(+) 增大字体   Ctrl + Minus(-) 减小字体   Ctrl + Zero(0) 恢复字体到原始大小   F11 全屏开关Alt    </description>
+    </item>
+    
+    <item>
+      <title>Ubuntu Shell环境配置</title>
+      <link>https://xblzbjs.cn/posts/linux/ubuntu-shell%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Fri, 02 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xblzbjs.cn/posts/linux/ubuntu-shell%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</guid>
+      <description>终端模拟器选择    推荐三个
+1. Gnome Terminal（原生）    2. Terminator（在用）    3. Guake    终端配置（Zsh + Oh My Zsh + PowerLevel10k）    1. 安装Zsh(https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)    # apt 打包安装 zsh sudo apt install zsh # 确认 zsh 成功安装 zsh --version # 设置为默认Shell并确认 chsh -s $(which zsh) echo $SHELL 2. 安装Oh My Zsh    # 推荐使用curl安装 sh -c &amp;#34;$(curl -fsSL https://raw.</description>
+    </item>
+    
     <item>
       <title>zsh｜主题</title>
       <link>https://xblzbjs.cn/posts/linux/zsh%E4%B8%BB%E9%A2%98/</link>
@@ -37,11 +57,11 @@ yum install zlib-devel libffi-devel bzip2-devel openssl-devel ncurses-devel sqli
     </item>
     
     <item>
-      <title>Network | Nmap 常用操作</title>
-      <link>https://xblzbjs.cn/posts/linux/network-nmap/</link>
+      <title>Nmap 网络扫描工具常用操作</title>
+      <link>https://xblzbjs.cn/posts/linux/nmap-%E7%BD%91%E7%BB%9C%E6%89%AB%E6%8F%8F%E5%B7%A5%E5%85%B7%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/</link>
       <pubDate>Wed, 17 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://xblzbjs.cn/posts/linux/network-nmap/</guid>
+      <guid>https://xblzbjs.cn/posts/linux/nmap-%E7%BD%91%E7%BB%9C%E6%89%AB%E6%8F%8F%E5%B7%A5%E5%85%B7%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/</guid>
       <description>Nmap 是由 Gordon Lyon 创建的免费开源网络扫描工具。
 安装    Debian系列的Linux，例如Ubuntu
 sudo apt-get install nmap Red Hat系列的Linux，例如Centos

@@ -12,7 +12,7 @@
 
     
 
-    <meta name="author" content="行百里者半九十">
+    <meta name="author" content="xblzbjs">
     <meta name="description" content="因何而生❓    有时测试程序需要在测试之前或之后进行额外的设置或拆卸。有时测试还需要控制哪些代码在主线程上运行。为了支持这些和其他情况, testing 包提供了 TestMain 函数 :
 func TestMain(m *testing.M) 有什么作用🤔    如果测试文件中包含该函数，那么生成的测试将调用 TestMain(m)，而不是直接运行测试。TestMain 运行在主 goroutine 中 , 可以在调用 m.Run 前后做任何设置和拆卸。m. Run将返回可能传递给的退出代码操作系统退出. 如果TestMain返回，测试包装器将m.Run的结果传递给操作系统退出它自己
 调用TestMain时，flag.解析尚未运行。如果TestMain依赖于命令行标志，包括测试包的标志，那么它应该调用flag.解析明确地。命令行标志总是由运行的时间测试或基准函数来解析
@@ -43,7 +43,7 @@ func TestMain(m *testing.M) 有什么作用🤔    如果测试文件中包含�
 
 
     <title>
-  Go Tips | Test · 行百里者半九十
+  Go Tips | Test · xblzbjs
 </title>
 
     
@@ -73,11 +73,14 @@ func TestMain(m *testing.M) 有什么作用🤔    如果测试文件中包含�
     
 
     <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16">
 
     <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 
+    
+      <script defer src="https://twemoji.maxcdn.com/v/13.0.2/twemoji.min.js"
+        integrity="sha384-wyB/MspSJ/r2bT2kCj44qtsYRYlpzO2oAPhRj5myrWD63dt6qWv4x8AZe7Fl3K3b" crossorigin="anonymous"></script>
     
 
     <meta name="generator" content="Hugo 0.83.1" />
@@ -88,7 +91,7 @@ func TestMain(m *testing.M) 有什么作用🤔    如果测试文件中包含�
     
   
   <body class="preload-transitions colorscheme-auto"
-        onload=""
+        onload=" twemoji.parse(document.body); "
   >
     
 <div class="float-container">
@@ -102,7 +105,7 @@ func TestMain(m *testing.M) 有什么作用🤔    如果测试文件中包含�
       <nav class="navigation">
   <section class="container">
     <a class="navigation-title" href="/">
-      行百里者半九十
+      xblzbjs
     </a>
     
       <input type="checkbox" id="menu-toggle" />
@@ -122,6 +125,10 @@ func TestMain(m *testing.M) 有什么作用🤔    如果测试文件中包含�
           
             <li class="navigation-item">
               <a class="navigation-link" href="/tags/">标签</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">关于</a>
             </li>
           
             <li class="navigation-item">
@@ -181,7 +188,7 @@ func TestMain(m *testing.M) 有什么作用🤔    如果测试文件中包含�
   </a>
 </h2>
 <p>有时测试程序需要在测试之前或之后进行额外的设置或拆卸。有时测试还需要控制哪些代码在主线程上运行。为了支持这些和其他情况, <code>testing</code> 包提供了 <code>TestMain</code> 函数 :</p>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#0087ff">func</span> <span style="color:#0087ff">TestMain</span>(m *testing.M)
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">TestMain</span>(m <span style="color:#555">*</span>testing.M)
 </code></pre></div><h2 id="有什么作用">
   有什么作用🤔
   <a class="heading-link" href="#%e6%9c%89%e4%bb%80%e4%b9%88%e4%bd%9c%e7%94%a8">
@@ -203,27 +210,27 @@ func TestMain(m *testing.M) 有什么作用🤔    如果测试文件中包含�
     <i class="fa fa-link" aria-hidden="true"></i>
   </a>
 </h3>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#4e4e4e">// file name: demo_test.go
-</span><span style="color:#4e4e4e"></span><span style="color:#d75f00">package</span> tests
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#09f;font-style:italic">// file name: demo_test.go
+</span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">package</span> tests
 
-<span style="color:#d75f00">import</span> (
-    <span style="color:#00afaf">&#34;testing&#34;</span>
-    <span style="color:#00afaf">&#34;os&#34;</span>
+<span style="color:#069;font-weight:bold">import</span> (
+    <span style="color:#c30">&#34;testing&#34;</span>
+    <span style="color:#c30">&#34;os&#34;</span>
 )
 
-<span style="color:#0087ff">func</span> <span style="color:#0087ff">TestMain</span>(m *testing.M) {
-    log.<span style="color:#0087ff">Println</span>(<span style="color:#00afaf">&#34;Do stuff BEFORE the tests!&#34;</span>)
-    exitVal := m.<span style="color:#0087ff">Run</span>()
-    log.<span style="color:#0087ff">Println</span>(<span style="color:#00afaf">&#34;Do stuff AFTER the tests!&#34;</span>)
-    os.<span style="color:#0087ff">Exit</span>(exitVal)
+<span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">TestMain</span>(m <span style="color:#555">*</span>testing.M) {
+    log.<span style="color:#c0f">Println</span>(<span style="color:#c30">&#34;Do stuff BEFORE the tests!&#34;</span>)
+    exitVal <span style="color:#555">:=</span> m.<span style="color:#c0f">Run</span>()
+    log.<span style="color:#c0f">Println</span>(<span style="color:#c30">&#34;Do stuff AFTER the tests!&#34;</span>)
+    os.<span style="color:#c0f">Exit</span>(exitVal)
 }
 
-<span style="color:#0087ff">func</span> <span style="color:#0087ff">TestA</span>(t *testing.T) {
-    log.<span style="color:#0087ff">Println</span>(<span style="color:#00afaf">&#34;TestA running&#34;</span>)
+<span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">TestA</span>(t <span style="color:#555">*</span>testing.T) {
+    log.<span style="color:#c0f">Println</span>(<span style="color:#c30">&#34;TestA running&#34;</span>)
 }
 
-<span style="color:#0087ff">func</span> <span style="color:#0087ff">TestB</span>(t *testing.T) {
-    log.<span style="color:#0087ff">Println</span>(<span style="color:#00afaf">&#34;TestB running&#34;</span>)
+<span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">TestB</span>(t <span style="color:#555">*</span>testing.T) {
+    log.<span style="color:#c0f">Println</span>(<span style="color:#c30">&#34;TestB running&#34;</span>)
 }
 </code></pre></div><h4 id="输出">
   输出
@@ -231,14 +238,14 @@ func TestMain(m *testing.M) 有什么作用🤔    如果测试文件中包含�
     <i class="fa fa-link" aria-hidden="true"></i>
   </a>
 </h4>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ go <span style="color:#0087ff">test</span> -v demo_test.go
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ go <span style="color:#366">test</span> -v demo_test.go
 2021/03/24 11:01:06 Do stuff BEFORE the tests!
-=== RUN   TestA
+<span style="color:#555">===</span> RUN   TestA
 2021/03/24 11:01:06 TestA running
---- PASS: TestA (0.00s)
-=== RUN   TestB
+--- PASS: TestA <span style="color:#555">(</span>0.00s<span style="color:#555">)</span>
+<span style="color:#555">===</span> RUN   TestB
 2021/03/24 11:01:06 TestB running
---- PASS: TestB (0.00s)
+--- PASS: TestB <span style="color:#555">(</span>0.00s<span style="color:#555">)</span>
 PASS
 2021/03/24 11:01:06 Do stuff AFTER the tests!
 </code></pre></div><h3 id="复杂">
@@ -248,35 +255,35 @@ PASS
   </a>
 </h3>
 <p>假设在测试之前需要对数据库进行一些配置，不使用<code>Testmain</code>函数可能需要这么写</p>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#0087ff">func</span> <span style="color:#0087ff">TestDBFeatureA</span>(t *testing.T) {
-    models.TestDBManager.<span style="color:#0087ff">Setup</span>()
-    <span style="color:#5f8700">defer</span> models.TestDBManager.<span style="color:#0087ff">Exit</span>()
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">TestDBFeatureA</span>(t <span style="color:#555">*</span>testing.T) {
+    models.TestDBManager.<span style="color:#c0f">Setup</span>()
+    <span style="color:#069;font-weight:bold">defer</span> models.TestDBManager.<span style="color:#c0f">Exit</span>()
 
-    <span style="color:#4e4e4e">// Do the tests
-</span><span style="color:#4e4e4e"></span>}
-<span style="color:#0087ff">func</span> <span style="color:#0087ff">TestDBFeatureB</span>(t *testing.T) {
-    models.TestDBManager.<span style="color:#0087ff">Setup</span>()
-    <span style="color:#5f8700">defer</span> models.TestDBManager.<span style="color:#0087ff">Exit</span>()
+    <span style="color:#09f;font-style:italic">// Do the tests
+</span><span style="color:#09f;font-style:italic"></span>}
+<span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">TestDBFeatureB</span>(t <span style="color:#555">*</span>testing.T) {
+    models.TestDBManager.<span style="color:#c0f">Setup</span>()
+    <span style="color:#069;font-weight:bold">defer</span> models.TestDBManager.<span style="color:#c0f">Exit</span>()
 
-    <span style="color:#4e4e4e">// Do the tests
-</span><span style="color:#4e4e4e"></span>}
+    <span style="color:#09f;font-style:italic">// Do the tests
+</span><span style="color:#09f;font-style:italic"></span>}
 </code></pre></div><p>有了<code>Testmain</code>后，配置更为简单清晰</p>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#0087ff">func</span> <span style="color:#0087ff">TestDBFeatureA</span>(t *testing.T) {
-    <span style="color:#5f8700">defer</span> models.TestDBManager.<span style="color:#0087ff">Reset</span>()
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">TestDBFeatureA</span>(t <span style="color:#555">*</span>testing.T) {
+    <span style="color:#069;font-weight:bold">defer</span> models.TestDBManager.<span style="color:#c0f">Reset</span>()
 
-    <span style="color:#4e4e4e">// Do the tests
-</span><span style="color:#4e4e4e"></span>}
-<span style="color:#0087ff">func</span> <span style="color:#0087ff">TestDBFeatureB</span>(t *testing.T) {
-    <span style="color:#5f8700">defer</span> models.TestDBManager.<span style="color:#0087ff">Reset</span>()
+    <span style="color:#09f;font-style:italic">// Do the tests
+</span><span style="color:#09f;font-style:italic"></span>}
+<span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">TestDBFeatureB</span>(t <span style="color:#555">*</span>testing.T) {
+    <span style="color:#069;font-weight:bold">defer</span> models.TestDBManager.<span style="color:#c0f">Reset</span>()
 
-    <span style="color:#4e4e4e">// Do the tests
-</span><span style="color:#4e4e4e"></span>}
-<span style="color:#0087ff">func</span> <span style="color:#0087ff">TestMain</span>(m *testing.M) {
-    models.TestDBManager.<span style="color:#0087ff">Setup</span>()
-    <span style="color:#4e4e4e">// os.Exit() does not respect defer statements
-</span><span style="color:#4e4e4e"></span>    code := m.<span style="color:#0087ff">Run</span>()
-    models.TestDBManager.<span style="color:#0087ff">Exit</span>()
-    os.<span style="color:#0087ff">Exit</span>(code)
+    <span style="color:#09f;font-style:italic">// Do the tests
+</span><span style="color:#09f;font-style:italic"></span>}
+<span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">TestMain</span>(m <span style="color:#555">*</span>testing.M) {
+    models.TestDBManager.<span style="color:#c0f">Setup</span>()
+    <span style="color:#09f;font-style:italic">// os.Exit() does not respect defer statements
+</span><span style="color:#09f;font-style:italic"></span>    code <span style="color:#555">:=</span> m.<span style="color:#c0f">Run</span>()
+    models.TestDBManager.<span style="color:#c0f">Exit</span>()
+    os.<span style="color:#c0f">Exit</span>(code)
 }
 </code></pre></div><p>虽然每个测试都必须在自身完成后进行清理，但这只涉及恢复初始数据，这比进行模式迁移要快得多。这种方法还减少了代码重复，在每个测试中只有一行用于数据库管理，而不是两行，运行速度会快得多。</p>
 <h2 id="注意">
@@ -305,7 +312,7 @@ PASS
   </a>
 </h2>
 <p>有时测试程序需要在测试之前或之后进行额外的设置或拆卸。有时测试还需要控制哪些代码在主线程上运行。为了支持这些和其他情况, <code>testing</code> 包提供了 <code>TestMain</code> 函数 :</p>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#0087ff">func</span> <span style="color:#0087ff">TestMain</span>(m *testing.M)
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">TestMain</span>(m <span style="color:#555">*</span>testing.M)
 </code></pre></div><h2 id="有什么作用-1">
   有什么作用🤔
   <a class="heading-link" href="#%e6%9c%89%e4%bb%80%e4%b9%88%e4%bd%9c%e7%94%a8-1">
@@ -327,27 +334,27 @@ PASS
     <i class="fa fa-link" aria-hidden="true"></i>
   </a>
 </h3>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#4e4e4e">// file name: demo_test.go
-</span><span style="color:#4e4e4e"></span><span style="color:#d75f00">package</span> tests
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#09f;font-style:italic">// file name: demo_test.go
+</span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">package</span> tests
 
-<span style="color:#d75f00">import</span> (
-    <span style="color:#00afaf">&#34;testing&#34;</span>
-    <span style="color:#00afaf">&#34;os&#34;</span>
+<span style="color:#069;font-weight:bold">import</span> (
+    <span style="color:#c30">&#34;testing&#34;</span>
+    <span style="color:#c30">&#34;os&#34;</span>
 )
 
-<span style="color:#0087ff">func</span> <span style="color:#0087ff">TestMain</span>(m *testing.M) {
-    log.<span style="color:#0087ff">Println</span>(<span style="color:#00afaf">&#34;Do stuff BEFORE the tests!&#34;</span>)
-    exitVal := m.<span style="color:#0087ff">Run</span>()
-    log.<span style="color:#0087ff">Println</span>(<span style="color:#00afaf">&#34;Do stuff AFTER the tests!&#34;</span>)
-    os.<span style="color:#0087ff">Exit</span>(exitVal)
+<span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">TestMain</span>(m <span style="color:#555">*</span>testing.M) {
+    log.<span style="color:#c0f">Println</span>(<span style="color:#c30">&#34;Do stuff BEFORE the tests!&#34;</span>)
+    exitVal <span style="color:#555">:=</span> m.<span style="color:#c0f">Run</span>()
+    log.<span style="color:#c0f">Println</span>(<span style="color:#c30">&#34;Do stuff AFTER the tests!&#34;</span>)
+    os.<span style="color:#c0f">Exit</span>(exitVal)
 }
 
-<span style="color:#0087ff">func</span> <span style="color:#0087ff">TestA</span>(t *testing.T) {
-    log.<span style="color:#0087ff">Println</span>(<span style="color:#00afaf">&#34;TestA running&#34;</span>)
+<span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">TestA</span>(t <span style="color:#555">*</span>testing.T) {
+    log.<span style="color:#c0f">Println</span>(<span style="color:#c30">&#34;TestA running&#34;</span>)
 }
 
-<span style="color:#0087ff">func</span> <span style="color:#0087ff">TestB</span>(t *testing.T) {
-    log.<span style="color:#0087ff">Println</span>(<span style="color:#00afaf">&#34;TestB running&#34;</span>)
+<span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">TestB</span>(t <span style="color:#555">*</span>testing.T) {
+    log.<span style="color:#c0f">Println</span>(<span style="color:#c30">&#34;TestB running&#34;</span>)
 }
 </code></pre></div><h4 id="输出-1">
   输出
@@ -355,14 +362,14 @@ PASS
     <i class="fa fa-link" aria-hidden="true"></i>
   </a>
 </h4>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ go <span style="color:#0087ff">test</span> -v demo_test.go
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ go <span style="color:#366">test</span> -v demo_test.go
 2021/03/24 11:01:06 Do stuff BEFORE the tests!
-=== RUN   TestA
+<span style="color:#555">===</span> RUN   TestA
 2021/03/24 11:01:06 TestA running
---- PASS: TestA (0.00s)
-=== RUN   TestB
+--- PASS: TestA <span style="color:#555">(</span>0.00s<span style="color:#555">)</span>
+<span style="color:#555">===</span> RUN   TestB
 2021/03/24 11:01:06 TestB running
---- PASS: TestB (0.00s)
+--- PASS: TestB <span style="color:#555">(</span>0.00s<span style="color:#555">)</span>
 PASS
 2021/03/24 11:01:06 Do stuff AFTER the tests!
 </code></pre></div><h3 id="复杂-1">
@@ -372,35 +379,35 @@ PASS
   </a>
 </h3>
 <p>假设在测试之前需要对数据库进行一些配置，不使用<code>Testmain</code>函数可能需要这么写</p>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#0087ff">func</span> <span style="color:#0087ff">TestDBFeatureA</span>(t *testing.T) {
-    models.TestDBManager.<span style="color:#0087ff">Setup</span>()
-    <span style="color:#5f8700">defer</span> models.TestDBManager.<span style="color:#0087ff">Exit</span>()
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">TestDBFeatureA</span>(t <span style="color:#555">*</span>testing.T) {
+    models.TestDBManager.<span style="color:#c0f">Setup</span>()
+    <span style="color:#069;font-weight:bold">defer</span> models.TestDBManager.<span style="color:#c0f">Exit</span>()
 
-    <span style="color:#4e4e4e">// Do the tests
-</span><span style="color:#4e4e4e"></span>}
-<span style="color:#0087ff">func</span> <span style="color:#0087ff">TestDBFeatureB</span>(t *testing.T) {
-    models.TestDBManager.<span style="color:#0087ff">Setup</span>()
-    <span style="color:#5f8700">defer</span> models.TestDBManager.<span style="color:#0087ff">Exit</span>()
+    <span style="color:#09f;font-style:italic">// Do the tests
+</span><span style="color:#09f;font-style:italic"></span>}
+<span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">TestDBFeatureB</span>(t <span style="color:#555">*</span>testing.T) {
+    models.TestDBManager.<span style="color:#c0f">Setup</span>()
+    <span style="color:#069;font-weight:bold">defer</span> models.TestDBManager.<span style="color:#c0f">Exit</span>()
 
-    <span style="color:#4e4e4e">// Do the tests
-</span><span style="color:#4e4e4e"></span>}
+    <span style="color:#09f;font-style:italic">// Do the tests
+</span><span style="color:#09f;font-style:italic"></span>}
 </code></pre></div><p>有了<code>Testmain</code>后，配置更为简单清晰</p>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#0087ff">func</span> <span style="color:#0087ff">TestDBFeatureA</span>(t *testing.T) {
-    <span style="color:#5f8700">defer</span> models.TestDBManager.<span style="color:#0087ff">Reset</span>()
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">TestDBFeatureA</span>(t <span style="color:#555">*</span>testing.T) {
+    <span style="color:#069;font-weight:bold">defer</span> models.TestDBManager.<span style="color:#c0f">Reset</span>()
 
-    <span style="color:#4e4e4e">// Do the tests
-</span><span style="color:#4e4e4e"></span>}
-<span style="color:#0087ff">func</span> <span style="color:#0087ff">TestDBFeatureB</span>(t *testing.T) {
-    <span style="color:#5f8700">defer</span> models.TestDBManager.<span style="color:#0087ff">Reset</span>()
+    <span style="color:#09f;font-style:italic">// Do the tests
+</span><span style="color:#09f;font-style:italic"></span>}
+<span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">TestDBFeatureB</span>(t <span style="color:#555">*</span>testing.T) {
+    <span style="color:#069;font-weight:bold">defer</span> models.TestDBManager.<span style="color:#c0f">Reset</span>()
 
-    <span style="color:#4e4e4e">// Do the tests
-</span><span style="color:#4e4e4e"></span>}
-<span style="color:#0087ff">func</span> <span style="color:#0087ff">TestMain</span>(m *testing.M) {
-    models.TestDBManager.<span style="color:#0087ff">Setup</span>()
-    <span style="color:#4e4e4e">// os.Exit() does not respect defer statements
-</span><span style="color:#4e4e4e"></span>    code := m.<span style="color:#0087ff">Run</span>()
-    models.TestDBManager.<span style="color:#0087ff">Exit</span>()
-    os.<span style="color:#0087ff">Exit</span>(code)
+    <span style="color:#09f;font-style:italic">// Do the tests
+</span><span style="color:#09f;font-style:italic"></span>}
+<span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">TestMain</span>(m <span style="color:#555">*</span>testing.M) {
+    models.TestDBManager.<span style="color:#c0f">Setup</span>()
+    <span style="color:#09f;font-style:italic">// os.Exit() does not respect defer statements
+</span><span style="color:#09f;font-style:italic"></span>    code <span style="color:#555">:=</span> m.<span style="color:#c0f">Run</span>()
+    models.TestDBManager.<span style="color:#c0f">Exit</span>()
+    os.<span style="color:#c0f">Exit</span>(code)
 }
 </code></pre></div><p>虽然每个测试都必须在自身完成后进行清理，但这只涉及恢复初始数据，这比进行模式迁移要快得多。这种方法还减少了代码重复，在每个测试中只有一行用于数据库管理，而不是两行，运行速度会快得多。</p>
 <h2 id="注意-1">
@@ -471,6 +478,22 @@ PASS
       </div>
 
       
+  <footer class="footer">
+    <section class="container">
+      
+        <p>粤ICP备2021007187号-1</p>
+      
+      
+        ©
+        
+        2021
+         xblzbjs 
+      
+      
+      
+    </section>
+  </footer>
+
 
     </main>
 
@@ -494,13 +517,13 @@ PASS
     
 
     
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-192697137-1"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QYYHFCMJHS"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-192697137-1');
+  gtag('config', 'G-QYYHFCMJHS');
 </script>
 
   </body>

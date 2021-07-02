@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Network on 行百里者半九十</title>
+    <title>Network on xblzbjs</title>
     <link>https://xblzbjs.cn/tags/network/</link>
-    <description>Recent content in Network on 行百里者半九十</description>
+    <description>Recent content in Network on xblzbjs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 17 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xblzbjs.cn/tags/network/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Network | Nmap 常用操作</title>
-      <link>https://xblzbjs.cn/posts/linux/network-nmap/</link>
+      <title>Nmap 网络扫描工具常用操作</title>
+      <link>https://xblzbjs.cn/posts/linux/nmap-%E7%BD%91%E7%BB%9C%E6%89%AB%E6%8F%8F%E5%B7%A5%E5%85%B7%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/</link>
       <pubDate>Wed, 17 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://xblzbjs.cn/posts/linux/network-nmap/</guid>
+      <guid>https://xblzbjs.cn/posts/linux/nmap-%E7%BD%91%E7%BB%9C%E6%89%AB%E6%8F%8F%E5%B7%A5%E5%85%B7%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/</guid>
       <description>Nmap 是由 Gordon Lyon 创建的免费开源网络扫描工具。
 安装    Debian系列的Linux，例如Ubuntu
 sudo apt-get install nmap Red Hat系列的Linux，例如Centos

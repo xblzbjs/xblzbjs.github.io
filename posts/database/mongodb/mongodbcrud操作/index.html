@@ -12,7 +12,7 @@
 
     
 
-    <meta name="author" content="行百里者半九十">
+    <meta name="author" content="xblzbjs">
     <meta name="description" content="Create(创建)    insertOne()方法    ### insertOne()方法 # 参数含义 db.collection·insertOne() db.&lt;collection&gt;·insertOne( &lt;document&gt; writeConcern：&lt;document&gt;	# &lt;collection&gt;表示写入的集合 # &lt;document&gt;要替换成要写入的文档本身 # writeConcern：&lt;document&gt;定义了本次文档创建操作的安全写级别 ) # 简单来说，安全写级别用来判断一次数据库写入操作是否成功 安全写级别越高，丢失数据的风险就越低，然而写入操作的延迟也可能更高。如果不提供writeconcern文档，用默认的安全写级别。 # 创建单个文档 &gt; db.accounts.insertOne(	# 虽然没有创建过accounts的集合，但该命令会自动创建相应的集合 ... { ... _id: &#34;account1&#34;, ... name: &#34;alice&#34;, ... balance: 100, ... } ... ) { &#34;acknowledged&#34; : true, &#34;insertedId&#34; : &#34;account1&#34; } # &#34;acknowledged&#34;: true表示安全写级别被启用 # 由于在db.collection.insertone()命令中没有提供writeConcern文档，这里显示的是默认的安全写级别启用状态 # &#34;insertedId&#34;显示了被写入的文档的_id # 重复_id创建一个新文档及相对应的报错信息 &gt; db.accounts.insertOne( ... { ... _id: &#34;account1&#34;, .">
     <meta name="keywords" content="blog,developer,personal">
 
@@ -31,7 +31,7 @@
 
 
     <title>
-  MongoDB｜CRUD操作 · 行百里者半九十
+  MongoDB｜CRUD操作 · xblzbjs
 </title>
 
     
@@ -61,11 +61,14 @@
     
 
     <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16">
 
     <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 
+    
+      <script defer src="https://twemoji.maxcdn.com/v/13.0.2/twemoji.min.js"
+        integrity="sha384-wyB/MspSJ/r2bT2kCj44qtsYRYlpzO2oAPhRj5myrWD63dt6qWv4x8AZe7Fl3K3b" crossorigin="anonymous"></script>
     
 
     <meta name="generator" content="Hugo 0.83.1" />
@@ -76,7 +79,7 @@
     
   
   <body class="preload-transitions colorscheme-auto"
-        onload=""
+        onload=" twemoji.parse(document.body); "
   >
     
 <div class="float-container">
@@ -90,7 +93,7 @@
       <nav class="navigation">
   <section class="container">
     <a class="navigation-title" href="/">
-      行百里者半九十
+      xblzbjs
     </a>
     
       <input type="checkbox" id="menu-toggle" />
@@ -110,6 +113,10 @@
           
             <li class="navigation-item">
               <a class="navigation-link" href="/tags/">标签</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">关于</a>
             </li>
           
             <li class="navigation-item">
@@ -174,227 +181,227 @@
     <i class="fa fa-link" aria-hidden="true"></i>
   </a>
 </h3>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#4e4e4e">### insertOne()方法</span>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#09f;font-style:italic">### insertOne()方法</span>
 
-<span style="color:#4e4e4e"># 参数含义</span>
-db.collection·insertOne() 
-db.&lt;collection&gt;·insertOne(
+<span style="color:#09f;font-style:italic"># 参数含义</span>
+db.collection·insertOne<span style="color:#555">()</span> 
+db.&lt;collection&gt;·insertOne<span style="color:#555">(</span>
 	&lt;document&gt; writeConcern：&lt;document&gt;	
-	<span style="color:#4e4e4e"># &lt;collection&gt;表示写入的集合</span>
-	<span style="color:#4e4e4e"># &lt;document&gt;要替换成要写入的文档本身</span>
-	<span style="color:#4e4e4e"># writeConcern：&lt;document&gt;定义了本次文档创建操作的安全写级别</span>
-) 
-<span style="color:#4e4e4e"># 简单来说，安全写级别用来判断一次数据库写入操作是否成功 安全写级别越高，丢失数据的风险就越低，然而写入操作的延迟也可能更高。如果不提供writeconcern文档，用默认的安全写级别。</span>
+	<span style="color:#09f;font-style:italic"># &lt;collection&gt;表示写入的集合</span>
+	<span style="color:#09f;font-style:italic"># &lt;document&gt;要替换成要写入的文档本身</span>
+	<span style="color:#09f;font-style:italic"># writeConcern：&lt;document&gt;定义了本次文档创建操作的安全写级别</span>
+<span style="color:#555">)</span> 
+<span style="color:#09f;font-style:italic"># 简单来说，安全写级别用来判断一次数据库写入操作是否成功 安全写级别越高，丢失数据的风险就越低，然而写入操作的延迟也可能更高。如果不提供writeconcern文档，用默认的安全写级别。</span>
 
-<span style="color:#4e4e4e"># 创建单个文档</span>
-&gt;  db.accounts.insertOne(	<span style="color:#4e4e4e"># 虽然没有创建过accounts的集合，但该命令会自动创建相应的集合</span>
-...  {
-...    _id: <span style="color:#00afaf">&#34;account1&#34;</span>,
-...    name: <span style="color:#00afaf">&#34;alice&#34;</span>,
+<span style="color:#09f;font-style:italic"># 创建单个文档</span>
+&gt;  db.accounts.insertOne<span style="color:#555">(</span>	<span style="color:#09f;font-style:italic"># 虽然没有创建过accounts的集合，但该命令会自动创建相应的集合</span>
+...  <span style="color:#555">{</span>
+...    _id: <span style="color:#c30">&#34;account1&#34;</span>,
+...    name: <span style="color:#c30">&#34;alice&#34;</span>,
 ...    balance: 100,
-...  }
-... )
-{ <span style="color:#00afaf">&#34;acknowledged&#34;</span> : true, <span style="color:#00afaf">&#34;insertedId&#34;</span> : <span style="color:#00afaf">&#34;account1&#34;</span> }
-<span style="color:#4e4e4e"># &#34;acknowledged&#34;: true表示安全写级别被启用</span>
-<span style="color:#4e4e4e"># 由于在db.collection.insertone()命令中没有提供writeConcern文档，这里显示的是默认的安全写级别启用状态</span>
-<span style="color:#4e4e4e"># &#34;insertedId&#34;显示了被写入的文档的_id</span>
+...  <span style="color:#555">}</span>
+... <span style="color:#555">)</span>
+<span style="color:#555">{</span> <span style="color:#c30">&#34;acknowledged&#34;</span> : true, <span style="color:#c30">&#34;insertedId&#34;</span> : <span style="color:#c30">&#34;account1&#34;</span> <span style="color:#555">}</span>
+<span style="color:#09f;font-style:italic"># &#34;acknowledged&#34;: true表示安全写级别被启用</span>
+<span style="color:#09f;font-style:italic"># 由于在db.collection.insertone()命令中没有提供writeConcern文档，这里显示的是默认的安全写级别启用状态</span>
+<span style="color:#09f;font-style:italic"># &#34;insertedId&#34;显示了被写入的文档的_id</span>
 
 
-<span style="color:#4e4e4e"># 重复_id创建一个新文档及相对应的报错信息</span>
-&gt; db.accounts.insertOne(
-...   {
-...     _id: <span style="color:#00afaf">&#34;account1&#34;</span>,
-...     name: <span style="color:#00afaf">&#34;bob&#34;</span>,
-...     balance: <span style="color:#00afaf">50</span>
-...   }
-... )
-2020-12-25T12:07:21.913+0000 E QUERY    [js] WriteError: E11000 duplicate key error collection: test.accounts index: _id_ dup key: { : <span style="color:#00afaf">&#34;account1&#34;</span> } :
-WriteError({
-        <span style="color:#00afaf">&#34;index&#34;</span> : 0,
-        <span style="color:#00afaf">&#34;code&#34;</span> : 11000,
-        <span style="color:#00afaf">&#34;errmsg&#34;</span> : <span style="color:#00afaf">&#34;E11000 duplicate key error collection: test.accounts index: _id_ dup key: { : \&#34;account1\&#34; }&#34;</span>,
-        <span style="color:#00afaf">&#34;op&#34;</span> : {
-                <span style="color:#00afaf">&#34;_id&#34;</span> : <span style="color:#00afaf">&#34;account1&#34;</span>,
-                <span style="color:#00afaf">&#34;name&#34;</span> : <span style="color:#00afaf">&#34;bob&#34;</span>,
-                <span style="color:#00afaf">&#34;balance&#34;</span> : <span style="color:#00afaf">50</span>
-        }
-})
+<span style="color:#09f;font-style:italic"># 重复_id创建一个新文档及相对应的报错信息</span>
+&gt; db.accounts.insertOne<span style="color:#555">(</span>
+...   <span style="color:#555">{</span>
+...     _id: <span style="color:#c30">&#34;account1&#34;</span>,
+...     name: <span style="color:#c30">&#34;bob&#34;</span>,
+...     balance: <span style="color:#f60">50</span>
+...   <span style="color:#555">}</span>
+... <span style="color:#555">)</span>
+2020-12-25T12:07:21.913+0000 E QUERY    <span style="color:#555">[</span>js<span style="color:#555">]</span> WriteError: E11000 duplicate key error collection: test.accounts index: _id_ dup key: <span style="color:#555">{</span> : <span style="color:#c30">&#34;account1&#34;</span> <span style="color:#555">}</span> :
+WriteError<span style="color:#555">({</span>
+        <span style="color:#c30">&#34;index&#34;</span> : 0,
+        <span style="color:#c30">&#34;code&#34;</span> : 11000,
+        <span style="color:#c30">&#34;errmsg&#34;</span> : <span style="color:#c30">&#34;E11000 duplicate key error collection: test.accounts index: _id_ dup key: { : \&#34;account1\&#34; }&#34;</span>,
+        <span style="color:#c30">&#34;op&#34;</span> : <span style="color:#555">{</span>
+                <span style="color:#c30">&#34;_id&#34;</span> : <span style="color:#c30">&#34;account1&#34;</span>,
+                <span style="color:#c30">&#34;name&#34;</span> : <span style="color:#c30">&#34;bob&#34;</span>,
+                <span style="color:#c30">&#34;balance&#34;</span> : <span style="color:#f60">50</span>
+        <span style="color:#555">}</span>
+<span style="color:#555">})</span>
 WriteError@src/mongo/shell/bulk_api.js:461:48
 Bulk/mergeBatchResults@src/mongo/shell/bulk_api.js:841:49
 Bulk/executeBatch@src/mongo/shell/bulk_api.js:906:13
 Bulk/this.execute@src/mongo/shell/bulk_api.js:1150:21
 DBCollection.prototype.insertOne@src/mongo/shell/crud_api.js:252:9
-@(shell):1:1
+@<span style="color:#555">(</span>shell<span style="color:#555">)</span>:1:1
 
-<span style="color:#4e4e4e"># 处理抛出的错误</span>
-&gt; try { 
-		db.accounts.insertOne( 
-			{ 
-				_id:<span style="color:#00afaf">&#34;account1&#34;</span>, 
-				nem:<span style="color:#00afaf">&#34;bob&#34;</span>, 
+<span style="color:#09f;font-style:italic"># 处理抛出的错误</span>
+&gt; try <span style="color:#555">{</span> 
+		db.accounts.insertOne<span style="color:#555">(</span> 
+			<span style="color:#555">{</span> 
+				_id:<span style="color:#c30">&#34;account1&#34;</span>, 
+				nem:<span style="color:#c30">&#34;bob&#34;</span>, 
 				balance:50 
-			} 
-		)
-	  } catch(e) { 
-	      print(e) 
-	  }
+			<span style="color:#555">}</span> 
+		<span style="color:#555">)</span>
+	  <span style="color:#555">}</span> catch<span style="color:#555">(</span>e<span style="color:#555">)</span> <span style="color:#555">{</span> 
+	      print<span style="color:#555">(</span>e<span style="color:#555">)</span> 
+	  <span style="color:#555">}</span>
 
-WriteError({
-        <span style="color:#00afaf">&#34;index&#34;</span> : 0,
-        <span style="color:#00afaf">&#34;code&#34;</span> : 11000,
-        <span style="color:#00afaf">&#34;errmsg&#34;</span> : <span style="color:#00afaf">&#34;E11000 duplicate key error collection: test.accounts index: _id_ dup key: { : \&#34;account1\&#34; }&#34;</span>,
-        <span style="color:#00afaf">&#34;op&#34;</span> : {
-                <span style="color:#00afaf">&#34;_id&#34;</span> : <span style="color:#00afaf">&#34;account1&#34;</span>,
-                <span style="color:#00afaf">&#34;nem&#34;</span> : <span style="color:#00afaf">&#34;bob&#34;</span>,
-                <span style="color:#00afaf">&#34;balance&#34;</span> : <span style="color:#00afaf">50</span>
-        }
-})
+WriteError<span style="color:#555">({</span>
+        <span style="color:#c30">&#34;index&#34;</span> : 0,
+        <span style="color:#c30">&#34;code&#34;</span> : 11000,
+        <span style="color:#c30">&#34;errmsg&#34;</span> : <span style="color:#c30">&#34;E11000 duplicate key error collection: test.accounts index: _id_ dup key: { : \&#34;account1\&#34; }&#34;</span>,
+        <span style="color:#c30">&#34;op&#34;</span> : <span style="color:#555">{</span>
+                <span style="color:#c30">&#34;_id&#34;</span> : <span style="color:#c30">&#34;account1&#34;</span>,
+                <span style="color:#c30">&#34;nem&#34;</span> : <span style="color:#c30">&#34;bob&#34;</span>,
+                <span style="color:#c30">&#34;balance&#34;</span> : <span style="color:#f60">50</span>
+        <span style="color:#555">}</span>
+<span style="color:#555">})</span>
 
-<span style="color:#4e4e4e"># 省略输入的_id字段，自动生成_id</span>
-&gt; db.accounts.insertOne(
-... 	{
-... 		name: <span style="color:#00afaf">&#34;bob&#34;</span>,
-...			balance: <span style="color:#00afaf">50</span>
-... 	}
-... )
-{
-        <span style="color:#00afaf">&#34;acknowledged&#34;</span> : true,
-        <span style="color:#00afaf">&#34;insertedId&#34;</span> : ObjectId(<span style="color:#00afaf">&#34;5fe5d97f6cf5f5ae20ce0a5a&#34;</span>) <span style="color:#4e4e4e"># 自动生成ObjectId</span>
-}
+<span style="color:#09f;font-style:italic"># 省略输入的_id字段，自动生成_id</span>
+&gt; db.accounts.insertOne<span style="color:#555">(</span>
+... 	<span style="color:#555">{</span>
+... 		name: <span style="color:#c30">&#34;bob&#34;</span>,
+...			balance: <span style="color:#f60">50</span>
+... 	<span style="color:#555">}</span>
+... <span style="color:#555">)</span>
+<span style="color:#555">{</span>
+        <span style="color:#c30">&#34;acknowledged&#34;</span> : true,
+        <span style="color:#c30">&#34;insertedId&#34;</span> : ObjectId<span style="color:#555">(</span><span style="color:#c30">&#34;5fe5d97f6cf5f5ae20ce0a5a&#34;</span><span style="color:#555">)</span> <span style="color:#09f;font-style:italic"># 自动生成ObjectId</span>
+<span style="color:#555">}</span>
 </code></pre></div><h3 id="insertmany方法">
   insertMany()方法
   <a class="heading-link" href="#insertmany%e6%96%b9%e6%b3%95">
     <i class="fa fa-link" aria-hidden="true"></i>
   </a>
 </h3>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#4e4e4e">### insertMany()方法</span>
-db.&lt;collection&gt;.insertMany(
-    [&lt;document1&gt;,&lt;document2&gt;,...],
-    {
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#09f;font-style:italic">### insertMany()方法</span>
+db.&lt;collection&gt;.insertMany<span style="color:#555">(</span>
+    <span style="color:#555">[</span>&lt;document1&gt;,&lt;document2&gt;,...<span style="color:#555">]</span>,
+    <span style="color:#555">{</span>
         writeConcern: &lt;document&gt;,
-        <span style="color:#4e4e4e"># ordered决定是否按顺序来写入这些文档。若设置为false，则打乱顺序并优化写入操作的性能</span>
+        <span style="color:#09f;font-style:italic"># ordered决定是否按顺序来写入这些文档。若设置为false，则打乱顺序并优化写入操作的性能</span>
         ordered: &lt;boolean&gt;	
-    }
-)
+    <span style="color:#555">}</span>
+<span style="color:#555">)</span>
 
-<span style="color:#4e4e4e"># 创建多个文档</span>
-&gt; db.accounts.insertMany( [
-...     {
-...         name: <span style="color:#00afaf">&#34;charlie&#34;</span>,
-...         balance: <span style="color:#00afaf">500</span>
-...     },
-...     {
-...         name: <span style="color:#00afaf">&#34;david&#34;</span>,
-...         balance: <span style="color:#00afaf">200</span>
-...     }
-... ] )
-{
-        <span style="color:#00afaf">&#34;acknowledged&#34;</span> : true,
-        <span style="color:#00afaf">&#34;insertedIds&#34;</span> : [
-                ObjectId(<span style="color:#00afaf">&#34;5fe5e2656cf5f5ae20ce0a5b&#34;</span>),
-                ObjectId(<span style="color:#00afaf">&#34;5fe5e2656cf5f5ae20ce0a5c&#34;</span>)
-        ]
-}
+<span style="color:#09f;font-style:italic"># 创建多个文档</span>
+&gt; db.accounts.insertMany<span style="color:#555">(</span> <span style="color:#555">[</span>
+...     <span style="color:#555">{</span>
+...         name: <span style="color:#c30">&#34;charlie&#34;</span>,
+...         balance: <span style="color:#f60">500</span>
+...     <span style="color:#555">}</span>,
+...     <span style="color:#555">{</span>
+...         name: <span style="color:#c30">&#34;david&#34;</span>,
+...         balance: <span style="color:#f60">200</span>
+...     <span style="color:#555">}</span>
+... <span style="color:#555">]</span> <span style="color:#555">)</span>
+<span style="color:#555">{</span>
+        <span style="color:#c30">&#34;acknowledged&#34;</span> : true,
+        <span style="color:#c30">&#34;insertedIds&#34;</span> : <span style="color:#555">[</span>
+                ObjectId<span style="color:#555">(</span><span style="color:#c30">&#34;5fe5e2656cf5f5ae20ce0a5b&#34;</span><span style="color:#555">)</span>,
+                ObjectId<span style="color:#555">(</span><span style="color:#c30">&#34;5fe5e2656cf5f5ae20ce0a5c&#34;</span><span style="color:#555">)</span>
+        <span style="color:#555">]</span>
+<span style="color:#555">}</span>
 
 
-<span style="color:#4e4e4e"># 顺序写入时遇到错误</span>
-&gt; try {
-...   db.accounts.insertMany( [
-...     {
-...       _id: <span style="color:#00afaf">&#34;account1&#34;</span>,
-...       name: <span style="color:#00afaf">&#34;edwrad&#34;</span>,
-...       balance: <span style="color:#00afaf">700</span>
-...     },
-...     {
-...       name: <span style="color:#00afaf">&#34;fred&#34;</span>,
-...       balance: <span style="color:#00afaf">20</span>
-...     }
-... ] )
-... } catch(e) {
-...   print(e)
-... }
-BulkWriteError({
-        <span style="color:#00afaf">&#34;writeErrors&#34;</span> : [
-                {
-                        <span style="color:#00afaf">&#34;index&#34;</span> : 0,
-                        <span style="color:#00afaf">&#34;code&#34;</span> : 11000,
-                        <span style="color:#00afaf">&#34;errmsg&#34;</span> : <span style="color:#00afaf">&#34;E11000 duplicate key error collection: test.accounts index: _id_ dup key: { : \&#34;account1\&#34; }&#34;</span>,
-                        <span style="color:#00afaf">&#34;op&#34;</span> : {
-                                <span style="color:#00afaf">&#34;_id&#34;</span> : <span style="color:#00afaf">&#34;account1&#34;</span>,
-                                <span style="color:#00afaf">&#34;name&#34;</span> : <span style="color:#00afaf">&#34;edwrad&#34;</span>,
-                                <span style="color:#00afaf">&#34;balance&#34;</span> : <span style="color:#00afaf">700</span>
-                        }
-                }
-        ],
-        <span style="color:#00afaf">&#34;writeConcernErrors&#34;</span> : [ ],
-        <span style="color:#00afaf">&#34;nInserted&#34;</span> : 0,	<span style="color:#4e4e4e"># 由于顺序写入，一旦遇到错误文档，剩余的文档无论正确错误都不会写入</span>
-        <span style="color:#00afaf">&#34;nUpserted&#34;</span> : 0,
-        <span style="color:#00afaf">&#34;nMatched&#34;</span> : 0,
-        <span style="color:#00afaf">&#34;nModified&#34;</span> : 0,
-        <span style="color:#00afaf">&#34;nRemoved&#34;</span> : 0,
-        <span style="color:#00afaf">&#34;upserted&#34;</span> : [ ]
-})
+<span style="color:#09f;font-style:italic"># 顺序写入时遇到错误</span>
+&gt; try <span style="color:#555">{</span>
+...   db.accounts.insertMany<span style="color:#555">(</span> <span style="color:#555">[</span>
+...     <span style="color:#555">{</span>
+...       _id: <span style="color:#c30">&#34;account1&#34;</span>,
+...       name: <span style="color:#c30">&#34;edwrad&#34;</span>,
+...       balance: <span style="color:#f60">700</span>
+...     <span style="color:#555">}</span>,
+...     <span style="color:#555">{</span>
+...       name: <span style="color:#c30">&#34;fred&#34;</span>,
+...       balance: <span style="color:#f60">20</span>
+...     <span style="color:#555">}</span>
+... <span style="color:#555">]</span> <span style="color:#555">)</span>
+... <span style="color:#555">}</span> catch<span style="color:#555">(</span>e<span style="color:#555">)</span> <span style="color:#555">{</span>
+...   print<span style="color:#555">(</span>e<span style="color:#555">)</span>
+... <span style="color:#555">}</span>
+BulkWriteError<span style="color:#555">({</span>
+        <span style="color:#c30">&#34;writeErrors&#34;</span> : <span style="color:#555">[</span>
+                <span style="color:#555">{</span>
+                        <span style="color:#c30">&#34;index&#34;</span> : 0,
+                        <span style="color:#c30">&#34;code&#34;</span> : 11000,
+                        <span style="color:#c30">&#34;errmsg&#34;</span> : <span style="color:#c30">&#34;E11000 duplicate key error collection: test.accounts index: _id_ dup key: { : \&#34;account1\&#34; }&#34;</span>,
+                        <span style="color:#c30">&#34;op&#34;</span> : <span style="color:#555">{</span>
+                                <span style="color:#c30">&#34;_id&#34;</span> : <span style="color:#c30">&#34;account1&#34;</span>,
+                                <span style="color:#c30">&#34;name&#34;</span> : <span style="color:#c30">&#34;edwrad&#34;</span>,
+                                <span style="color:#c30">&#34;balance&#34;</span> : <span style="color:#f60">700</span>
+                        <span style="color:#555">}</span>
+                <span style="color:#555">}</span>
+        <span style="color:#555">]</span>,
+        <span style="color:#c30">&#34;writeConcernErrors&#34;</span> : <span style="color:#555">[</span> <span style="color:#555">]</span>,
+        <span style="color:#c30">&#34;nInserted&#34;</span> : 0,	<span style="color:#09f;font-style:italic"># 由于顺序写入，一旦遇到错误文档，剩余的文档无论正确错误都不会写入</span>
+        <span style="color:#c30">&#34;nUpserted&#34;</span> : 0,
+        <span style="color:#c30">&#34;nMatched&#34;</span> : 0,
+        <span style="color:#c30">&#34;nModified&#34;</span> : 0,
+        <span style="color:#c30">&#34;nRemoved&#34;</span> : 0,
+        <span style="color:#c30">&#34;upserted&#34;</span> : <span style="color:#555">[</span> <span style="color:#555">]</span>
+<span style="color:#555">})</span>
 
-<span style="color:#4e4e4e"># 乱序写入时遇到错误</span>
-&gt; try {
-...   db.accounts.insertMany( [
-...     {
-...       _id: <span style="color:#00afaf">&#34;account1&#34;</span>,
-...       name: <span style="color:#00afaf">&#34;edwrad&#34;</span>,
-...       balance: <span style="color:#00afaf">700</span>
-...     },
-...     {
-...       name: <span style="color:#00afaf">&#34;fred&#34;</span>,
-...       balance: <span style="color:#00afaf">20</span>
-...     }
-... ], { ordered: <span style="color:#0087ff">false</span> } )
-... } catch(e) {
-...   print(e)
-... }
-BulkWriteError({
-        <span style="color:#00afaf">&#34;writeErrors&#34;</span> : [
-                {
-                        <span style="color:#00afaf">&#34;index&#34;</span> : 0,
-                        <span style="color:#00afaf">&#34;code&#34;</span> : 11000,
-                        <span style="color:#00afaf">&#34;errmsg&#34;</span> : <span style="color:#00afaf">&#34;E11000 duplicate key error collection: test.accounts index: _id_ dup key: { : \&#34;account1\&#34; }&#34;</span>,
-                        <span style="color:#00afaf">&#34;op&#34;</span> : {
-                                <span style="color:#00afaf">&#34;_id&#34;</span> : <span style="color:#00afaf">&#34;account1&#34;</span>,
-                                <span style="color:#00afaf">&#34;name&#34;</span> : <span style="color:#00afaf">&#34;edwrad&#34;</span>,
-                                <span style="color:#00afaf">&#34;balance&#34;</span> : <span style="color:#00afaf">700</span>
-                        }
-                }
-        ],
-        <span style="color:#00afaf">&#34;writeConcernErrors&#34;</span> : [ ],
-        <span style="color:#00afaf">&#34;nInserted&#34;</span> : 1,	<span style="color:#4e4e4e"># 插入的文档个数为1</span>
-        <span style="color:#00afaf">&#34;nUpserted&#34;</span> : 0,
-        <span style="color:#00afaf">&#34;nMatched&#34;</span> : 0,
-        <span style="color:#00afaf">&#34;nModified&#34;</span> : 0,
-        <span style="color:#00afaf">&#34;nRemoved&#34;</span> : 0,
-        <span style="color:#00afaf">&#34;upserted&#34;</span> : [ ]
-})
+<span style="color:#09f;font-style:italic"># 乱序写入时遇到错误</span>
+&gt; try <span style="color:#555">{</span>
+...   db.accounts.insertMany<span style="color:#555">(</span> <span style="color:#555">[</span>
+...     <span style="color:#555">{</span>
+...       _id: <span style="color:#c30">&#34;account1&#34;</span>,
+...       name: <span style="color:#c30">&#34;edwrad&#34;</span>,
+...       balance: <span style="color:#f60">700</span>
+...     <span style="color:#555">}</span>,
+...     <span style="color:#555">{</span>
+...       name: <span style="color:#c30">&#34;fred&#34;</span>,
+...       balance: <span style="color:#f60">20</span>
+...     <span style="color:#555">}</span>
+... <span style="color:#555">]</span>, <span style="color:#555">{</span> ordered: <span style="color:#366">false</span> <span style="color:#555">}</span> <span style="color:#555">)</span>
+... <span style="color:#555">}</span> catch<span style="color:#555">(</span>e<span style="color:#555">)</span> <span style="color:#555">{</span>
+...   print<span style="color:#555">(</span>e<span style="color:#555">)</span>
+... <span style="color:#555">}</span>
+BulkWriteError<span style="color:#555">({</span>
+        <span style="color:#c30">&#34;writeErrors&#34;</span> : <span style="color:#555">[</span>
+                <span style="color:#555">{</span>
+                        <span style="color:#c30">&#34;index&#34;</span> : 0,
+                        <span style="color:#c30">&#34;code&#34;</span> : 11000,
+                        <span style="color:#c30">&#34;errmsg&#34;</span> : <span style="color:#c30">&#34;E11000 duplicate key error collection: test.accounts index: _id_ dup key: { : \&#34;account1\&#34; }&#34;</span>,
+                        <span style="color:#c30">&#34;op&#34;</span> : <span style="color:#555">{</span>
+                                <span style="color:#c30">&#34;_id&#34;</span> : <span style="color:#c30">&#34;account1&#34;</span>,
+                                <span style="color:#c30">&#34;name&#34;</span> : <span style="color:#c30">&#34;edwrad&#34;</span>,
+                                <span style="color:#c30">&#34;balance&#34;</span> : <span style="color:#f60">700</span>
+                        <span style="color:#555">}</span>
+                <span style="color:#555">}</span>
+        <span style="color:#555">]</span>,
+        <span style="color:#c30">&#34;writeConcernErrors&#34;</span> : <span style="color:#555">[</span> <span style="color:#555">]</span>,
+        <span style="color:#c30">&#34;nInserted&#34;</span> : 1,	<span style="color:#09f;font-style:italic"># 插入的文档个数为1</span>
+        <span style="color:#c30">&#34;nUpserted&#34;</span> : 0,
+        <span style="color:#c30">&#34;nMatched&#34;</span> : 0,
+        <span style="color:#c30">&#34;nModified&#34;</span> : 0,
+        <span style="color:#c30">&#34;nRemoved&#34;</span> : 0,
+        <span style="color:#c30">&#34;upserted&#34;</span> : <span style="color:#555">[</span> <span style="color:#555">]</span>
+<span style="color:#555">})</span>
 </code></pre></div><h3 id="insert方法">
   insert()方法
   <a class="heading-link" href="#insert%e6%96%b9%e6%b3%95">
     <i class="fa fa-link" aria-hidden="true"></i>
   </a>
 </h3>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#4e4e4e">### insert()方法</span>
-db.&lt;collection&gt;.insert(
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#09f;font-style:italic">### insert()方法</span>
+db.&lt;collection&gt;.insert<span style="color:#555">(</span>
 	&lt;document or array of documents&gt;,
-	{
+	<span style="color:#555">{</span>
 		writeConcern: &lt;document&gt;,
 		ordered: &lt;boolean&gt;
-	}
-)
+	<span style="color:#555">}</span>
+<span style="color:#555">)</span>
 
-<span style="color:#4e4e4e"># 创建单个或多个文档</span>
-&gt; db.accounts.insert(
-... {
-...   name: <span style="color:#00afaf">&#34;george&#34;</span>,
-...   balance: <span style="color:#00afaf">1000</span>
-... }
-... )
-WriteResult({ <span style="color:#00afaf">&#34;nInserted&#34;</span> : <span style="color:#00afaf">1</span> })
+<span style="color:#09f;font-style:italic"># 创建单个或多个文档</span>
+&gt; db.accounts.insert<span style="color:#555">(</span>
+... <span style="color:#555">{</span>
+...   name: <span style="color:#c30">&#34;george&#34;</span>,
+...   balance: <span style="color:#f60">1000</span>
+... <span style="color:#555">}</span>
+... <span style="color:#555">)</span>
+WriteResult<span style="color:#555">({</span> <span style="color:#c30">&#34;nInserted&#34;</span> : <span style="color:#f60">1</span> <span style="color:#555">})</span>
 </code></pre></div><h3 id="insertone-insertmany和insert的区别">
   insertOne, insertMany和insert的区别
   <a class="heading-link" href="#insertone-insertmany%e5%92%8cinsert%e7%9a%84%e5%8c%ba%e5%88%ab">
@@ -404,79 +411,79 @@ WriteResult({ <span style="color:#00afaf">&#34;nInserted&#34;</span> : <span sty
 <ol>
 <li>三个命令返回的结果文档格式不一样</li>
 </ol>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#4e4e4e"># insertOne返回的正确结果文档</span>
-{ <span style="color:#00afaf">&#34;acknowledged&#34;</span> : true, <span style="color:#00afaf">&#34;insertedId&#34;</span> : <span style="color:#00afaf">&#34;account1&#34;</span> }
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#09f;font-style:italic"># insertOne返回的正确结果文档</span>
+<span style="color:#555">{</span> <span style="color:#c30">&#34;acknowledged&#34;</span> : true, <span style="color:#c30">&#34;insertedId&#34;</span> : <span style="color:#c30">&#34;account1&#34;</span> <span style="color:#555">}</span>
 
-<span style="color:#4e4e4e"># insertOne返回的错误结果文档</span>
-WriteError({
-        <span style="color:#00afaf">&#34;index&#34;</span> : 0,
-        <span style="color:#00afaf">&#34;code&#34;</span> : 11000,
-        <span style="color:#00afaf">&#34;errmsg&#34;</span> : <span style="color:#00afaf">&#34;E11000 duplicate key error collection: test.accounts index: _id_ dup key: { : \&#34;account1\&#34; }&#34;</span>,
-        <span style="color:#00afaf">&#34;op&#34;</span> : {
-                <span style="color:#00afaf">&#34;_id&#34;</span> : <span style="color:#00afaf">&#34;account1&#34;</span>,
-                <span style="color:#00afaf">&#34;name&#34;</span> : <span style="color:#00afaf">&#34;bob&#34;</span>,
-                <span style="color:#00afaf">&#34;balance&#34;</span> : <span style="color:#00afaf">50</span>
-        }
-})
-</code></pre></div><div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#4e4e4e"># insertMany返回的正确结果文档</span>
-{ <span style="color:#00afaf">&#34;acknowledged&#34;</span> : true, <span style="color:#00afaf">&#34;insertedId&#34;</span> : <span style="color:#00afaf">&#34;account1&#34;</span> }
+<span style="color:#09f;font-style:italic"># insertOne返回的错误结果文档</span>
+WriteError<span style="color:#555">({</span>
+        <span style="color:#c30">&#34;index&#34;</span> : 0,
+        <span style="color:#c30">&#34;code&#34;</span> : 11000,
+        <span style="color:#c30">&#34;errmsg&#34;</span> : <span style="color:#c30">&#34;E11000 duplicate key error collection: test.accounts index: _id_ dup key: { : \&#34;account1\&#34; }&#34;</span>,
+        <span style="color:#c30">&#34;op&#34;</span> : <span style="color:#555">{</span>
+                <span style="color:#c30">&#34;_id&#34;</span> : <span style="color:#c30">&#34;account1&#34;</span>,
+                <span style="color:#c30">&#34;name&#34;</span> : <span style="color:#c30">&#34;bob&#34;</span>,
+                <span style="color:#c30">&#34;balance&#34;</span> : <span style="color:#f60">50</span>
+        <span style="color:#555">}</span>
+<span style="color:#555">})</span>
+</code></pre></div><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#09f;font-style:italic"># insertMany返回的正确结果文档</span>
+<span style="color:#555">{</span> <span style="color:#c30">&#34;acknowledged&#34;</span> : true, <span style="color:#c30">&#34;insertedId&#34;</span> : <span style="color:#c30">&#34;account1&#34;</span> <span style="color:#555">}</span>
 
-<span style="color:#4e4e4e"># insertMany返回的错误结果文档</span>
-WriteError({
-        <span style="color:#00afaf">&#34;index&#34;</span> : 0,
-        <span style="color:#00afaf">&#34;code&#34;</span> : 11000,
-        <span style="color:#00afaf">&#34;errmsg&#34;</span> : <span style="color:#00afaf">&#34;E11000 duplicate key error collection: test.accounts index: _id_ dup key: { : \&#34;account1\&#34; }&#34;</span>,
-        <span style="color:#00afaf">&#34;op&#34;</span> : {
-                <span style="color:#00afaf">&#34;_id&#34;</span> : <span style="color:#00afaf">&#34;account1&#34;</span>,
-                <span style="color:#00afaf">&#34;name&#34;</span> : <span style="color:#00afaf">&#34;bob&#34;</span>,
-                <span style="color:#00afaf">&#34;balance&#34;</span> : <span style="color:#00afaf">50</span>
-        }
-})
-</code></pre></div><div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#4e4e4e"># insert写入单个文档返回的正确结果文档</span>
-WriteResult({ <span style="color:#00afaf">&#34;nInserted&#34;</span> : <span style="color:#00afaf">1</span> })
+<span style="color:#09f;font-style:italic"># insertMany返回的错误结果文档</span>
+WriteError<span style="color:#555">({</span>
+        <span style="color:#c30">&#34;index&#34;</span> : 0,
+        <span style="color:#c30">&#34;code&#34;</span> : 11000,
+        <span style="color:#c30">&#34;errmsg&#34;</span> : <span style="color:#c30">&#34;E11000 duplicate key error collection: test.accounts index: _id_ dup key: { : \&#34;account1\&#34; }&#34;</span>,
+        <span style="color:#c30">&#34;op&#34;</span> : <span style="color:#555">{</span>
+                <span style="color:#c30">&#34;_id&#34;</span> : <span style="color:#c30">&#34;account1&#34;</span>,
+                <span style="color:#c30">&#34;name&#34;</span> : <span style="color:#c30">&#34;bob&#34;</span>,
+                <span style="color:#c30">&#34;balance&#34;</span> : <span style="color:#f60">50</span>
+        <span style="color:#555">}</span>
+<span style="color:#555">})</span>
+</code></pre></div><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#09f;font-style:italic"># insert写入单个文档返回的正确结果文档</span>
+WriteResult<span style="color:#555">({</span> <span style="color:#c30">&#34;nInserted&#34;</span> : <span style="color:#f60">1</span> <span style="color:#555">})</span>
 
-<span style="color:#4e4e4e"># insert写入单个文档返回的错误结果文档</span>
-WriteResult({
-        <span style="color:#00afaf">&#34;nInserted&#34;</span> : 0,
-        <span style="color:#00afaf">&#34;writeError&#34;</span> : {
-                <span style="color:#00afaf">&#34;code&#34;</span> : 11000,
-                <span style="color:#00afaf">&#34;errmsg&#34;</span> : <span style="color:#00afaf">&#34;E11000 duplicate key error collection: test.accounts index: _id_ dup key: { : \&#34;account1\&#34; }&#34;</span>
-        }
-})
+<span style="color:#09f;font-style:italic"># insert写入单个文档返回的错误结果文档</span>
+WriteResult<span style="color:#555">({</span>
+        <span style="color:#c30">&#34;nInserted&#34;</span> : 0,
+        <span style="color:#c30">&#34;writeError&#34;</span> : <span style="color:#555">{</span>
+                <span style="color:#c30">&#34;code&#34;</span> : 11000,
+                <span style="color:#c30">&#34;errmsg&#34;</span> : <span style="color:#c30">&#34;E11000 duplicate key error collection: test.accounts index: _id_ dup key: { : \&#34;account1\&#34; }&#34;</span>
+        <span style="color:#555">}</span>
+<span style="color:#555">})</span>
 
-<span style="color:#4e4e4e"># insert写入多个文档返回的正确结果文档</span>
-BulkWriteResult({
-        <span style="color:#00afaf">&#34;writeErrors&#34;</span> : [ ],
-        <span style="color:#00afaf">&#34;writeConcernErrors&#34;</span> : [ ],
-        <span style="color:#00afaf">&#34;nInserted&#34;</span> : 2,
-        <span style="color:#00afaf">&#34;nUpserted&#34;</span> : 0,
-        <span style="color:#00afaf">&#34;nMatched&#34;</span> : 0,
-        <span style="color:#00afaf">&#34;nModified&#34;</span> : 0,
-        <span style="color:#00afaf">&#34;nRemoved&#34;</span> : 0,
-        <span style="color:#00afaf">&#34;upserted&#34;</span> : [ ]
-})
+<span style="color:#09f;font-style:italic"># insert写入多个文档返回的正确结果文档</span>
+BulkWriteResult<span style="color:#555">({</span>
+        <span style="color:#c30">&#34;writeErrors&#34;</span> : <span style="color:#555">[</span> <span style="color:#555">]</span>,
+        <span style="color:#c30">&#34;writeConcernErrors&#34;</span> : <span style="color:#555">[</span> <span style="color:#555">]</span>,
+        <span style="color:#c30">&#34;nInserted&#34;</span> : 2,
+        <span style="color:#c30">&#34;nUpserted&#34;</span> : 0,
+        <span style="color:#c30">&#34;nMatched&#34;</span> : 0,
+        <span style="color:#c30">&#34;nModified&#34;</span> : 0,
+        <span style="color:#c30">&#34;nRemoved&#34;</span> : 0,
+        <span style="color:#c30">&#34;upserted&#34;</span> : <span style="color:#555">[</span> <span style="color:#555">]</span>
+<span style="color:#555">})</span>
 
-<span style="color:#4e4e4e"># insert写入多个文档返回的错误结果文档</span>
-BulkWriteResult({
-        <span style="color:#00afaf">&#34;writeErrors&#34;</span> : [
-                {
-                        <span style="color:#00afaf">&#34;index&#34;</span> : 0,
-                        <span style="color:#00afaf">&#34;code&#34;</span> : 11000,
-                        <span style="color:#00afaf">&#34;errmsg&#34;</span> : <span style="color:#00afaf">&#34;E11000 duplicate key error collection: test.accounts index: _id_ dup key: { : \&#34;account1\&#34; }&#34;</span>,
-                        <span style="color:#00afaf">&#34;op&#34;</span> : {
-                                <span style="color:#00afaf">&#34;_id&#34;</span> : <span style="color:#00afaf">&#34;account1&#34;</span>,
-                                <span style="color:#00afaf">&#34;name&#34;</span> : <span style="color:#00afaf">&#34;jimmy&#34;</span>,
-                                <span style="color:#00afaf">&#34;balance&#34;</span> : <span style="color:#00afaf">333</span>
-                        }
-                }
-        ],
-        <span style="color:#00afaf">&#34;writeConcernErrors&#34;</span> : [ ],
-        <span style="color:#00afaf">&#34;nInserted&#34;</span> : 0,
-        <span style="color:#00afaf">&#34;nUpserted&#34;</span> : 0,
-        <span style="color:#00afaf">&#34;nMatched&#34;</span> : 0,
-        <span style="color:#00afaf">&#34;nModified&#34;</span> : 0,
-        <span style="color:#00afaf">&#34;nRemoved&#34;</span> : 0,
-        <span style="color:#00afaf">&#34;upserted&#34;</span> : [ ]  
+<span style="color:#09f;font-style:italic"># insert写入多个文档返回的错误结果文档</span>
+BulkWriteResult<span style="color:#555">({</span>
+        <span style="color:#c30">&#34;writeErrors&#34;</span> : <span style="color:#555">[</span>
+                <span style="color:#555">{</span>
+                        <span style="color:#c30">&#34;index&#34;</span> : 0,
+                        <span style="color:#c30">&#34;code&#34;</span> : 11000,
+                        <span style="color:#c30">&#34;errmsg&#34;</span> : <span style="color:#c30">&#34;E11000 duplicate key error collection: test.accounts index: _id_ dup key: { : \&#34;account1\&#34; }&#34;</span>,
+                        <span style="color:#c30">&#34;op&#34;</span> : <span style="color:#555">{</span>
+                                <span style="color:#c30">&#34;_id&#34;</span> : <span style="color:#c30">&#34;account1&#34;</span>,
+                                <span style="color:#c30">&#34;name&#34;</span> : <span style="color:#c30">&#34;jimmy&#34;</span>,
+                                <span style="color:#c30">&#34;balance&#34;</span> : <span style="color:#f60">333</span>
+                        <span style="color:#555">}</span>
+                <span style="color:#555">}</span>
+        <span style="color:#555">]</span>,
+        <span style="color:#c30">&#34;writeConcernErrors&#34;</span> : <span style="color:#555">[</span> <span style="color:#555">]</span>,
+        <span style="color:#c30">&#34;nInserted&#34;</span> : 0,
+        <span style="color:#c30">&#34;nUpserted&#34;</span> : 0,
+        <span style="color:#c30">&#34;nMatched&#34;</span> : 0,
+        <span style="color:#c30">&#34;nModified&#34;</span> : 0,
+        <span style="color:#c30">&#34;nRemoved&#34;</span> : 0,
+        <span style="color:#c30">&#34;upserted&#34;</span> : <span style="color:#555">[</span> <span style="color:#555">]</span>  
 </code></pre></div><ol start="2">
 <li>insertOne和insertMany命令不支持db.collection.explain()命令；insert支持db.collection.explain()命令</li>
 </ol>
@@ -486,46 +493,46 @@ BulkWriteResult({
     <i class="fa fa-link" aria-hidden="true"></i>
   </a>
 </h3>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#4e4e4e"># save()方法</span>
-db.collection.save(
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#09f;font-style:italic"># save()方法</span>
+db.collection.save<span style="color:#555">(</span>
 	&lt;document&gt;,
-	{
+	<span style="color:#555">{</span>
 		writeConcern: &lt;document&gt;
-	}
-)
+	<span style="color:#555">}</span>
+<span style="color:#555">)</span>
 
-<span style="color:#4e4e4e"># 当db.collection.save()命令处理一个新文档时，它会调用db.collection.insert()命令(返回文档与insert方法相同)</span>
+<span style="color:#09f;font-style:italic"># 当db.collection.save()命令处理一个新文档时，它会调用db.collection.insert()命令(返回文档与insert方法相同)</span>
 </code></pre></div><h3 id="对象主键和复合主键">
   对象主键和复合主键
   <a class="heading-link" href="#%e5%af%b9%e8%b1%a1%e4%b8%bb%e9%94%ae%e5%92%8c%e5%a4%8d%e5%90%88%e4%b8%bb%e9%94%ae">
     <i class="fa fa-link" aria-hidden="true"></i>
   </a>
 </h3>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">&gt; ObjectId()
-ObjectId(<span style="color:#00afaf">&#34;5fe5f0416cf5f5ae20ce0a65&#34;</span>)
-&gt; ObjectId().getTimestamp()	<span style="color:#4e4e4e"># 提取ObjectId的创建时间</span>
-ISODate(<span style="color:#00afaf">&#34;2020-12-25T13:59:38Z&#34;</span>)
-&gt; ObjectId(<span style="color:#00afaf">&#34;5fe5f0416cf5f5ae20ce0a80&#34;</span>)	<span style="color:#4e4e4e"># 重新赋值ObjectId</span>
-ObjectId(<span style="color:#00afaf">&#34;5fe5f0416cf5f5ae20ce0a80&#34;</span>)
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">&gt; ObjectId<span style="color:#555">()</span>
+ObjectId<span style="color:#555">(</span><span style="color:#c30">&#34;5fe5f0416cf5f5ae20ce0a65&#34;</span><span style="color:#555">)</span>
+&gt; ObjectId<span style="color:#555">()</span>.getTimestamp<span style="color:#555">()</span>	<span style="color:#09f;font-style:italic"># 提取ObjectId的创建时间</span>
+ISODate<span style="color:#555">(</span><span style="color:#c30">&#34;2020-12-25T13:59:38Z&#34;</span><span style="color:#555">)</span>
+&gt; ObjectId<span style="color:#555">(</span><span style="color:#c30">&#34;5fe5f0416cf5f5ae20ce0a80&#34;</span><span style="color:#555">)</span>	<span style="color:#09f;font-style:italic"># 重新赋值ObjectId</span>
+ObjectId<span style="color:#555">(</span><span style="color:#c30">&#34;5fe5f0416cf5f5ae20ce0a80&#34;</span><span style="color:#555">)</span>
 </code></pre></div><p>复合主键可以使用文档作为文档主键，但仍然要满足主键的唯一性</p>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#4e4e4e"># 第一次创建</span>
-&gt; db.accounts.insert(
-...   {
-...     _id: { accountNo: <span style="color:#00afaf">&#34;101&#34;</span>, type: <span style="color:#00afaf">&#34;savings&#34;</span> },
-...     name: <span style="color:#00afaf">&#34;irene&#34;</span>,
-...     balance: <span style="color:#00afaf">80</span>
-...   }
-... )
-WriteResult({ <span style="color:#00afaf">&#34;nInserted&#34;</span> : <span style="color:#00afaf">1</span> })
-<span style="color:#4e4e4e"># 第二次创建</span>
-&gt; db.accounts.insert(   {     _id: { accountNo: <span style="color:#00afaf">&#34;101&#34;</span>, type: <span style="color:#00afaf">&#34;savings&#34;</span> },     name: <span style="color:#00afaf">&#34;irene&#34;</span>,     balance: <span style="color:#00afaf">80</span>   } )
-WriteResult({
-        <span style="color:#00afaf">&#34;nInserted&#34;</span> : 0,
-        <span style="color:#00afaf">&#34;writeError&#34;</span> : {
-                <span style="color:#00afaf">&#34;code&#34;</span> : 11000,
-                <span style="color:#00afaf">&#34;errmsg&#34;</span> : <span style="color:#00afaf">&#34;E11000 duplicate key error collection: test.accounts index: _id_ dup key: { : { accountNo: \&#34;101\&#34;, type: \&#34;savings\&#34; } }&#34;</span>
-        }
-})
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#09f;font-style:italic"># 第一次创建</span>
+&gt; db.accounts.insert<span style="color:#555">(</span>
+...   <span style="color:#555">{</span>
+...     _id: <span style="color:#555">{</span> accountNo: <span style="color:#c30">&#34;101&#34;</span>, type: <span style="color:#c30">&#34;savings&#34;</span> <span style="color:#555">}</span>,
+...     name: <span style="color:#c30">&#34;irene&#34;</span>,
+...     balance: <span style="color:#f60">80</span>
+...   <span style="color:#555">}</span>
+... <span style="color:#555">)</span>
+WriteResult<span style="color:#555">({</span> <span style="color:#c30">&#34;nInserted&#34;</span> : <span style="color:#f60">1</span> <span style="color:#555">})</span>
+<span style="color:#09f;font-style:italic"># 第二次创建</span>
+&gt; db.accounts.insert<span style="color:#555">(</span>   <span style="color:#555">{</span>     _id: <span style="color:#555">{</span> accountNo: <span style="color:#c30">&#34;101&#34;</span>, type: <span style="color:#c30">&#34;savings&#34;</span> <span style="color:#555">}</span>,     name: <span style="color:#c30">&#34;irene&#34;</span>,     balance: <span style="color:#f60">80</span>   <span style="color:#555">}</span> <span style="color:#555">)</span>
+WriteResult<span style="color:#555">({</span>
+        <span style="color:#c30">&#34;nInserted&#34;</span> : 0,
+        <span style="color:#c30">&#34;writeError&#34;</span> : <span style="color:#555">{</span>
+                <span style="color:#c30">&#34;code&#34;</span> : 11000,
+                <span style="color:#c30">&#34;errmsg&#34;</span> : <span style="color:#c30">&#34;E11000 duplicate key error collection: test.accounts index: _id_ dup key: { : { accountNo: \&#34;101\&#34;, type: \&#34;savings\&#34; } }&#34;</span>
+        <span style="color:#555">}</span>
+<span style="color:#555">})</span>
 </code></pre></div><h2 id="read读取">
   Read(读取)
   <a class="heading-link" href="#read%e8%af%bb%e5%8f%96">
@@ -593,6 +600,22 @@ WriteResult({
       </div>
 
       
+  <footer class="footer">
+    <section class="container">
+      
+        <p>粤ICP备2021007187号-1</p>
+      
+      
+        ©
+        
+        2021
+         xblzbjs 
+      
+      
+      
+    </section>
+  </footer>
+
 
     </main>
 
@@ -616,13 +639,13 @@ WriteResult({
     
 
     
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-192697137-1"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QYYHFCMJHS"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-192697137-1');
+  gtag('config', 'G-QYYHFCMJHS');
 </script>
 
   </body>

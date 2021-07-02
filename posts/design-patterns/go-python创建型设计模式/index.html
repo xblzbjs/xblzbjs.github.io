@@ -12,7 +12,7 @@
 
     
 
-    <meta name="author" content="行百里者半九十">
+    <meta name="author" content="xblzbjs">
     <meta name="description" content="常见创建型设计模式     工厂模式（Factory）：解决对象创建问题 构造模式（Builder）：控制复杂对象的创建 原型模式（Prototype）：通过原型的克隆创建新的实例 单例（Borg/Singleton）：一个类只能创建同一个对象 对象池模式（Pool）：预先分配同一类型的一组实例 惰性计算模式（Lazy Evaluation）：延迟计算（python的property）  1.工厂模式    解决了什么问题：
  解决对象创建问题 解耦对象的创建和使用 包括工厂方法和抽象工厂  # 工厂方法 class DogToy: def speak(self): print(&#34;wang wang&#34;) class CatToy: def speak(self): print(&#34;miao miao&#34;) def toy_factory(toy_type): if toy_type == &#39;dog&#39;: return DogToy() elif toy_type == &#39;cat&#39;: return CatToy() 2.构造模式    什么是构造模式：
  用来控制复杂对象的构造 创建和表示分离。比如你要买电脑，工厂模式直接给你需要的电脑 但是构造模式允许你自己定义电脑的配置，组装完成后给你  3.原型模式    什么是原型模式：
@@ -39,7 +39,7 @@
 
 
     <title>
-  Go &amp; Python｜创建型设计模式 · 行百里者半九十
+  Go &amp; Python｜创建型设计模式 · xblzbjs
 </title>
 
     
@@ -69,11 +69,14 @@
     
 
     <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16">
 
     <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 
+    
+      <script defer src="https://twemoji.maxcdn.com/v/13.0.2/twemoji.min.js"
+        integrity="sha384-wyB/MspSJ/r2bT2kCj44qtsYRYlpzO2oAPhRj5myrWD63dt6qWv4x8AZe7Fl3K3b" crossorigin="anonymous"></script>
     
 
     <meta name="generator" content="Hugo 0.83.1" />
@@ -84,7 +87,7 @@
     
   
   <body class="preload-transitions colorscheme-auto"
-        onload=""
+        onload=" twemoji.parse(document.body); "
   >
     
 <div class="float-container">
@@ -98,7 +101,7 @@
       <nav class="navigation">
   <section class="container">
     <a class="navigation-title" href="/">
-      行百里者半九十
+      xblzbjs
     </a>
     
       <input type="checkbox" id="menu-toggle" />
@@ -118,6 +121,10 @@
           
             <li class="navigation-item">
               <a class="navigation-link" href="/tags/">标签</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">关于</a>
             </li>
           
             <li class="navigation-item">
@@ -203,20 +210,20 @@
 <li>解耦对象的创建和使用</li>
 <li>包括工厂方法和抽象工厂</li>
 </ul>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#4e4e4e"># 工厂方法</span>
-<span style="color:#5f8700">class</span> <span style="color:#0087ff">DogToy</span>:
-    <span style="color:#5f8700">def</span> <span style="color:#0087ff">speak</span>(<span style="color:#0087ff">self</span>):
-        <span style="color:#5f8700">print</span>(<span style="color:#00afaf">&#34;wang wang&#34;</span>)
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#09f;font-style:italic"># 工厂方法</span>
+<span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">DogToy</span>:
+    <span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">speak</span>(self):
+        <span style="color:#069;font-weight:bold">print</span>(<span style="color:#c30">&#34;wang wang&#34;</span>)
         
-<span style="color:#5f8700">class</span> <span style="color:#0087ff">CatToy</span>:
-    <span style="color:#5f8700">def</span> <span style="color:#0087ff">speak</span>(<span style="color:#0087ff">self</span>):
-        <span style="color:#5f8700">print</span>(<span style="color:#00afaf">&#34;miao miao&#34;</span>)
+<span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">CatToy</span>:
+    <span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">speak</span>(self):
+        <span style="color:#069;font-weight:bold">print</span>(<span style="color:#c30">&#34;miao miao&#34;</span>)
         
-<span style="color:#5f8700">def</span> <span style="color:#0087ff">toy_factory</span>(toy_type):
-    <span style="color:#5f8700">if</span> toy_type == <span style="color:#00afaf">&#39;dog&#39;</span>:
-        <span style="color:#5f8700">return</span> DogToy()
-    <span style="color:#5f8700">elif</span> toy_type == <span style="color:#00afaf">&#39;cat&#39;</span>:
-        <span style="color:#5f8700">return</span> CatToy()
+<span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">toy_factory</span>(toy_type):
+    <span style="color:#069;font-weight:bold">if</span> toy_type <span style="color:#555">==</span> <span style="color:#c30">&#39;dog&#39;</span>:
+        <span style="color:#069;font-weight:bold">return</span> DogToy()
+    <span style="color:#069;font-weight:bold">elif</span> toy_type <span style="color:#555">==</span> <span style="color:#c30">&#39;cat&#39;</span>:
+        <span style="color:#069;font-weight:bold">return</span> CatToy()
         
 </code></pre></div><h2 id="2构造模式">
   2.构造模式
@@ -254,20 +261,20 @@
 <li>Python的模块其实就是单例的，只会导入一次（import）</li>
 <li>使用共享同一个实例的方式来创建单例模式</li>
 </ul>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#4e4e4e"># 单例模式</span>
-<span style="color:#5f8700">class</span> <span style="color:#0087ff">Singleton</span>:
-    <span style="color:#5f8700">def</span> __new__(<span style="color:#0087ff">cls</span>, *args, **kwargs):
-        <span style="color:#5f8700">if</span> <span style="color:#5f8700">not</span> <span style="color:#0087ff">hasattr</span>(<span style="color:#0087ff">cls</span>, <span style="color:#00afaf">&#39;_instance&#39;</span>):
-            _instance = <span style="color:#0087ff">super</span>().__new__(<span style="color:#0087ff">cls</span>, *args, **kwargs)
-            <span style="color:#0087ff">cls</span>.instance = _instance
-            <span style="color:#5f8700">return</span> <span style="color:#0087ff">cls</span>._instance
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#09f;font-style:italic"># 单例模式</span>
+<span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">Singleton</span>:
+    <span style="color:#069;font-weight:bold">def</span> __new__(cls, <span style="color:#555">*</span>args, <span style="color:#555">**</span>kwargs):
+        <span style="color:#069;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">not</span> <span style="color:#366">hasattr</span>(cls, <span style="color:#c30">&#39;_instance&#39;</span>):
+            _instance <span style="color:#555">=</span> <span style="color:#366">super</span>()<span style="color:#555">.</span>__new__(cls, <span style="color:#555">*</span>args, <span style="color:#555">**</span>kwargs)
+            cls<span style="color:#555">.</span>instance <span style="color:#555">=</span> _instance
+            <span style="color:#069;font-weight:bold">return</span> cls<span style="color:#555">.</span>_instance
 
-<span style="color:#5f8700">class</span> <span style="color:#0087ff">MyClass</span>(Singleton):
-    <span style="color:#5f8700">pass</span>
+<span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">MyClass</span>(Singleton):
+    <span style="color:#069;font-weight:bold">pass</span>
 
-c1 = MyClass()
-c2 = MyClass()
-<span style="color:#5f8700">assert</span> c1 <span style="color:#5f8700">is</span> c2 <span style="color:#4e4e4e"># c1, c2是同一个实例</span>
+c1 <span style="color:#555">=</span> MyClass()
+c2 <span style="color:#555">=</span> MyClass()
+<span style="color:#069;font-weight:bold">assert</span> c1 <span style="color:#000;font-weight:bold">is</span> c2 <span style="color:#09f;font-style:italic"># c1, c2是同一个实例</span>
 </code></pre></div><h2 id="参考">
   参考
   <a class="heading-link" href="#%e5%8f%82%e8%80%83">
@@ -295,6 +302,22 @@ c2 = MyClass()
       </div>
 
       
+  <footer class="footer">
+    <section class="container">
+      
+        <p>粤ICP备2021007187号-1</p>
+      
+      
+        ©
+        
+        2021
+         xblzbjs 
+      
+      
+      
+    </section>
+  </footer>
+
 
     </main>
 
@@ -318,13 +341,13 @@ c2 = MyClass()
     
 
     
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-192697137-1"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QYYHFCMJHS"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-192697137-1');
+  gtag('config', 'G-QYYHFCMJHS');
 </script>
 
   </body>

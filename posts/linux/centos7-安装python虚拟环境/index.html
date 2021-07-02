@@ -12,7 +12,7 @@
 
     
 
-    <meta name="author" content="行百里者半九十">
+    <meta name="author" content="xblzbjs">
     <meta name="description" content="virtualenv和virtualenvwrapper安装    pip 3 安装    pip3 install virtualenv -i https://mirrors.aliyun.com/pypi/simple/ 安装virtualenvwrapper工具管理虚拟环境    pip3 install virtualenvwrapper -i https://mirrors.aliyun.com/pypi/simple/ # 报错 [root@centos ~]# pip3 install virtualenvwrapper -i https://mirrors.aliyun.com/pypi/simple/ Looking in indexes: http://mirrors.tencentyun.com/pypi/simple Collecting virtualenvwrapper Downloading http://mirrors.tencentyun.com/pypi/packages/c1/6b/2f05d73b2d2f2410b48b90d3783a0034c26afa534a4a95ad5f1178d61191/virtualenvwrapper-4.8.4.tar.gz (334 kB) |████████████████████████████████| 334 kB 832 kB/s ERROR: Command errored out with exit status 1: command: /usr/local/python3/bin/python3.7 -c &#39;import sys, setuptools, tokenize; sys.argv[0] = &#39;&#34;&#39;&#34;&#39;/tmp/pip-install-f3bmqs9b/virtualenvwrapper_891e91f27f1f44e4b94d4cb51de96c5d/setup.py&#39;&#34;&#39;&#34;&#39;; __file__=&#39;&#34;&#39;&#34;&#39;/tmp/pip-install-f3bmqs9b/virtualenvwrapper_891e91f27f1f44e4b94d4cb51de96c5d/setup.py&#39;&#34;&#39;&#34;&#39;;f=getattr(tokenize, &#39;&#34;&#39;&#34;&#39;open&#39;&#34;&#39;&#34;&#39;, open)(__file__);code=f.read().replace(&#39;&#34;&#39;&#34;&#39;\r\n&#39;&#34;&#39;&#34;&#39;, &#39;&#34;&#39;&#34;&#39;\n&#39;&#34;&#39;&#34;&#39;);f.close();exec(compile(code, __file__, &#39;&#34;&#39;&#34;&#39;exec&#39;&#34;&#39;&#34;&#39;))&#39; egg_info --egg-base /tmp/pip-pip-egg-info-u879bw4z cwd: /tmp/pip-install-f3bmqs9b/virtualenvwrapper_891e91f27f1f44e4b94d4cb51de96c5d/ Complete output (11 lines): Traceback (most recent call last): File &#34;&lt;string&gt;&#34;, line 1, in &lt;module&gt; File &#34;/usr/local/python3/lib/python3.">
     <meta name="keywords" content="blog,developer,personal">
 
@@ -30,7 +30,7 @@
 
 
     <title>
-  CentOS7 | 安装Python虚拟环境 · 行百里者半九十
+  CentOS7 | 安装Python虚拟环境 · xblzbjs
 </title>
 
     
@@ -60,11 +60,14 @@
     
 
     <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16">
 
     <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 
+    
+      <script defer src="https://twemoji.maxcdn.com/v/13.0.2/twemoji.min.js"
+        integrity="sha384-wyB/MspSJ/r2bT2kCj44qtsYRYlpzO2oAPhRj5myrWD63dt6qWv4x8AZe7Fl3K3b" crossorigin="anonymous"></script>
     
 
     <meta name="generator" content="Hugo 0.83.1" />
@@ -75,7 +78,7 @@
     
   
   <body class="preload-transitions colorscheme-auto"
-        onload=""
+        onload=" twemoji.parse(document.body); "
   >
     
 <div class="float-container">
@@ -89,7 +92,7 @@
       <nav class="navigation">
   <section class="container">
     <a class="navigation-title" href="/">
-      行百里者半九十
+      xblzbjs
     </a>
     
       <input type="checkbox" id="menu-toggle" />
@@ -109,6 +112,10 @@
           
             <li class="navigation-item">
               <a class="navigation-link" href="/tags/">标签</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">关于</a>
             </li>
           
             <li class="navigation-item">
@@ -173,43 +180,43 @@
     <i class="fa fa-link" aria-hidden="true"></i>
   </a>
 </h3>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">pip3 install virtualenv -i https://mirrors.aliyun.com/pypi/simple/
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">pip3 install virtualenv -i https://mirrors.aliyun.com/pypi/simple/
 </code></pre></div><h3 id="安装virtualenvwrapper工具管理虚拟环境">
   安装virtualenvwrapper工具管理虚拟环境
   <a class="heading-link" href="#%e5%ae%89%e8%a3%85virtualenvwrapper%e5%b7%a5%e5%85%b7%e7%ae%a1%e7%90%86%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83">
     <i class="fa fa-link" aria-hidden="true"></i>
   </a>
 </h3>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">pip3 install virtualenvwrapper -i https://mirrors.aliyun.com/pypi/simple/
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">pip3 install virtualenvwrapper -i https://mirrors.aliyun.com/pypi/simple/
 
-<span style="color:#4e4e4e"># 报错</span>
-[root@centos ~]<span style="color:#4e4e4e"># pip3 install virtualenvwrapper -i https://mirrors.aliyun.com/pypi/simple/</span>
+<span style="color:#09f;font-style:italic"># 报错</span>
+<span style="color:#555">[</span>root@centos ~<span style="color:#555">]</span><span style="color:#09f;font-style:italic"># pip3 install virtualenvwrapper -i https://mirrors.aliyun.com/pypi/simple/</span>
 Looking in indexes: http://mirrors.tencentyun.com/pypi/simple
 Collecting virtualenvwrapper
-  Downloading http://mirrors.tencentyun.com/pypi/packages/c1/6b/2f05d73b2d2f2410b48b90d3783a0034c26afa534a4a95ad5f1178d61191/virtualenvwrapper-4.8.4.tar.gz (<span style="color:#00afaf">334</span> kB)
-     |████████████████████████████████| <span style="color:#00afaf">334</span> kB <span style="color:#00afaf">832</span> kB/s 
-    ERROR: Command errored out with <span style="color:#0087ff">exit</span> status 1:
-     command: /usr/local/python3/bin/python3.7 -c <span style="color:#00afaf">&#39;import sys, setuptools, tokenize; sys.argv[0] = &#39;</span><span style="color:#00afaf">&#34;&#39;&#34;</span><span style="color:#00afaf">&#39;/tmp/pip-install-f3bmqs9b/virtualenvwrapper_891e91f27f1f44e4b94d4cb51de96c5d/setup.py&#39;</span><span style="color:#00afaf">&#34;&#39;&#34;</span><span style="color:#00afaf">&#39;; __file__=&#39;</span><span style="color:#00afaf">&#34;&#39;&#34;</span><span style="color:#00afaf">&#39;/tmp/pip-install-f3bmqs9b/virtualenvwrapper_891e91f27f1f44e4b94d4cb51de96c5d/setup.py&#39;</span><span style="color:#00afaf">&#34;&#39;&#34;</span><span style="color:#00afaf">&#39;;f=getattr(tokenize, &#39;</span><span style="color:#00afaf">&#34;&#39;&#34;</span><span style="color:#00afaf">&#39;open&#39;</span><span style="color:#00afaf">&#34;&#39;&#34;</span><span style="color:#00afaf">&#39;, open)(__file__);code=f.read().replace(&#39;</span><span style="color:#00afaf">&#34;&#39;&#34;</span><span style="color:#00afaf">&#39;\r\n&#39;</span><span style="color:#00afaf">&#34;&#39;&#34;</span><span style="color:#00afaf">&#39;, &#39;</span><span style="color:#00afaf">&#34;&#39;&#34;</span><span style="color:#00afaf">&#39;\n&#39;</span><span style="color:#00afaf">&#34;&#39;&#34;</span><span style="color:#00afaf">&#39;);f.close();exec(compile(code, __file__, &#39;</span><span style="color:#00afaf">&#34;&#39;&#34;</span><span style="color:#00afaf">&#39;exec&#39;</span><span style="color:#00afaf">&#34;&#39;&#34;</span><span style="color:#00afaf">&#39;))&#39;</span> egg_info --egg-base /tmp/pip-pip-egg-info-u879bw4z
+  Downloading http://mirrors.tencentyun.com/pypi/packages/c1/6b/2f05d73b2d2f2410b48b90d3783a0034c26afa534a4a95ad5f1178d61191/virtualenvwrapper-4.8.4.tar.gz <span style="color:#555">(</span><span style="color:#f60">334</span> kB<span style="color:#555">)</span>
+     |████████████████████████████████| <span style="color:#f60">334</span> kB <span style="color:#f60">832</span> kB/s 
+    ERROR: Command errored out with <span style="color:#366">exit</span> status 1:
+     command: /usr/local/python3/bin/python3.7 -c <span style="color:#c30">&#39;import sys, setuptools, tokenize; sys.argv[0] = &#39;</span><span style="color:#c30">&#34;&#39;&#34;</span><span style="color:#c30">&#39;/tmp/pip-install-f3bmqs9b/virtualenvwrapper_891e91f27f1f44e4b94d4cb51de96c5d/setup.py&#39;</span><span style="color:#c30">&#34;&#39;&#34;</span><span style="color:#c30">&#39;; __file__=&#39;</span><span style="color:#c30">&#34;&#39;&#34;</span><span style="color:#c30">&#39;/tmp/pip-install-f3bmqs9b/virtualenvwrapper_891e91f27f1f44e4b94d4cb51de96c5d/setup.py&#39;</span><span style="color:#c30">&#34;&#39;&#34;</span><span style="color:#c30">&#39;;f=getattr(tokenize, &#39;</span><span style="color:#c30">&#34;&#39;&#34;</span><span style="color:#c30">&#39;open&#39;</span><span style="color:#c30">&#34;&#39;&#34;</span><span style="color:#c30">&#39;, open)(__file__);code=f.read().replace(&#39;</span><span style="color:#c30">&#34;&#39;&#34;</span><span style="color:#c30">&#39;\r\n&#39;</span><span style="color:#c30">&#34;&#39;&#34;</span><span style="color:#c30">&#39;, &#39;</span><span style="color:#c30">&#34;&#39;&#34;</span><span style="color:#c30">&#39;\n&#39;</span><span style="color:#c30">&#34;&#39;&#34;</span><span style="color:#c30">&#39;);f.close();exec(compile(code, __file__, &#39;</span><span style="color:#c30">&#34;&#39;&#34;</span><span style="color:#c30">&#39;exec&#39;</span><span style="color:#c30">&#34;&#39;&#34;</span><span style="color:#c30">&#39;))&#39;</span> egg_info --egg-base /tmp/pip-pip-egg-info-u879bw4z
          cwd: /tmp/pip-install-f3bmqs9b/virtualenvwrapper_891e91f27f1f44e4b94d4cb51de96c5d/
-    Complete output (<span style="color:#00afaf">11</span> lines):
-    Traceback (most recent call last):
-      File <span style="color:#00afaf">&#34;&lt;string&gt;&#34;</span>, line 1, in &lt;module&gt;
-      File <span style="color:#00afaf">&#34;/usr/local/python3/lib/python3.7/site-packages/setuptools/__init__.py&#34;</span>, line 19, in &lt;module&gt;
+    Complete output <span style="color:#555">(</span><span style="color:#f60">11</span> lines<span style="color:#555">)</span>:
+    Traceback <span style="color:#555">(</span>most recent call last<span style="color:#555">)</span>:
+      File <span style="color:#c30">&#34;&lt;string&gt;&#34;</span>, line 1, in &lt;module&gt;
+      File <span style="color:#c30">&#34;/usr/local/python3/lib/python3.7/site-packages/setuptools/__init__.py&#34;</span>, line 19, in &lt;module&gt;
         from setuptools.dist import Distribution
-      File <span style="color:#00afaf">&#34;/usr/local/python3/lib/python3.7/site-packages/setuptools/dist.py&#34;</span>, line 34, in &lt;module&gt;
+      File <span style="color:#c30">&#34;/usr/local/python3/lib/python3.7/site-packages/setuptools/dist.py&#34;</span>, line 34, in &lt;module&gt;
         from setuptools import windows_support
-      File <span style="color:#00afaf">&#34;/usr/local/python3/lib/python3.7/site-packages/setuptools/windows_support.py&#34;</span>, line 2, in &lt;module&gt;
+      File <span style="color:#c30">&#34;/usr/local/python3/lib/python3.7/site-packages/setuptools/windows_support.py&#34;</span>, line 2, in &lt;module&gt;
         import ctypes
-      File <span style="color:#00afaf">&#34;/usr/local/python3/lib/python3.7/ctypes/__init__.py&#34;</span>, line 7, in &lt;module&gt;
+      File <span style="color:#c30">&#34;/usr/local/python3/lib/python3.7/ctypes/__init__.py&#34;</span>, line 7, in &lt;module&gt;
         from _ctypes import Union, Structure, Array
-    ModuleNotFoundError: No module named <span style="color:#00afaf">&#39;_ctypes&#39;</span>
+    ModuleNotFoundError: No module named <span style="color:#c30">&#39;_ctypes&#39;</span>
     ----------------------------------------
-ERROR: Command errored out with <span style="color:#0087ff">exit</span> status 1: python setup.py egg_info Check the logs <span style="color:#5f8700">for</span> full <span style="color:#0087ff">command</span> output.
+ERROR: Command errored out with <span style="color:#366">exit</span> status 1: python setup.py egg_info Check the logs <span style="color:#069;font-weight:bold">for</span> full <span style="color:#366">command</span> output.
 </code></pre></div><p>原因：Python3中有个内置模块叫ctypes，它是Python3的外部函数库模块，它提供兼容C语言的数据类型，并通过它调用Linux系统下的共享库(Shared library)，此模块需要使用CentOS7系统中外部函数库(Foreign function library)的开发链接库(头文件和链接库)。由于在CentOS7系统中没有安装外部函数库(libffi)的开发链接库软件包，所以在安装pip的时候就报了&quot;ModuleNotFoundError: No module named &lsquo;_ctypes&rsquo;&ldquo;的错误。</p>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#4e4e4e"># 解决方案</span>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#09f;font-style:italic"># 解决方案</span>
 yum install libffi-devel -y
 
-<span style="color:#4e4e4e"># 进入python3.7目录重新安装python</span>
+<span style="color:#09f;font-style:italic"># 进入python3.7目录重新安装python</span>
 make&amp;make install
 </code></pre></div><h3 id="创建虚拟环境virtualenvs文件夹">
   创建虚拟环境(.virtualenvs)文件夹
@@ -217,31 +224,31 @@ make&amp;make install
     <i class="fa fa-link" aria-hidden="true"></i>
   </a>
 </h3>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mkdir .virtualenvs
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mkdir .virtualenvs
 </code></pre></div><h3 id="配置bashrc">
   配置bashrc
   <a class="heading-link" href="#%e9%85%8d%e7%bd%aebashrc">
     <i class="fa fa-link" aria-hidden="true"></i>
   </a>
 </h3>
-<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#4e4e4e"># 查找virtualenvwrapper.sh位置</span>
-[root@centos ~]<span style="color:#4e4e4e"># find / -name virtualenvwrapper.sh</span>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#09f;font-style:italic"># 查找virtualenvwrapper.sh位置</span>
+<span style="color:#555">[</span>root@centos ~<span style="color:#555">]</span><span style="color:#09f;font-style:italic"># find / -name virtualenvwrapper.sh</span>
 /usr/local/python3/bin/virtualenvwrapper.sh
 
-[root@centos ~]<span style="color:#4e4e4e"># vi ~/.bashrc</span>
-</code></pre></div><div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">写入以下几行代码(export可以先去掉)
+<span style="color:#555">[</span>root@centos ~<span style="color:#555">]</span><span style="color:#09f;font-style:italic"># vi ~/.bashrc</span>
+</code></pre></div><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">写入以下几行代码<span style="color:#555">(</span>export可以先去掉<span style="color:#555">)</span>
 
-<span style="color:#4e4e4e"># 设置virtualenv的统一管理目录, 以后自动下载的虚拟环境，全部都放在这</span>
-<span style="color:#0087ff">export</span> <span style="color:#0087ff">WORKON_HOME</span>=/root/.virtualenvs 
-<span style="color:#4e4e4e"># 添加virtualenvwrapper的参数，生成干净隔绝的环境(从版本20开始，默认就是&#39;--no-site-packages&#39;)</span>
-<span style="color:#0087ff">export</span> <span style="color:#0087ff">VIRTUALENVWRAPPER_VIRTUALENV_ARGS</span>=<span style="color:#00afaf">&#39;--no-site-packages&#39;</span>   
-<span style="color:#4e4e4e"># 指定python解释器的本体(注意此路径随不同的linux环境改变而改变)</span>
-<span style="color:#0087ff">export</span> <span style="color:#0087ff">VIRTUALENVWRAPPER_PYTHON</span>=/usr/bin/python   
-<span style="color:#4e4e4e"># 执行virtualenvwrapper安装脚本</span>
-<span style="color:#0087ff">source</span> /usr/local/python3/bin/virtualenvwrapper.sh 
-</code></pre></div><div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">加载配置文件
+<span style="color:#09f;font-style:italic"># 设置virtualenv的统一管理目录, 以后自动下载的虚拟环境，全部都放在这</span>
+<span style="color:#366">export</span> <span style="color:#033">WORKON_HOME</span><span style="color:#555">=</span>/root/.virtualenvs 
+<span style="color:#09f;font-style:italic"># 添加virtualenvwrapper的参数，生成干净隔绝的环境(从版本20开始，默认就是&#39;--no-site-packages&#39;)</span>
+<span style="color:#366">export</span> <span style="color:#033">VIRTUALENVWRAPPER_VIRTUALENV_ARGS</span><span style="color:#555">=</span><span style="color:#c30">&#39;--no-site-packages&#39;</span>   
+<span style="color:#09f;font-style:italic"># 指定python解释器的本体(注意此路径随不同的linux环境改变而改变)</span>
+<span style="color:#366">export</span> <span style="color:#033">VIRTUALENVWRAPPER_PYTHON</span><span style="color:#555">=</span>/usr/bin/python   
+<span style="color:#09f;font-style:italic"># 执行virtualenvwrapper安装脚本</span>
+<span style="color:#366">source</span> /usr/local/python3/bin/virtualenvwrapper.sh 
+</code></pre></div><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">加载配置文件
 
-[root@centos ~]<span style="color:#4e4e4e"># source ~/.bashrc</span>
+<span style="color:#555">[</span>root@centos ~<span style="color:#555">]</span><span style="color:#09f;font-style:italic"># source ~/.bashrc</span>
 virtualenvwrapper.user_scripts creating /root/.virtualenvs/premkproject
 virtualenvwrapper.user_scripts creating /root/.virtualenvs/postmkproject
 virtualenvwrapper.user_scripts creating /root/.virtualenvs/initialize
@@ -254,25 +261,25 @@ virtualenvwrapper.user_scripts creating /root/.virtualenvs/postdeactivate
 virtualenvwrapper.user_scripts creating /root/.virtualenvs/preactivate
 virtualenvwrapper.user_scripts creating /root/.virtualenvs/postactivate
 virtualenvwrapper.user_scripts creating /root/.virtualenvs/get_env_details
-</code></pre></div><div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">[root@centos ~]<span style="color:#4e4e4e"># mkvirtualenv test -p python3</span>
+</code></pre></div><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#555">[</span>root@centos ~<span style="color:#555">]</span><span style="color:#09f;font-style:italic"># mkvirtualenv test -p python3</span>
 created virtual environment CPython3.7.9.final.0-64 in 115ms
-  creator CPython3Posix(<span style="color:#0087ff">dest</span>=/root/.virtualenvs/test, <span style="color:#0087ff">clear</span>=False, <span style="color:#0087ff">no_vcs_ignore</span>=False, <span style="color:#0087ff">global</span>=False)
-  seeder FromAppData(<span style="color:#0087ff">download</span>=False, <span style="color:#0087ff">pip</span>=bundle, <span style="color:#0087ff">setuptools</span>=bundle, <span style="color:#0087ff">wheel</span>=bundle, <span style="color:#0087ff">via</span>=copy, <span style="color:#0087ff">app_data_dir</span>=/root/.local/share/virtualenv)
-    added seed packages: <span style="color:#0087ff">pip</span>==20.3.1, <span style="color:#0087ff">setuptools</span>==51.0.0, <span style="color:#0087ff">wheel</span>==0.36.1
+  creator CPython3Posix<span style="color:#555">(</span><span style="color:#033">dest</span><span style="color:#555">=</span>/root/.virtualenvs/test, <span style="color:#033">clear</span><span style="color:#555">=</span>False, <span style="color:#033">no_vcs_ignore</span><span style="color:#555">=</span>False, <span style="color:#033">global</span><span style="color:#555">=</span>False<span style="color:#555">)</span>
+  seeder FromAppData<span style="color:#555">(</span><span style="color:#033">download</span><span style="color:#555">=</span>False, <span style="color:#033">pip</span><span style="color:#555">=</span>bundle, <span style="color:#033">setuptools</span><span style="color:#555">=</span>bundle, <span style="color:#033">wheel</span><span style="color:#555">=</span>bundle, <span style="color:#033">via</span><span style="color:#555">=</span>copy, <span style="color:#033">app_data_dir</span><span style="color:#555">=</span>/root/.local/share/virtualenv<span style="color:#555">)</span>
+    added seed packages: <span style="color:#033">pip</span><span style="color:#555">==</span>20.3.1, <span style="color:#033">setuptools</span><span style="color:#555">==</span>51.0.0, <span style="color:#033">wheel</span><span style="color:#555">==</span>0.36.1
   activators BashActivator,CShellActivator,FishActivator,PowerShellActivator,PythonActivator,XonshActivator
 virtualenvwrapper.user_scripts creating /root/.virtualenvs/test/bin/predeactivate
 virtualenvwrapper.user_scripts creating /root/.virtualenvs/test/bin/postdeactivate
 virtualenvwrapper.user_scripts creating /root/.virtualenvs/test/bin/preactivate
 virtualenvwrapper.user_scripts creating /root/.virtualenvs/test/bin/postactivate
 virtualenvwrapper.user_scripts creating /root/.virtualenvs/test/bin/get_env_details
-(<span style="color:#0087ff">test</span>) [root@VM-0-5-centos ~]<span style="color:#4e4e4e"># pip3 list</span>
+<span style="color:#555">(</span><span style="color:#366">test</span><span style="color:#555">)</span> <span style="color:#555">[</span>root@VM-0-5-centos ~<span style="color:#555">]</span><span style="color:#09f;font-style:italic"># pip3 list</span>
 Package    Version
 ---------- -------
 pip        20.3.1
 setuptools 51.0.0
 wheel      0.36.1
 WARNING: You are using pip version 20.3.1; however, version 20.3.3 is available.
-You should consider upgrading via the <span style="color:#00afaf">&#39;/root/.virtualenvs/test/bin/python -m pip install --upgrade pip&#39;</span> command.
+You should consider upgrading via the <span style="color:#c30">&#39;/root/.virtualenvs/test/bin/python -m pip install --upgrade pip&#39;</span> command.
 
 </code></pre></div>
       </div>
@@ -294,6 +301,22 @@ You should consider upgrading via the <span style="color:#00afaf">&#39;/root/.vi
       </div>
 
       
+  <footer class="footer">
+    <section class="container">
+      
+        <p>粤ICP备2021007187号-1</p>
+      
+      
+        ©
+        
+        2021
+         xblzbjs 
+      
+      
+      
+    </section>
+  </footer>
+
 
     </main>
 
@@ -317,13 +340,13 @@ You should consider upgrading via the <span style="color:#00afaf">&#39;/root/.vi
     
 
     
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-192697137-1"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QYYHFCMJHS"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-192697137-1');
+  gtag('config', 'G-QYYHFCMJHS');
 </script>
 
   </body>

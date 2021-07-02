@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>git on 行百里者半九十</title>
+    <title>git on xblzbjs</title>
     <link>https://xblzbjs.cn/tags/git/</link>
-    <description>Recent content in git on 行百里者半九十</description>
+    <description>Recent content in git on xblzbjs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 19 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xblzbjs.cn/tags/git/index.xml" rel="self" type="application/rss+xml" />
@@ -27,33 +27,6 @@
       <guid>https://xblzbjs.cn/posts/git/gitdiff/</guid>
       <description>假设你的仓库下有两个分支main和dev    场景一：
 比较工作区    # 显示头和工作目录之间的差异。 git diff HEAD #  比较文件    # 比较工作区与最后一次commit提交的仓库的共同文件 git diff # 显示暂存区(已add但未commit文件)和最后一次commit(HEAD)之间的所有不相同文件的增删改 git diff --cached 比较分支    # 显示main和dev有差异的文件(显示更改代码) git diff main dev # 显示main和dev有差异的文件(不显示更改代码) git diff main dev --stat </description>
-    </item>
-    
-    <item>
-      <title>Git｜merge</title>
-      <link>https://xblzbjs.cn/posts/git/gitmerge/</link>
-      <pubDate>Fri, 19 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://xblzbjs.cn/posts/git/gitmerge/</guid>
-      <description>首先查看当前项目有哪些分支git branch -a等同于 git branch -all
-git branch -a 输入后会看到当前项目的所有分支（其中带*的分支为当前分支）
-dev *main 假设你需要在dev分支上进行开发，则需要切换到该分支
-git checkout dev 这个时候再使用git branch -a命令就会发现当前分支为dev分支
-*dev main 在dev分支上进行开发，提交测试没有问题想合并到main分支上，需要进行以下几步:
-  查看当前分支的状态并
-git status   添加更改文件push到当前分支上
-git add . &amp;amp;&amp;amp; git commit -m &amp;#34;update&amp;#34;   将dev分支合并到main分支
-git merge dev   检查main分支是否和dev分支的区别（当前处于div分支）
-git diff main   </description>
-    </item>
-    
-    <item>
-      <title>Git｜基本概念</title>
-      <link>https://xblzbjs.cn/posts/git/git%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</link>
-      <pubDate>Fri, 19 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://xblzbjs.cn/posts/git/git%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</guid>
-      <description>git 术语    Repository(仓库)    Working Directory(工作区)    Staging area(暂存区)    Revision(修订)    Tags(标记)    Push(推送)    Pull(拉取)    Indev(索引)    Commit(提交)    Conflict(冲突)    Merge(合并)    Branch(分支)    HEAD(头)    Checkout(检出)    commit(提交)    diff(差异)    fetch(获取)    main/master(主干)    merge request(合并请求)    git文件有四种状态分别是:</description>
     </item>
     
   </channel>

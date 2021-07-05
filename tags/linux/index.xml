@@ -6,7 +6,26 @@
     <description>Recent content in Linux on xblzbjs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 02 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xblzbjs.cn/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 03 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xblzbjs.cn/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>grep和egrep</title>
+      <link>https://xblzbjs.cn/posts/linux/grep%E5%92%8Cegrep/</link>
+      <pubDate>Sat, 03 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xblzbjs.cn/posts/linux/grep%E5%92%8Cegrep/</guid>
+      <description>语法    第一种形式    grep [option] [pattern] [file, file2...] 第二种形式    command | grep [option] [pattern] 参数选项    必须掌握       选项 含义     -v 不显示匹配航信息   -i 搜索时忽略大小写   -n 显示行号   -r 递归搜索（只适合第二种语法）   -E 支持扩展正则表达式   -F 不按正则表达式匹配，按照字符串字面意思匹配    了解即可       选项 含义     -c 只输出匹配行的数量，不显示具体内容   -w 匹配整词   -x 匹配整行   -l 只列出匹配的文件名，不显示具体匹配行的内容    grep和egrep：     grep默认不支持扩展正则表达式，只支持基础正则表达式 使用grep -E可以支持扩展正则表达式 使用egrep可以支持扩展正则表达式，与grep -E等价  </description>
+    </item>
+    
+    <item>
+      <title>sed</title>
+      <link>https://xblzbjs.cn/posts/linux/sed/</link>
+      <pubDate>Sat, 03 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xblzbjs.cn/posts/linux/sed/</guid>
+      <description>简介    sed（Stream Editor），流编辑器。对标准输出或文件逐行进行处理
+语法    第一种形式    stdout | sed [option] &amp;#34;pattern command&amp;#34; 第二种形式    sed [option] &amp;#34;pattern command&amp;#34; file option选项       选项 含义     -n 只打印模式匹配行   -e 直接在命令行进行sed编辑，默认选线   -f 编辑动作保存在文件中，指定文件执行   -r 支持扩展正则表达式   -i（常用） 直接修改文件内容    pattern匹配模式       匹配模式 含义     10command 匹配到第10行   10,20command 匹配从第10行开始，到第20行结束 (10,20]   10,+5command 匹配从第10行开始，到第16行结束 (10, 15]   /pattern1/command（常用） 匹配到pattern1的行   /pattern1/,/pattern2/command（常用） 匹配到pattern1的行开始，到匹配到pattern2的行结束   10, /pattern1/command 匹配从第10行开始，到匹配到pattern1的行结束   /pattern1/,10command 匹配到pattern1的行开始，到第10行匹配结束    Command编辑命令       类别 命令 含义     查询 p 打印   增加 a 行后增加    i 行前追加    r 外部文件读入，行后追加    w 匹配行写入外部文件   删除 d     </description>
+    </item>
+    
     <item>
       <title>Terminator快捷键</title>
       <link>https://xblzbjs.cn/posts/linux/terminator%E5%BF%AB%E6%8D%B7%E9%94%AE/</link>
@@ -24,15 +43,15 @@
       
       <guid>https://xblzbjs.cn/posts/linux/ubuntu-shell%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</guid>
       <description>终端模拟器选择    推荐三个
-1. Gnome Terminal（原生）    2. Terminator（在用）    3. Guake    终端配置（Zsh + Oh My Zsh + PowerLevel10k）    1. 安装Zsh(https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)    # apt 打包安装 zsh sudo apt install zsh # 确认 zsh 成功安装 zsh --version # 设置为默认Shell并确认 chsh -s $(which zsh) echo $SHELL 2. 安装Oh My Zsh    # 推荐使用curl安装 sh -c &amp;#34;$(curl -fsSL https://raw.</description>
+1. Gnome Terminal（原生）    2. Terminator（在用）    3. Guake    终端配置（Zsh + Oh My Zsh + PowerLevel10k）    1. 安装Zsh    # apt 打包安装 zsh sudo apt install zsh # 确认 zsh 成功安装 zsh --version # 设置为默认Shell并确认 chsh -s $(which zsh) echo $SHELL 2. 安装Oh My Zsh    # 推荐使用curl安装 sh -c &amp;#34;$(curl -fsSL https://raw.</description>
     </item>
     
     <item>
       <title>zsh｜主题</title>
-      <link>https://xblzbjs.cn/posts/linux/zsh%E4%B8%BB%E9%A2%98/</link>
+      <link>https://xblzbjs.cn/posts/linux/zsh-%E4%B8%BB%E9%A2%98%E6%8E%A8%E8%8D%90/</link>
       <pubDate>Fri, 19 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://xblzbjs.cn/posts/linux/zsh%E4%B8%BB%E9%A2%98/</guid>
+      <guid>https://xblzbjs.cn/posts/linux/zsh-%E4%B8%BB%E9%A2%98%E6%8E%A8%E8%8D%90/</guid>
       <description>所有主题    我喜欢的自带主题    agnoster    amuse    awesomepanda    clean    crcandy    frisk    jonathan    linuxonly（只能运行在linux）    nanotech    philips    pmcgee    xiong-chiamiov    额外的主题    powerlevel10k    spaceship-prompt    </description>
     </item>
     
@@ -66,6 +85,17 @@ yum install zlib-devel libffi-devel bzip2-devel openssl-devel ncurses-devel sqli
 安装    Debian系列的Linux，例如Ubuntu
 sudo apt-get install nmap Red Hat系列的Linux，例如Centos
 sudo yum install nmap 常用功能    主机扫描    单个主机    nmap baidu.com Starting Nmap 7.80 ( https://nmap.org ) at 2021-06-16 13:56 CST Nmap scan report for baidu.com (220.181.38.148) Host is up (0.046s latency). Other addresses for baidu.com (not scanned): 39.156.69.79 Not shown: 995 filtered ports PORT STATE SERVICE 25/tcp open smtp 80/tcp open http 110/tcp open pop3 143/tcp open imap 443/tcp open https Nmap done: 1 IP address (1 host up) scanned in 5.</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu20.04蓝牙没作用</title>
+      <link>https://xblzbjs.cn/posts/linux/ubuntu20.04%E8%93%9D%E7%89%99%E6%B2%A1%E4%BD%9C%E7%94%A8/</link>
+      <pubDate>Tue, 02 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xblzbjs.cn/posts/linux/ubuntu20.04%E8%93%9D%E7%89%99%E6%B2%A1%E4%BD%9C%E7%94%A8/</guid>
+      <description>前言    我的笔记本电脑是联想小新Air14-2020-AMD版，从Windows转到Ubuntu20.04时发现蓝牙扫描不到周围的设备（特别是耳机）！
+执行了以下命令，蓝牙又重新工作了O(∩_∩)O~~
+sudo rmmod btusb sudo modprobe btusb 参考链接    Ubuntu 20.04 bluetooth not working</description>
     </item>
     
   </channel>

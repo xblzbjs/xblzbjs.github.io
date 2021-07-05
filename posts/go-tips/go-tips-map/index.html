@@ -178,17 +178,17 @@
     <i class="fa fa-link" aria-hidden="true"></i>
   </a>
 </h2>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">TestTestInitMap</span>(t <span style="color:#555">*</span>testing.T) {
-	<span style="color:#09f;font-style:italic">// 方法一（字面量初始化）
-</span><span style="color:#09f;font-style:italic"></span>	m1 <span style="color:#555">:=</span> <span style="color:#069;font-weight:bold">map</span>[<span style="color:#078;font-weight:bold">string</span>]<span style="color:#078;font-weight:bold">int</span>{<span style="color:#c30">&#34;Go&#34;</span>: <span style="color:#f60">1</span>, <span style="color:#c30">&#34;Java&#34;</span>: <span style="color:#f60">2</span>, <span style="color:#c30">&#34;Python&#34;</span>: <span style="color:#f60">3</span>}
-	m2 <span style="color:#555">:=</span> <span style="color:#069;font-weight:bold">map</span>[<span style="color:#078;font-weight:bold">int</span>]<span style="color:#078;font-weight:bold">int</span>{}
-	<span style="color:#09f;font-style:italic">// 方法二（使用内置函数make初始化）
-</span><span style="color:#09f;font-style:italic"></span>	m3 <span style="color:#555">:=</span> <span style="color:#366">make</span>(<span style="color:#069;font-weight:bold">map</span>[<span style="color:#078;font-weight:bold">int</span>]<span style="color:#078;font-weight:bold">int</span>, <span style="color:#f60">10</span>)
-	<span style="color:#09f;font-style:italic">// 使用len函数打印map的长度, 不能用cap打印容量
-</span><span style="color:#09f;font-style:italic"></span>	t.<span style="color:#c0f">Logf</span>(<span style="color:#c30">&#34;len m1=%d&#34;</span>, <span style="color:#366">len</span>(m1))
-	m2[<span style="color:#f60">4</span>] = <span style="color:#f60">16</span>
-	t.<span style="color:#c0f">Logf</span>(<span style="color:#c30">&#34;len m2=%d&#34;</span>, <span style="color:#366">len</span>(m2))
-	t.<span style="color:#c0f">Logf</span>(<span style="color:#c30">&#34;len m3=%d&#34;</span>, <span style="color:#366">len</span>(m3)) 
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#268bd2">func</span> <span style="color:#268bd2">TestTestInitMap</span>(t <span style="color:#719e07">*</span>testing.T) {
+	<span style="color:#586e75">// 方法一（字面量初始化）
+</span><span style="color:#586e75"></span>	m1 <span style="color:#719e07">:=</span> <span style="color:#268bd2">map</span>[<span style="color:#dc322f">string</span>]<span style="color:#dc322f">int</span>{<span style="color:#2aa198">&#34;Go&#34;</span>: <span style="color:#2aa198">1</span>, <span style="color:#2aa198">&#34;Java&#34;</span>: <span style="color:#2aa198">2</span>, <span style="color:#2aa198">&#34;Python&#34;</span>: <span style="color:#2aa198">3</span>}
+	m2 <span style="color:#719e07">:=</span> <span style="color:#268bd2">map</span>[<span style="color:#dc322f">int</span>]<span style="color:#dc322f">int</span>{}
+	<span style="color:#586e75">// 方法二（使用内置函数make初始化）
+</span><span style="color:#586e75"></span>	m3 <span style="color:#719e07">:=</span> <span style="color:#b58900">make</span>(<span style="color:#268bd2">map</span>[<span style="color:#dc322f">int</span>]<span style="color:#dc322f">int</span>, <span style="color:#2aa198">10</span>)
+	<span style="color:#586e75">// 使用len函数打印map的长度, 不能用cap打印容量
+</span><span style="color:#586e75"></span>	t.<span style="color:#268bd2">Logf</span>(<span style="color:#2aa198">&#34;len m1=%d&#34;</span>, <span style="color:#b58900">len</span>(m1))
+	m2[<span style="color:#2aa198">4</span>] = <span style="color:#2aa198">16</span>
+	t.<span style="color:#268bd2">Logf</span>(<span style="color:#2aa198">&#34;len m2=%d&#34;</span>, <span style="color:#b58900">len</span>(m2))
+	t.<span style="color:#268bd2">Logf</span>(<span style="color:#2aa198">&#34;len m3=%d&#34;</span>, <span style="color:#b58900">len</span>(m3)) 
 }
 </code></pre></div><p>以上两者同样是初始化一个Map，有什么不同？</p>
 <ul>
@@ -200,30 +200,30 @@
     <i class="fa fa-link" aria-hidden="true"></i>
   </a>
 </h2>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">TestMapCRUD</span>(t <span style="color:#555">*</span>testing.T) {
-	m <span style="color:#555">:=</span> <span style="color:#366">make</span>(<span style="color:#069;font-weight:bold">map</span>[<span style="color:#078;font-weight:bold">string</span>]<span style="color:#078;font-weight:bold">int</span>, <span style="color:#f60">10</span>)
-	m[<span style="color:#c30">&#34;other&#34;</span>] = <span style="color:#f60">0</span>
-	<span style="color:#09f;font-style:italic">// Create
-</span><span style="color:#09f;font-style:italic"></span>	m[<span style="color:#c30">&#34;go&#34;</span>] = <span style="color:#f60">1</span>
-	t.<span style="color:#c0f">Logf</span>(<span style="color:#c30">&#34;Before updating:%d&#34;</span>, m[<span style="color:#c30">&#34;go&#34;</span>])
-	<span style="color:#09f;font-style:italic">// Update
-</span><span style="color:#09f;font-style:italic"></span>	m[<span style="color:#c30">&#34;go&#34;</span>] = <span style="color:#f60">100</span>
-	t.<span style="color:#c0f">Logf</span>(<span style="color:#c30">&#34;After updating:%d&#34;</span>, m[<span style="color:#c30">&#34;go&#34;</span>])
-	<span style="color:#09f;font-style:italic">// Delete
-</span><span style="color:#09f;font-style:italic"></span>	<span style="color:#366">delete</span>(m, <span style="color:#c30">&#34;go&#34;</span>)
-	<span style="color:#09f;font-style:italic">// Read
-</span><span style="color:#09f;font-style:italic"></span>	val, exist <span style="color:#555">:=</span> m[<span style="color:#c30">&#34;go&#34;</span>]
-	<span style="color:#069;font-weight:bold">if</span> exist {
-		t.<span style="color:#c0f">Logf</span>(<span style="color:#c30">&#34;Exist! Value is %d&#34;</span>, val)
-	} <span style="color:#069;font-weight:bold">else</span> {
-		t.<span style="color:#c0f">Log</span>(<span style="color:#c30">&#34;Does not exist!&#34;</span>)
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#268bd2">func</span> <span style="color:#268bd2">TestMapCRUD</span>(t <span style="color:#719e07">*</span>testing.T) {
+	m <span style="color:#719e07">:=</span> <span style="color:#b58900">make</span>(<span style="color:#268bd2">map</span>[<span style="color:#dc322f">string</span>]<span style="color:#dc322f">int</span>, <span style="color:#2aa198">10</span>)
+	m[<span style="color:#2aa198">&#34;other&#34;</span>] = <span style="color:#2aa198">0</span>
+	<span style="color:#586e75">// Create
+</span><span style="color:#586e75"></span>	m[<span style="color:#2aa198">&#34;go&#34;</span>] = <span style="color:#2aa198">1</span>
+	t.<span style="color:#268bd2">Logf</span>(<span style="color:#2aa198">&#34;Before updating:%d&#34;</span>, m[<span style="color:#2aa198">&#34;go&#34;</span>])
+	<span style="color:#586e75">// Update
+</span><span style="color:#586e75"></span>	m[<span style="color:#2aa198">&#34;go&#34;</span>] = <span style="color:#2aa198">100</span>
+	t.<span style="color:#268bd2">Logf</span>(<span style="color:#2aa198">&#34;After updating:%d&#34;</span>, m[<span style="color:#2aa198">&#34;go&#34;</span>])
+	<span style="color:#586e75">// Delete
+</span><span style="color:#586e75"></span>	<span style="color:#b58900">delete</span>(m, <span style="color:#2aa198">&#34;go&#34;</span>)
+	<span style="color:#586e75">// Read
+</span><span style="color:#586e75"></span>	val, exist <span style="color:#719e07">:=</span> m[<span style="color:#2aa198">&#34;go&#34;</span>]
+	<span style="color:#719e07">if</span> exist {
+		t.<span style="color:#268bd2">Logf</span>(<span style="color:#2aa198">&#34;Exist! Value is %d&#34;</span>, val)
+	} <span style="color:#719e07">else</span> {
+		t.<span style="color:#268bd2">Log</span>(<span style="color:#2aa198">&#34;Does not exist!&#34;</span>)
 	}
 }
 
-<span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">TestEmptyMap</span>(t <span style="color:#555">*</span>testing.T) {
-	<span style="color:#069;font-weight:bold">var</span> m <span style="color:#069;font-weight:bold">map</span>[<span style="color:#078;font-weight:bold">string</span>]<span style="color:#078;font-weight:bold">int</span>
-	m[<span style="color:#c30">&#34;string&#34;</span>] = <span style="color:#f60">3</span>	<span style="color:#09f;font-style:italic">//会触发panic: assignment to entry in nil map
-</span><span style="color:#09f;font-style:italic"></span>}
+<span style="color:#268bd2">func</span> <span style="color:#268bd2">TestEmptyMap</span>(t <span style="color:#719e07">*</span>testing.T) {
+	<span style="color:#268bd2">var</span> m <span style="color:#268bd2">map</span>[<span style="color:#dc322f">string</span>]<span style="color:#dc322f">int</span>
+	m[<span style="color:#2aa198">&#34;string&#34;</span>] = <span style="color:#2aa198">3</span>	<span style="color:#586e75">//会触发panic: assignment to entry in nil map
+</span><span style="color:#586e75"></span>}
 </code></pre></div><p>注意：</p>
 <ul>
 <li>如果map为nil或者指定key不存在时，delete()不会报错，相当于空操作</li>
@@ -236,10 +236,10 @@
     <i class="fa fa-link" aria-hidden="true"></i>
   </a>
 </h2>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">TestTravelMap</span>(t <span style="color:#555">*</span>testing.T) {
-	m1 <span style="color:#555">:=</span> <span style="color:#069;font-weight:bold">map</span>[<span style="color:#078;font-weight:bold">int</span>]<span style="color:#078;font-weight:bold">int</span>{<span style="color:#f60">1</span>: <span style="color:#f60">1</span>, <span style="color:#f60">2</span>: <span style="color:#f60">4</span>, <span style="color:#f60">3</span>: <span style="color:#f60">9</span>}
-	<span style="color:#069;font-weight:bold">for</span> k, v <span style="color:#555">:=</span> <span style="color:#069;font-weight:bold">range</span> m1 {
-		t.<span style="color:#c0f">Log</span>(k, v)
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#268bd2">func</span> <span style="color:#268bd2">TestTravelMap</span>(t <span style="color:#719e07">*</span>testing.T) {
+	m1 <span style="color:#719e07">:=</span> <span style="color:#268bd2">map</span>[<span style="color:#dc322f">int</span>]<span style="color:#dc322f">int</span>{<span style="color:#2aa198">1</span>: <span style="color:#2aa198">1</span>, <span style="color:#2aa198">2</span>: <span style="color:#2aa198">4</span>, <span style="color:#2aa198">3</span>: <span style="color:#2aa198">9</span>}
+	<span style="color:#719e07">for</span> k, v <span style="color:#719e07">:=</span> <span style="color:#719e07">range</span> m1 {
+		t.<span style="color:#268bd2">Log</span>(k, v)
 	}
 }
 </code></pre></div><h2 id="tip4--new和make创建map的差异">
@@ -255,26 +255,26 @@
     <i class="fa fa-link" aria-hidden="true"></i>
   </a>
 </h3>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">TestDiffMakeAndNew</span>(t <span style="color:#555">*</span>testing.T) {
-	t.<span style="color:#c0f">Log</span>(<span style="color:#c30">&#34;========使用new创建Map=======&#34;</span>)
-	m <span style="color:#555">:=</span> <span style="color:#366">new</span>(<span style="color:#069;font-weight:bold">map</span>[<span style="color:#078;font-weight:bold">string</span>]<span style="color:#078;font-weight:bold">int</span>)
-	t.<span style="color:#c0f">Log</span>(m, <span style="color:#c30">&#34;\t&#34;</span>, reflect.<span style="color:#c0f">TypeOf</span>(m))
-	t.<span style="color:#c0f">Log</span>(<span style="color:#555">&amp;</span>m, <span style="color:#c30">&#34;\t&#34;</span>, reflect.<span style="color:#c0f">TypeOf</span>(<span style="color:#555">&amp;</span>m))
-	t.<span style="color:#c0f">Log</span>(<span style="color:#555">*</span>m, <span style="color:#c30">&#34;\t&#34;</span>, reflect.<span style="color:#c0f">TypeOf</span>(<span style="color:#555">*</span>m))
-	<span style="color:#555">*</span>m = <span style="color:#069;font-weight:bold">map</span>[<span style="color:#078;font-weight:bold">string</span>]<span style="color:#078;font-weight:bold">int</span>{}
-	t.<span style="color:#c0f">Log</span>(<span style="color:#555">*</span>m, <span style="color:#c30">&#34;\t&#34;</span>, reflect.<span style="color:#c0f">TypeOf</span>(<span style="color:#555">*</span>m))
-	(<span style="color:#555">*</span>m)[<span style="color:#c30">&#34;a&#34;</span>] = <span style="color:#f60">44</span>
-	t.<span style="color:#c0f">Log</span>(<span style="color:#555">*</span>m, <span style="color:#c30">&#34;\t&#34;</span>, reflect.<span style="color:#c0f">TypeOf</span>((<span style="color:#555">*</span>m)[<span style="color:#c30">&#34;a&#34;</span>]))
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#268bd2">func</span> <span style="color:#268bd2">TestDiffMakeAndNew</span>(t <span style="color:#719e07">*</span>testing.T) {
+	t.<span style="color:#268bd2">Log</span>(<span style="color:#2aa198">&#34;========使用new创建Map=======&#34;</span>)
+	m <span style="color:#719e07">:=</span> <span style="color:#b58900">new</span>(<span style="color:#268bd2">map</span>[<span style="color:#dc322f">string</span>]<span style="color:#dc322f">int</span>)
+	t.<span style="color:#268bd2">Log</span>(m, <span style="color:#2aa198">&#34;\t&#34;</span>, reflect.<span style="color:#268bd2">TypeOf</span>(m))
+	t.<span style="color:#268bd2">Log</span>(<span style="color:#719e07">&amp;</span>m, <span style="color:#2aa198">&#34;\t&#34;</span>, reflect.<span style="color:#268bd2">TypeOf</span>(<span style="color:#719e07">&amp;</span>m))
+	t.<span style="color:#268bd2">Log</span>(<span style="color:#719e07">*</span>m, <span style="color:#2aa198">&#34;\t&#34;</span>, reflect.<span style="color:#268bd2">TypeOf</span>(<span style="color:#719e07">*</span>m))
+	<span style="color:#719e07">*</span>m = <span style="color:#268bd2">map</span>[<span style="color:#dc322f">string</span>]<span style="color:#dc322f">int</span>{}
+	t.<span style="color:#268bd2">Log</span>(<span style="color:#719e07">*</span>m, <span style="color:#2aa198">&#34;\t&#34;</span>, reflect.<span style="color:#268bd2">TypeOf</span>(<span style="color:#719e07">*</span>m))
+	(<span style="color:#719e07">*</span>m)[<span style="color:#2aa198">&#34;a&#34;</span>] = <span style="color:#2aa198">44</span>
+	t.<span style="color:#268bd2">Log</span>(<span style="color:#719e07">*</span>m, <span style="color:#2aa198">&#34;\t&#34;</span>, reflect.<span style="color:#268bd2">TypeOf</span>((<span style="color:#719e07">*</span>m)[<span style="color:#2aa198">&#34;a&#34;</span>]))
 
-	t.<span style="color:#c0f">Log</span>(<span style="color:#c30">&#34;========使用make创建Map=======&#34;</span>)
-	<span style="color:#555">*</span>m = <span style="color:#366">make</span>(<span style="color:#069;font-weight:bold">map</span>[<span style="color:#078;font-weight:bold">string</span>]<span style="color:#078;font-weight:bold">int</span>, <span style="color:#f60">0</span>)
-	t.<span style="color:#c0f">Log</span>(<span style="color:#555">*</span>m, <span style="color:#c30">&#34;\t&#34;</span>, reflect.<span style="color:#c0f">TypeOf</span>(<span style="color:#555">*</span>m))
-	(<span style="color:#555">*</span>m)[<span style="color:#c30">&#34;b&#34;</span>] = <span style="color:#f60">55</span>
-	t.<span style="color:#c0f">Log</span>(<span style="color:#555">*</span>m, <span style="color:#c30">&#34;\t&#34;</span>, <span style="color:#366">len</span>(<span style="color:#555">*</span>m))
+	t.<span style="color:#268bd2">Log</span>(<span style="color:#2aa198">&#34;========使用make创建Map=======&#34;</span>)
+	<span style="color:#719e07">*</span>m = <span style="color:#b58900">make</span>(<span style="color:#268bd2">map</span>[<span style="color:#dc322f">string</span>]<span style="color:#dc322f">int</span>, <span style="color:#2aa198">0</span>)
+	t.<span style="color:#268bd2">Log</span>(<span style="color:#719e07">*</span>m, <span style="color:#2aa198">&#34;\t&#34;</span>, reflect.<span style="color:#268bd2">TypeOf</span>(<span style="color:#719e07">*</span>m))
+	(<span style="color:#719e07">*</span>m)[<span style="color:#2aa198">&#34;b&#34;</span>] = <span style="color:#2aa198">55</span>
+	t.<span style="color:#268bd2">Log</span>(<span style="color:#719e07">*</span>m, <span style="color:#2aa198">&#34;\t&#34;</span>, <span style="color:#b58900">len</span>(<span style="color:#719e07">*</span>m))
 
-	t.<span style="color:#c0f">Log</span>(<span style="color:#c30">&#34;========性能差异=======&#34;</span>)
-	<span style="color:#c0f">makeMapTime</span>()
-	<span style="color:#c0f">newMapTime</span>()
+	t.<span style="color:#268bd2">Log</span>(<span style="color:#2aa198">&#34;========性能差异=======&#34;</span>)
+	<span style="color:#268bd2">makeMapTime</span>()
+	<span style="color:#268bd2">newMapTime</span>()
 }
 
 </code></pre></div><h3 id="运行结果">
@@ -283,47 +283,47 @@
     <i class="fa fa-link" aria-hidden="true"></i>
   </a>
 </h3>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#555">==</span>= RUN   TestDiffMakeAndNew
-    map_test.<span style="color:#069;font-weight:bold">go</span>:<span style="color:#f60">43</span>: <span style="color:#555">========</span>使用new创建Map<span style="color:#555">======</span>=
-    map_test.<span style="color:#069;font-weight:bold">go</span>:<span style="color:#f60">45</span>: <span style="color:#555">&amp;</span><span style="color:#069;font-weight:bold">map</span>[] 	 <span style="color:#555">*</span><span style="color:#069;font-weight:bold">map</span>[<span style="color:#078;font-weight:bold">string</span>]<span style="color:#078;font-weight:bold">int</span>
-    map_test.<span style="color:#069;font-weight:bold">go</span>:<span style="color:#f60">46</span>: <span style="color:#f60">0xc00000e038</span> 	 <span style="color:#555">**</span><span style="color:#069;font-weight:bold">map</span>[<span style="color:#078;font-weight:bold">string</span>]<span style="color:#078;font-weight:bold">int</span>
-    map_test.<span style="color:#069;font-weight:bold">go</span>:<span style="color:#f60">47</span>: <span style="color:#069;font-weight:bold">map</span>[] 	 <span style="color:#069;font-weight:bold">map</span>[<span style="color:#078;font-weight:bold">string</span>]<span style="color:#078;font-weight:bold">int</span>
-    map_test.<span style="color:#069;font-weight:bold">go</span>:<span style="color:#f60">49</span>: <span style="color:#069;font-weight:bold">map</span>[] 	 <span style="color:#069;font-weight:bold">map</span>[<span style="color:#078;font-weight:bold">string</span>]<span style="color:#078;font-weight:bold">int</span>
-    map_test.<span style="color:#069;font-weight:bold">go</span>:<span style="color:#f60">51</span>: <span style="color:#069;font-weight:bold">map</span>[a:<span style="color:#f60">44</span>] 	 <span style="color:#078;font-weight:bold">int</span>
-    map_test.<span style="color:#069;font-weight:bold">go</span>:<span style="color:#f60">53</span>: <span style="color:#555">========</span>使用make创建Map<span style="color:#555">======</span>=
-    map_test.<span style="color:#069;font-weight:bold">go</span>:<span style="color:#f60">55</span>: <span style="color:#069;font-weight:bold">map</span>[] 	 <span style="color:#069;font-weight:bold">map</span>[<span style="color:#078;font-weight:bold">string</span>]<span style="color:#078;font-weight:bold">int</span>
-    map_test.<span style="color:#069;font-weight:bold">go</span>:<span style="color:#f60">57</span>: <span style="color:#069;font-weight:bold">map</span>[b:<span style="color:#f60">55</span>] 	 <span style="color:#f60">1</span>
-    map_test.<span style="color:#069;font-weight:bold">go</span>:<span style="color:#f60">59</span>: <span style="color:#555">========</span>性能差异<span style="color:#555">======</span>=
-	使用make函数执行完成耗时<span style="color:#a00;background-color:#faa">：</span> <span style="color:#f60">4.940985678</span>s
-	使用new函数执行完成耗时<span style="color:#a00;background-color:#faa">：</span> <span style="color:#f60">4.796069742</span>s
-<span style="color:#555">---</span> PASS: <span style="color:#c0f">TestDiffMakeAndNew</span> (<span style="color:#f60">9.74</span>s)
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#719e07">==</span>= RUN   TestDiffMakeAndNew
+    map_test.<span style="color:#719e07">go</span>:<span style="color:#2aa198">43</span>: <span style="color:#719e07">========</span>使用new创建Map<span style="color:#719e07">======</span>=
+    map_test.<span style="color:#719e07">go</span>:<span style="color:#2aa198">45</span>: <span style="color:#719e07">&amp;</span><span style="color:#268bd2">map</span>[] 	 <span style="color:#719e07">*</span><span style="color:#268bd2">map</span>[<span style="color:#dc322f">string</span>]<span style="color:#dc322f">int</span>
+    map_test.<span style="color:#719e07">go</span>:<span style="color:#2aa198">46</span>: <span style="color:#2aa198">0xc00000e038</span> 	 <span style="color:#719e07">**</span><span style="color:#268bd2">map</span>[<span style="color:#dc322f">string</span>]<span style="color:#dc322f">int</span>
+    map_test.<span style="color:#719e07">go</span>:<span style="color:#2aa198">47</span>: <span style="color:#268bd2">map</span>[] 	 <span style="color:#268bd2">map</span>[<span style="color:#dc322f">string</span>]<span style="color:#dc322f">int</span>
+    map_test.<span style="color:#719e07">go</span>:<span style="color:#2aa198">49</span>: <span style="color:#268bd2">map</span>[] 	 <span style="color:#268bd2">map</span>[<span style="color:#dc322f">string</span>]<span style="color:#dc322f">int</span>
+    map_test.<span style="color:#719e07">go</span>:<span style="color:#2aa198">51</span>: <span style="color:#268bd2">map</span>[a:<span style="color:#2aa198">44</span>] 	 <span style="color:#dc322f">int</span>
+    map_test.<span style="color:#719e07">go</span>:<span style="color:#2aa198">53</span>: <span style="color:#719e07">========</span>使用make创建Map<span style="color:#719e07">======</span>=
+    map_test.<span style="color:#719e07">go</span>:<span style="color:#2aa198">55</span>: <span style="color:#268bd2">map</span>[] 	 <span style="color:#268bd2">map</span>[<span style="color:#dc322f">string</span>]<span style="color:#dc322f">int</span>
+    map_test.<span style="color:#719e07">go</span>:<span style="color:#2aa198">57</span>: <span style="color:#268bd2">map</span>[b:<span style="color:#2aa198">55</span>] 	 <span style="color:#2aa198">1</span>
+    map_test.<span style="color:#719e07">go</span>:<span style="color:#2aa198">59</span>: <span style="color:#719e07">========</span>性能差异<span style="color:#719e07">======</span>=
+	使用make函数执行完成耗时： <span style="color:#2aa198">4.940985678</span>s
+	使用new函数执行完成耗时： <span style="color:#2aa198">4.796069742</span>s
+<span style="color:#719e07">---</span> PASS: <span style="color:#268bd2">TestDiffMakeAndNew</span> (<span style="color:#2aa198">9.74</span>s)
 </code></pre></div><h3 id="辅助函数">
   辅助函数
   <a class="heading-link" href="#%e8%be%85%e5%8a%a9%e5%87%bd%e6%95%b0">
     <i class="fa fa-link" aria-hidden="true"></i>
   </a>
 </h3>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#09f;font-style:italic">// newMapTime
-</span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">newMapTime</span>() {
-	m <span style="color:#555">:=</span> <span style="color:#366">new</span>(<span style="color:#069;font-weight:bold">map</span>[<span style="color:#078;font-weight:bold">string</span>]<span style="color:#078;font-weight:bold">int</span>)
-	<span style="color:#555">*</span>m = <span style="color:#069;font-weight:bold">map</span>[<span style="color:#078;font-weight:bold">string</span>]<span style="color:#078;font-weight:bold">int</span>{}
-	start <span style="color:#555">:=</span> time.<span style="color:#c0f">Now</span>() <span style="color:#09f;font-style:italic">// 获取当前时间
-</span><span style="color:#09f;font-style:italic"></span>	<span style="color:#069;font-weight:bold">for</span> i <span style="color:#555">:=</span> <span style="color:#f60">0</span>; i &lt; <span style="color:#f60">10000000</span>; i<span style="color:#555">++</span> {
-		(<span style="color:#555">*</span>m)[strconv.<span style="color:#c0f">Itoa</span>(i)] = i
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#586e75">// newMapTime
+</span><span style="color:#586e75"></span><span style="color:#268bd2">func</span> <span style="color:#268bd2">newMapTime</span>() {
+	m <span style="color:#719e07">:=</span> <span style="color:#b58900">new</span>(<span style="color:#268bd2">map</span>[<span style="color:#dc322f">string</span>]<span style="color:#dc322f">int</span>)
+	<span style="color:#719e07">*</span>m = <span style="color:#268bd2">map</span>[<span style="color:#dc322f">string</span>]<span style="color:#dc322f">int</span>{}
+	start <span style="color:#719e07">:=</span> time.<span style="color:#268bd2">Now</span>() <span style="color:#586e75">// 获取当前时间
+</span><span style="color:#586e75"></span>	<span style="color:#719e07">for</span> i <span style="color:#719e07">:=</span> <span style="color:#2aa198">0</span>; i &lt; <span style="color:#2aa198">10000000</span>; i<span style="color:#719e07">++</span> {
+		(<span style="color:#719e07">*</span>m)[strconv.<span style="color:#268bd2">Itoa</span>(i)] = i
 	}
-	elapsed <span style="color:#555">:=</span> time.<span style="color:#c0f">Now</span>().<span style="color:#c0f">Sub</span>(start)
-	fmt.<span style="color:#c0f">Println</span>(<span style="color:#c30">&#34;\t使用new函数执行完成耗时：&#34;</span>, elapsed)
+	elapsed <span style="color:#719e07">:=</span> time.<span style="color:#268bd2">Now</span>().<span style="color:#268bd2">Sub</span>(start)
+	fmt.<span style="color:#268bd2">Println</span>(<span style="color:#2aa198">&#34;\t使用new函数执行完成耗时：&#34;</span>, elapsed)
 }
 
-<span style="color:#09f;font-style:italic">// makeMapTime
-</span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">makeMapTime</span>() {
-	m <span style="color:#555">:=</span> <span style="color:#366">make</span>(<span style="color:#069;font-weight:bold">map</span>[<span style="color:#078;font-weight:bold">string</span>]<span style="color:#078;font-weight:bold">int</span>)
-	start <span style="color:#555">:=</span> time.<span style="color:#c0f">Now</span>() <span style="color:#09f;font-style:italic">// 获取当前时间
-</span><span style="color:#09f;font-style:italic"></span>	<span style="color:#069;font-weight:bold">for</span> i <span style="color:#555">:=</span> <span style="color:#f60">0</span>; i &lt; <span style="color:#f60">10000000</span>; i<span style="color:#555">++</span> {
-		m[strconv.<span style="color:#c0f">Itoa</span>(i)] = i
+<span style="color:#586e75">// makeMapTime
+</span><span style="color:#586e75"></span><span style="color:#268bd2">func</span> <span style="color:#268bd2">makeMapTime</span>() {
+	m <span style="color:#719e07">:=</span> <span style="color:#b58900">make</span>(<span style="color:#268bd2">map</span>[<span style="color:#dc322f">string</span>]<span style="color:#dc322f">int</span>)
+	start <span style="color:#719e07">:=</span> time.<span style="color:#268bd2">Now</span>() <span style="color:#586e75">// 获取当前时间
+</span><span style="color:#586e75"></span>	<span style="color:#719e07">for</span> i <span style="color:#719e07">:=</span> <span style="color:#2aa198">0</span>; i &lt; <span style="color:#2aa198">10000000</span>; i<span style="color:#719e07">++</span> {
+		m[strconv.<span style="color:#268bd2">Itoa</span>(i)] = i
 	}
-	elapsed <span style="color:#555">:=</span> time.<span style="color:#c0f">Now</span>().<span style="color:#c0f">Sub</span>(start)
-	fmt.<span style="color:#c0f">Println</span>(<span style="color:#c30">&#34;\t使用make函数执行完成耗时：&#34;</span>, elapsed)
+	elapsed <span style="color:#719e07">:=</span> time.<span style="color:#268bd2">Now</span>().<span style="color:#268bd2">Sub</span>(start)
+	fmt.<span style="color:#268bd2">Println</span>(<span style="color:#2aa198">&#34;\t使用make函数执行完成耗时：&#34;</span>, elapsed)
 }
 </code></pre></div><h2 id="tip-5-应该优先考虑哪些类型作为map的key">
   Tip 5 应该优先考虑哪些类型作为Map的key？
@@ -399,33 +399,33 @@
   </a>
 </h2>
 <p>我们经常会遇到JSON转换成Map或是Map转换为JSON的需求，这里推荐使用jsoniter替代原生的json包，其不仅支持原生的json，而且性能更快。</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">import</span> (
-    <span style="color:#555">...</span>
-    jsoniter <span style="color:#c30">&#34;github.com/json-iterator/go&#34;</span>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#719e07">import</span> (
+    <span style="color:#719e07">...</span>
+    jsoniter <span style="color:#2aa198">&#34;github.com/json-iterator/go&#34;</span>
 )
 
-<span style="color:#069;font-weight:bold">var</span> json = jsoniter.ConfigCompatibleWithStandardLibrary
+<span style="color:#268bd2">var</span> json = jsoniter.ConfigCompatibleWithStandardLibrary
 
 
-<span style="color:#09f;font-style:italic">// JSONToMap return map and error
-</span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">JSONToMap</span>(jsonStr <span style="color:#078;font-weight:bold">string</span>) (<span style="color:#069;font-weight:bold">map</span>[<span style="color:#078;font-weight:bold">string</span>]<span style="color:#078;font-weight:bold">string</span>, <span style="color:#078;font-weight:bold">error</span>) {
-	m <span style="color:#555">:=</span> <span style="color:#366">make</span>(<span style="color:#069;font-weight:bold">map</span>[<span style="color:#078;font-weight:bold">string</span>]<span style="color:#078;font-weight:bold">string</span>)
-	err <span style="color:#555">:=</span> json.<span style="color:#c0f">Unmarshal</span>([]<span style="color:#366">byte</span>(jsonStr), <span style="color:#555">&amp;</span>m)
-	<span style="color:#069;font-weight:bold">if</span> err <span style="color:#555">!=</span> <span style="color:#069;font-weight:bold">nil</span> {
-		fmt.<span style="color:#c0f">Printf</span>(<span style="color:#c30">&#34;Unmarshal with error: %+v\n&#34;</span>, err)
-		<span style="color:#069;font-weight:bold">return</span> <span style="color:#069;font-weight:bold">nil</span>, err
+<span style="color:#586e75">// JSONToMap return map and error
+</span><span style="color:#586e75"></span><span style="color:#268bd2">func</span> <span style="color:#268bd2">JSONToMap</span>(jsonStr <span style="color:#dc322f">string</span>) (<span style="color:#268bd2">map</span>[<span style="color:#dc322f">string</span>]<span style="color:#dc322f">string</span>, <span style="color:#dc322f">error</span>) {
+	m <span style="color:#719e07">:=</span> <span style="color:#b58900">make</span>(<span style="color:#268bd2">map</span>[<span style="color:#dc322f">string</span>]<span style="color:#dc322f">string</span>)
+	err <span style="color:#719e07">:=</span> json.<span style="color:#268bd2">Unmarshal</span>([]<span style="color:#b58900">byte</span>(jsonStr), <span style="color:#719e07">&amp;</span>m)
+	<span style="color:#719e07">if</span> err <span style="color:#719e07">!=</span> <span style="color:#cb4b16">nil</span> {
+		fmt.<span style="color:#268bd2">Printf</span>(<span style="color:#2aa198">&#34;Unmarshal with error: %+v\n&#34;</span>, err)
+		<span style="color:#719e07">return</span> <span style="color:#cb4b16">nil</span>, err
 	}
-	<span style="color:#069;font-weight:bold">return</span> m, <span style="color:#069;font-weight:bold">nil</span>
+	<span style="color:#719e07">return</span> m, <span style="color:#cb4b16">nil</span>
 }
 
-<span style="color:#09f;font-style:italic">// MapToJSON return json string and error
-</span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">MapToJSON</span>(m <span style="color:#069;font-weight:bold">map</span>[<span style="color:#078;font-weight:bold">string</span>]<span style="color:#078;font-weight:bold">string</span>) (<span style="color:#078;font-weight:bold">string</span>, <span style="color:#078;font-weight:bold">error</span>) {
-	jsonByte, err <span style="color:#555">:=</span> json.<span style="color:#c0f">Marshal</span>(m)
-	<span style="color:#069;font-weight:bold">if</span> err <span style="color:#555">!=</span> <span style="color:#069;font-weight:bold">nil</span> {
-		fmt.<span style="color:#c0f">Printf</span>(<span style="color:#c30">&#34;Marshal with error: %+v\n&#34;</span>, err)
-		<span style="color:#069;font-weight:bold">return</span> <span style="color:#c30">&#34;&#34;</span>, <span style="color:#069;font-weight:bold">nil</span>
+<span style="color:#586e75">// MapToJSON return json string and error
+</span><span style="color:#586e75"></span><span style="color:#268bd2">func</span> <span style="color:#268bd2">MapToJSON</span>(m <span style="color:#268bd2">map</span>[<span style="color:#dc322f">string</span>]<span style="color:#dc322f">string</span>) (<span style="color:#dc322f">string</span>, <span style="color:#dc322f">error</span>) {
+	jsonByte, err <span style="color:#719e07">:=</span> json.<span style="color:#268bd2">Marshal</span>(m)
+	<span style="color:#719e07">if</span> err <span style="color:#719e07">!=</span> <span style="color:#cb4b16">nil</span> {
+		fmt.<span style="color:#268bd2">Printf</span>(<span style="color:#2aa198">&#34;Marshal with error: %+v\n&#34;</span>, err)
+		<span style="color:#719e07">return</span> <span style="color:#2aa198">&#34;&#34;</span>, <span style="color:#cb4b16">nil</span>
 	}
-	<span style="color:#069;font-weight:bold">return</span> <span style="color:#366">string</span>(jsonByte), <span style="color:#069;font-weight:bold">nil</span>
+	<span style="color:#719e07">return</span> <span style="color:#b58900">string</span>(jsonByte), <span style="color:#cb4b16">nil</span>
 }
 </code></pre></div><h3 id="附录-2">
   附录:

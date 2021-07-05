@@ -205,13 +205,13 @@ mysite/ ├── manage.py ├── my_app │ ├── __init__.py │ ├
     <i class="fa fa-link" aria-hidden="true"></i>
   </a>
 </h2>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#09f;font-style:italic"># 默认项目布局 </span>
-<span style="color:#555">&lt;</span>django_project_root<span style="color:#555">&gt;</span>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#586e75"># 默认项目布局 </span>
+<span style="color:#719e07">&lt;</span>django_project_root<span style="color:#719e07">&gt;</span>
 
-<span style="color:#09f;font-style:italic"># 更好的项目布局</span>
-<span style="color:#555">&lt;</span>repository_root<span style="color:#555">&gt;/</span>
-<span style="color:#a00;background-color:#faa">├──</span> <span style="color:#555">&lt;</span>configuration_root<span style="color:#555">&gt;/</span>
-<span style="color:#a00;background-color:#faa">├──</span> <span style="color:#555">&lt;</span>django_project_root<span style="color:#555">&gt;/</span>
+<span style="color:#586e75"># 更好的项目布局</span>
+<span style="color:#719e07">&lt;</span>repository_root<span style="color:#719e07">&gt;/</span>
+├── <span style="color:#719e07">&lt;</span>configuration_root<span style="color:#719e07">&gt;/</span>
+├── <span style="color:#719e07">&lt;</span>django_project_root<span style="color:#719e07">&gt;/</span>
 </code></pre></div><h3 id="仓库根目录-repository_root">
   仓库根目录 repository_root
   <a class="heading-link" href="#%e4%bb%93%e5%ba%93%e6%a0%b9%e7%9b%ae%e5%bd%95-repository_root">
@@ -229,22 +229,22 @@ mysite/ ├── manage.py ├── my_app │ ├── __init__.py │ ├
   </a>
 </h3>
 <p>如果使用 <code>django-admin.py startproject</code>，它生成的Django项目将成为项目根目录。</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">mysite<span style="color:#555">/</span>
-<span style="color:#a00;background-color:#faa">├──</span> manage<span style="color:#555">.</span>py
-<span style="color:#a00;background-color:#faa">├──</span> my_app
-<span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">├──</span> __init__<span style="color:#555">.</span>py
-<span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">├──</span> admin<span style="color:#555">.</span>py
-<span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">├──</span> apps<span style="color:#555">.</span>py
-<span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">├──</span> migrations
-<span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">└──</span> __init__<span style="color:#555">.</span>py
-<span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">├──</span> models<span style="color:#555">.</span>py
-<span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">├──</span> tests<span style="color:#555">.</span>py
-<span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">└──</span> views<span style="color:#555">.</span>py
-<span style="color:#a00;background-color:#faa">└──</span> mysite
-    <span style="color:#a00;background-color:#faa">├──</span> __init__<span style="color:#555">.</span>py
-    <span style="color:#a00;background-color:#faa">├──</span> settings<span style="color:#555">.</span>py
-    <span style="color:#a00;background-color:#faa">├──</span> urls<span style="color:#555">.</span>py
-    <span style="color:#a00;background-color:#faa">└──</span> wsgi<span style="color:#555">.</span>py
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">mysite<span style="color:#719e07">/</span>
+├── manage<span style="color:#719e07">.</span>py
+├── my_app
+│   ├── __init__<span style="color:#719e07">.</span>py
+│   ├── admin<span style="color:#719e07">.</span>py
+│   ├── apps<span style="color:#719e07">.</span>py
+│   ├── migrations
+│   │   └── __init__<span style="color:#719e07">.</span>py
+│   ├── models<span style="color:#719e07">.</span>py
+│   ├── tests<span style="color:#719e07">.</span>py
+│   └── views<span style="color:#719e07">.</span>py
+└── mysite
+    ├── __init__<span style="color:#719e07">.</span>py
+    ├── settings<span style="color:#719e07">.</span>py
+    ├── urls<span style="color:#719e07">.</span>py
+    └── wsgi<span style="color:#719e07">.</span>py
 </code></pre></div><h3 id="配置根目录-configuration_root">
   配置根目录 configuration_root
   <a class="heading-link" href="#%e9%85%8d%e7%bd%ae%e6%a0%b9%e7%9b%ae%e5%bd%95-configuration_root">
@@ -259,25 +259,25 @@ mysite/ ├── manage.py ├── my_app │ ├── __init__.py │ ├
     <i class="fa fa-link" aria-hidden="true"></i>
   </a>
 </h3>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">mysite_project
-<span style="color:#a00;background-color:#faa">├──</span> config<span style="color:#555">/</span>
-<span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">├──</span> settings<span style="color:#555">/</span>
-<span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">├──</span> __init__<span style="color:#555">.</span>py
-<span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">├──</span> urls<span style="color:#555">.</span>py
-<span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">└──</span> wsgi<span style="color:#555">.</span>py
-<span style="color:#a00;background-color:#faa">├──</span> docs<span style="color:#555">/</span>
-<span style="color:#a00;background-color:#faa">├──</span> mysite<span style="color:#555">/</span>
-<span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">├──</span> media<span style="color:#555">/</span> <span style="color:#09f;font-style:italic"># Development only!</span>
-<span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">├──</span> products<span style="color:#555">/</span>
-<span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">├──</span> profiles<span style="color:#555">/</span>
-<span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">├──</span> ratings<span style="color:#555">/</span>
-<span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">├──</span> static<span style="color:#555">/</span>
-<span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">└──</span> templates<span style="color:#555">/</span>
-<span style="color:#a00;background-color:#faa">├──</span> <span style="color:#555">.</span>gitignore
-<span style="color:#a00;background-color:#faa">├──</span> Makefile
-<span style="color:#a00;background-color:#faa">├──</span> README<span style="color:#555">.</span>rst
-<span style="color:#a00;background-color:#faa">├──</span> manage<span style="color:#555">.</span>py
-<span style="color:#a00;background-color:#faa">└──</span> requirements<span style="color:#555">.</span>txt
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">mysite_project
+├── config<span style="color:#719e07">/</span>
+│   ├── settings<span style="color:#719e07">/</span>
+│   ├── __init__<span style="color:#719e07">.</span>py
+│   ├── urls<span style="color:#719e07">.</span>py
+│   └── wsgi<span style="color:#719e07">.</span>py
+├── docs<span style="color:#719e07">/</span>
+├── mysite<span style="color:#719e07">/</span>
+│   ├── media<span style="color:#719e07">/</span> <span style="color:#586e75"># Development only!</span>
+│   ├── products<span style="color:#719e07">/</span>
+│   ├── profiles<span style="color:#719e07">/</span>
+│   ├── ratings<span style="color:#719e07">/</span>
+│   ├── static<span style="color:#719e07">/</span>
+│   └── templates<span style="color:#719e07">/</span>
+├── <span style="color:#719e07">.</span>gitignore
+├── Makefile
+├── README<span style="color:#719e07">.</span>rst
+├── manage<span style="color:#719e07">.</span>py
+└── requirements<span style="color:#719e07">.</span>txt
 </code></pre></div><table>
 <thead>
 <tr>
@@ -356,65 +356,65 @@ mysite/ ├── manage.py ├── my_app │ ├── __init__.py │ ├
     <i class="fa fa-link" aria-hidden="true"></i>
   </a>
 </h2>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#09f;font-style:italic"># Django3 Web开发指南书中的例子</span>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#586e75"># Django3 Web开发指南书中的例子</span>
 myproject_website
-<span style="color:#a00;background-color:#faa">├──</span> commands<span style="color:#555">/</span>
-<span style="color:#a00;background-color:#faa">├──</span> db_backups<span style="color:#555">/</span> <span style="color:#09f;font-style:italic">#数据库</span>
-<span style="color:#a00;background-color:#faa">├──</span> mockups<span style="color:#555">/</span>
-<span style="color:#a00;background-color:#faa">├──</span> src<span style="color:#555">/</span>
-<span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">└──</span> django<span style="color:#555">-</span>myproject<span style="color:#555">/</span>
-<span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">├──</span> externals<span style="color:#555">/</span> <span style="color:#09f;font-style:italic"># 使用pip安装项目所包含外部依赖的externals目录</span>
-<span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">├──</span> apps<span style="color:#555">/</span>   
-<span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">└──</span> README<span style="color:#555">.</span>md 
-<span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">└──</span> libs<span style="color:#555">/</span>
-<span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">└──</span> README<span style="color:#555">.</span>md
-<span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">├──</span> locale<span style="color:#555">/</span>  <span style="color:#09f;font-style:italic"># 项目翻译</span>
-<span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">├──</span> media<span style="color:#555">/</span>  <span style="color:#09f;font-style:italic"># 媒体文件</span>
-<span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">├──</span> myproject<span style="color:#555">/</span>
-<span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">├──</span> apps<span style="color:#555">/</span>
-<span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">├──</span> core<span style="color:#555">/</span> <span style="color:#09f;font-style:italic"># 项目内建的Django应用，项目共享功能推荐名为core或utils的应用</span>
-<span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">├──</span> __init__<span style="color:#555">.</span>py
-<span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">└──</span> versioning<span style="color:#555">.</span>py
-<span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">└──</span> __init__<span style="color:#555">.</span>py
-<span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">├──</span> settings<span style="color:#555">/</span> <span style="color:#09f;font-style:italic">#项目设置</span>
-<span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">├──</span> __init__<span style="color:#555">.</span>py
-<span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">├──</span> _base<span style="color:#555">.</span>py   <span style="color:#09f;font-style:italic"># 基本设置</span>
-<span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">├──</span> dev<span style="color:#555">.</span>py    <span style="color:#09f;font-style:italic"># 开发</span>
-<span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">├──</span> production<span style="color:#555">.</span>py  <span style="color:#09f;font-style:italic"># 生产</span>
-<span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">├──</span> sample_secrets<span style="color:#555">.</span>json <span style="color:#09f;font-style:italic"># 密钥、数据库密码等敏感信息</span>
-<span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">├──</span> secrets<span style="color:#555">.</span>json
-<span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">├──</span> staging<span style="color:#555">.</span>py   <span style="color:#09f;font-style:italic"># 预发布</span>
-<span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">└──</span> test<span style="color:#555">.</span>py    <span style="color:#09f;font-style:italic"># 测试</span>
-<span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">├──</span> site_static<span style="color:#555">/</span> <span style="color:#09f;font-style:italic"># 项目特有静态文件</span>
-<span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">└──</span> site<span style="color:#555">/</span>
-<span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">├──</span> css<span style="color:#555">/</span> <span style="color:#09f;font-style:italic"># CSS </span>
-<span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">└──</span> style<span style="color:#555">.</span>css
-<span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">├──</span> img<span style="color:#555">/</span> <span style="color:#09f;font-style:italic"># 样式图片、favicon和logo</span>
-<span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">├──</span> favicon<span style="color:#555">-</span><span style="color:#f60">16</span>x16<span style="color:#555">.</span>png
-<span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">├──</span> favicon<span style="color:#555">-</span><span style="color:#f60">32</span>x32<span style="color:#555">.</span>png
-<span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">└──</span> favicon<span style="color:#555">.</span>ico
-<span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">├──</span> js<span style="color:#555">/</span>  <span style="color:#09f;font-style:italic"># js文件</span>
-<span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">└──</span> main<span style="color:#555">.</span>js
-<span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">└──</span> scss<span style="color:#555">/</span> <span style="color:#09f;font-style:italic"># Sass文件</span>
-<span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">│</span>           <span style="color:#a00;background-color:#faa">└──</span> style<span style="color:#555">.</span>scss
-<span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">└──</span> vendor<span style="color:#555">/</span> <span style="color:#09f;font-style:italic"># 组合各种类型文件的第三方模块(如TinyMCE富文本编辑器)</span>
-<span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">│</span>           
-<span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">├──</span> templates<span style="color:#555">/</span>  <span style="color:#09f;font-style:italic"># 项目HTML模板</span>
-<span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">├──</span> base<span style="color:#555">.</span>html <span style="color:#09f;font-style:italic"># 继承模板</span>
-<span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">└──</span> index<span style="color:#555">.</span>html <span style="color:#09f;font-style:italic"># 主页</span>
-<span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">├──</span> __init__<span style="color:#555">.</span>py
-<span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">├──</span> urls<span style="color:#555">.</span>py   <span style="color:#09f;font-style:italic"># 项目URL配置</span>
-<span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">└──</span> wsgi<span style="color:#555">.</span>py   <span style="color:#09f;font-style:italic"># 项目web服务配</span>
-<span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">├──</span> requirements<span style="color:#555">/</span>  
-<span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">├──</span> _base<span style="color:#555">.</span>txt  <span style="color:#09f;font-style:italic"># 共享</span>
-<span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">├──</span> dev<span style="color:#555">.</span>txt   <span style="color:#09f;font-style:italic"># 开发 </span>
-<span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">├──</span> production<span style="color:#555">.</span>txt <span style="color:#09f;font-style:italic"># 生产</span>
-<span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">├──</span> staging<span style="color:#555">.</span>txt  <span style="color:#09f;font-style:italic"># 预发布</span>
-<span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">│</span>   <span style="color:#a00;background-color:#faa">└──</span> test<span style="color:#555">.</span>txt  <span style="color:#09f;font-style:italic"># 测试</span>
-<span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">├──</span> static<span style="color:#555">/</span>  <span style="color:#09f;font-style:italic"># 存放静态文件</span>
-<span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">├──</span> LICENSE  <span style="color:#09f;font-style:italic"># 开源许可证</span>
-<span style="color:#a00;background-color:#faa">│</span>       <span style="color:#a00;background-color:#faa">└──</span> manage<span style="color:#555">.</span>py<span style="color:#555">*</span>
-<span style="color:#a00;background-color:#faa">└──</span> venv<span style="color:#555">/</span>
+├── commands<span style="color:#719e07">/</span>
+├── db_backups<span style="color:#719e07">/</span> <span style="color:#586e75">#数据库</span>
+├── mockups<span style="color:#719e07">/</span>
+├── src<span style="color:#719e07">/</span>
+│   └── django<span style="color:#719e07">-</span>myproject<span style="color:#719e07">/</span>
+│       ├── externals<span style="color:#719e07">/</span> <span style="color:#586e75"># 使用pip安装项目所包含外部依赖的externals目录</span>
+│       │   ├── apps<span style="color:#719e07">/</span>   
+│       │   │   └── README<span style="color:#719e07">.</span>md 
+│       │   └── libs<span style="color:#719e07">/</span>
+│       │       └── README<span style="color:#719e07">.</span>md
+│       ├── locale<span style="color:#719e07">/</span>  <span style="color:#586e75"># 项目翻译</span>
+│       ├── media<span style="color:#719e07">/</span>  <span style="color:#586e75"># 媒体文件</span>
+│       ├── myproject<span style="color:#719e07">/</span>
+│       │   ├── apps<span style="color:#719e07">/</span>
+│       │   │   ├── core<span style="color:#719e07">/</span> <span style="color:#586e75"># 项目内建的Django应用，项目共享功能推荐名为core或utils的应用</span>
+│       │   │   │   ├── __init__<span style="color:#719e07">.</span>py
+│       │   │   │   └── versioning<span style="color:#719e07">.</span>py
+│       │   │   └── __init__<span style="color:#719e07">.</span>py
+│       │   ├── settings<span style="color:#719e07">/</span> <span style="color:#586e75">#项目设置</span>
+│       │   │   ├── __init__<span style="color:#719e07">.</span>py
+│       │   │   ├── _base<span style="color:#719e07">.</span>py   <span style="color:#586e75"># 基本设置</span>
+│       │   │   ├── dev<span style="color:#719e07">.</span>py    <span style="color:#586e75"># 开发</span>
+│       │   │   ├── production<span style="color:#719e07">.</span>py  <span style="color:#586e75"># 生产</span>
+│       │   │   ├── sample_secrets<span style="color:#719e07">.</span>json <span style="color:#586e75"># 密钥、数据库密码等敏感信息</span>
+│       │   │   ├── secrets<span style="color:#719e07">.</span>json
+│       │   │   ├── staging<span style="color:#719e07">.</span>py   <span style="color:#586e75"># 预发布</span>
+│       │   │   └── test<span style="color:#719e07">.</span>py    <span style="color:#586e75"># 测试</span>
+│       │   ├── site_static<span style="color:#719e07">/</span> <span style="color:#586e75"># 项目特有静态文件</span>
+│       │   │   └── site<span style="color:#719e07">/</span>
+│       │   │       ├── css<span style="color:#719e07">/</span> <span style="color:#586e75"># CSS </span>
+│       │   │       │   └── style<span style="color:#719e07">.</span>css
+│       │   │       ├── img<span style="color:#719e07">/</span> <span style="color:#586e75"># 样式图片、favicon和logo</span>
+│       │   │       │   ├── favicon<span style="color:#719e07">-</span><span style="color:#2aa198">16</span>x16<span style="color:#719e07">.</span>png
+│       │   │       │   ├── favicon<span style="color:#719e07">-</span><span style="color:#2aa198">32</span>x32<span style="color:#719e07">.</span>png
+│       │   │       │   └── favicon<span style="color:#719e07">.</span>ico
+│       │   │       ├── js<span style="color:#719e07">/</span>  <span style="color:#586e75"># js文件</span>
+│       │   │       │   └── main<span style="color:#719e07">.</span>js
+│       │   │       └── scss<span style="color:#719e07">/</span> <span style="color:#586e75"># Sass文件</span>
+│       │   │           └── style<span style="color:#719e07">.</span>scss
+│       │   │       └── vendor<span style="color:#719e07">/</span> <span style="color:#586e75"># 组合各种类型文件的第三方模块(如TinyMCE富文本编辑器)</span>
+│       │   │           
+│       │   ├── templates<span style="color:#719e07">/</span>  <span style="color:#586e75"># 项目HTML模板</span>
+│       │   │   ├── base<span style="color:#719e07">.</span>html <span style="color:#586e75"># 继承模板</span>
+│       │   │   └── index<span style="color:#719e07">.</span>html <span style="color:#586e75"># 主页</span>
+│       │   ├── __init__<span style="color:#719e07">.</span>py
+│       │   ├── urls<span style="color:#719e07">.</span>py   <span style="color:#586e75"># 项目URL配置</span>
+│       │   └── wsgi<span style="color:#719e07">.</span>py   <span style="color:#586e75"># 项目web服务配</span>
+│       ├── requirements<span style="color:#719e07">/</span>  
+│       │   ├── _base<span style="color:#719e07">.</span>txt  <span style="color:#586e75"># 共享</span>
+│       │   ├── dev<span style="color:#719e07">.</span>txt   <span style="color:#586e75"># 开发 </span>
+│       │   ├── production<span style="color:#719e07">.</span>txt <span style="color:#586e75"># 生产</span>
+│       │   ├── staging<span style="color:#719e07">.</span>txt  <span style="color:#586e75"># 预发布</span>
+│       │   └── test<span style="color:#719e07">.</span>txt  <span style="color:#586e75"># 测试</span>
+│       ├── static<span style="color:#719e07">/</span>  <span style="color:#586e75"># 存放静态文件</span>
+│       ├── LICENSE  <span style="color:#586e75"># 开源许可证</span>
+│       └── manage<span style="color:#719e07">.</span>py<span style="color:#719e07">*</span>
+└── venv<span style="color:#719e07">/</span>
 </code></pre></div>
       </div>
 

@@ -14,17 +14,17 @@
 
     <meta name="author" content="xblzbjs">
     <meta name="description" content="终端模拟器选择    推荐三个
-1. Gnome Terminal（原生）    2. Terminator（在用）    3. Guake    终端配置（Zsh &#43; Oh My Zsh &#43; PowerLevel10k）    1. 安装Zsh(https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)    # apt 打包安装 zsh sudo apt install zsh # 确认 zsh 成功安装 zsh --version # 设置为默认Shell并确认 chsh -s $(which zsh) echo $SHELL 2. 安装Oh My Zsh    # 推荐使用curl安装 sh -c &#34;$(curl -fsSL https://raw.">
+1. Gnome Terminal（原生）    2. Terminator（在用）    3. Guake    终端配置（Zsh &#43; Oh My Zsh &#43; PowerLevel10k）    1. 安装Zsh    # apt 打包安装 zsh sudo apt install zsh # 确认 zsh 成功安装 zsh --version # 设置为默认Shell并确认 chsh -s $(which zsh) echo $SHELL 2. 安装Oh My Zsh    # 推荐使用curl安装 sh -c &#34;$(curl -fsSL https://raw.">
     <meta name="keywords" content="blog,developer,personal">
 
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Ubuntu Shell环境配置"/>
 <meta name="twitter:description" content="终端模拟器选择    推荐三个
-1. Gnome Terminal（原生）    2. Terminator（在用）    3. Guake    终端配置（Zsh &#43; Oh My Zsh &#43; PowerLevel10k）    1. 安装Zsh(https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)    # apt 打包安装 zsh sudo apt install zsh # 确认 zsh 成功安装 zsh --version # 设置为默认Shell并确认 chsh -s $(which zsh) echo $SHELL 2. 安装Oh My Zsh    # 推荐使用curl安装 sh -c &#34;$(curl -fsSL https://raw."/>
+1. Gnome Terminal（原生）    2. Terminator（在用）    3. Guake    终端配置（Zsh &#43; Oh My Zsh &#43; PowerLevel10k）    1. 安装Zsh    # apt 打包安装 zsh sudo apt install zsh # 确认 zsh 成功安装 zsh --version # 设置为默认Shell并确认 chsh -s $(which zsh) echo $SHELL 2. 安装Oh My Zsh    # 推荐使用curl安装 sh -c &#34;$(curl -fsSL https://raw."/>
 
     <meta property="og:title" content="Ubuntu Shell环境配置" />
 <meta property="og:description" content="终端模拟器选择    推荐三个
-1. Gnome Terminal（原生）    2. Terminator（在用）    3. Guake    终端配置（Zsh &#43; Oh My Zsh &#43; PowerLevel10k）    1. 安装Zsh(https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)    # apt 打包安装 zsh sudo apt install zsh # 确认 zsh 成功安装 zsh --version # 设置为默认Shell并确认 chsh -s $(which zsh) echo $SHELL 2. 安装Oh My Zsh    # 推荐使用curl安装 sh -c &#34;$(curl -fsSL https://raw." />
+1. Gnome Terminal（原生）    2. Terminator（在用）    3. Guake    终端配置（Zsh &#43; Oh My Zsh &#43; PowerLevel10k）    1. 安装Zsh    # apt 打包安装 zsh sudo apt install zsh # 确认 zsh 成功安装 zsh --version # 设置为默认Shell并确认 chsh -s $(which zsh) echo $SHELL 2. 安装Oh My Zsh    # 推荐使用curl安装 sh -c &#34;$(curl -fsSL https://raw." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://xblzbjs.cn/posts/linux/ubuntu-shell%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-07-02T00:00:00&#43;00:00" />
@@ -164,6 +164,10 @@
   <i class="fa fa-tag" aria-hidden="true"></i>
     <span class="tag">
       <a href="/tags/linux/">Linux</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/ubuntu/">Ubuntu</a>
     </span></div>
 
         </div>
@@ -203,48 +207,48 @@
   </a>
 </h2>
 <h3 id="1-安装zshhttpsgithubcomohmyzshohmyzshwikiinstalling-zsh">
-  1. 安装<a href="">Zsh</a>(<a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH">https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH</a>)
+  1. 安装<a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH">Zsh</a>
   <a class="heading-link" href="#1-%e5%ae%89%e8%a3%85zshhttpsgithubcomohmyzshohmyzshwikiinstalling-zsh">
     <i class="fa fa-link" aria-hidden="true"></i>
   </a>
 </h3>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh"><span style="color:#09f;font-style:italic"># apt 打包安装 zsh</span>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh"><span style="color:#586e75"># apt 打包安装 zsh</span>
 sudo apt install zsh
-<span style="color:#09f;font-style:italic"># 确认 zsh 成功安装</span>
+<span style="color:#586e75"># 确认 zsh 成功安装</span>
 zsh --version
-<span style="color:#09f;font-style:italic"># 设置为默认Shell并确认</span>
-chsh -s <span style="color:#069;font-weight:bold">$(</span>which zsh<span style="color:#069;font-weight:bold">)</span>
-<span style="color:#366">echo</span> <span style="color:#033">$SHELL</span>
+<span style="color:#586e75"># 设置为默认Shell并确认</span>
+chsh -s <span style="color:#719e07">$(</span>which zsh<span style="color:#719e07">)</span>
+<span style="color:#b58900">echo</span> <span style="color:#268bd2">$SHELL</span>
 </code></pre></div><h3 id="2-安装oh-my-zshhttpsgithubcomohmyzshohmyzsh">
   2. 安装<a href="https://github.com/ohmyzsh/ohmyzsh">Oh My Zsh</a>
   <a class="heading-link" href="#2-%e5%ae%89%e8%a3%85oh-my-zshhttpsgithubcomohmyzshohmyzsh">
     <i class="fa fa-link" aria-hidden="true"></i>
   </a>
 </h3>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh"><span style="color:#09f;font-style:italic"># 推荐使用curl安装</span>
-sh -c <span style="color:#c30">&#34;</span><span style="color:#069;font-weight:bold">$(</span>curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh<span style="color:#069;font-weight:bold">)</span><span style="color:#c30">
-</span><span style="color:#c30"># 如果没有安装curl，安装一下吧，你会发现它十分强大
-</span><span style="color:#c30">sudo apt install zsh
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh"><span style="color:#586e75"># 推荐使用curl安装</span>
+sh -c <span style="color:#2aa198">&#34;</span><span style="color:#719e07">$(</span>curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh<span style="color:#719e07">)</span><span style="color:#2aa198">
+</span><span style="color:#2aa198"># 如果没有安装curl，安装一下吧，你会发现它十分强大
+</span><span style="color:#2aa198">sudo apt install zsh
 </span></code></pre></div><h3 id="3-配置zsh主题powerlevel10k">
   3. 配置Zsh主题(PowerLevel10k)
   <a class="heading-link" href="#3-%e9%85%8d%e7%bd%aezsh%e4%b8%bb%e9%a2%98powerlevel10k">
     <i class="fa fa-link" aria-hidden="true"></i>
   </a>
 </h3>
-<p>Oh My Zsh自带的主题也很不错，这里是我喜欢的一些主题，你可以参考参考。</p>
+<p>Oh My Zsh自带的主题也很不错,你可以参考参考。</p>
 <p>我自己的电脑上设置的主题为 <a href="https://github.com/romkatv/powerlevel10k">Powerlevel10k</a></p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh">git clone --depth<span style="color:#555">=</span><span style="color:#f60">1</span> https://github.com/romkatv/powerlevel10k.git <span style="color:#a00">${</span><span style="color:#033">ZSH_CUSTOM</span><span style="color:#069;font-weight:bold">:-</span>~/.oh-my-zsh/custom<span style="color:#a00">}</span>/themes/powerlevel10k
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh">git clone --depth<span style="color:#719e07">=</span><span style="color:#2aa198">1</span> https://github.com/romkatv/powerlevel10k.git <span style="color:#2aa198">${</span><span style="color:#268bd2">ZSH_CUSTOM</span><span style="color:#719e07">:-</span>~/.oh-my-zsh/custom<span style="color:#2aa198">}</span>/themes/powerlevel10k
 </code></pre></div><p>安装下面的字体文件:</p>
 <ul>
-<li>[MesloLGS NF Regular.ttf](<a href="https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS">https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS</a> NF Regular.ttf)</li>
-<li>[MesloLGS NF Bold.ttf](<a href="https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS">https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS</a> NF Bold.ttf)</li>
-<li>[MesloLGS NF Italic.ttf](<a href="https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS">https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS</a> NF Italic.ttf)</li>
-<li>[MesloLGS NF Bold Italic.ttf](<a href="https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS">https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS</a> NF Bold Italic.ttf)</li>
+<li><a href="https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS">MesloLGS NF Regular.ttf</a></li>
+<li><a href="https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS">MesloLGS NF Bold.ttf</a></li>
+<li><a href="https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS">MesloLGS NF Italic.ttf</a></li>
+<li><a href="https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS">MesloLGS NF Bold Italic.ttf</a></li>
 </ul>
 <p>设置 <code>~/.zshrc</code></p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh">vim ~/.zshrc
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh">vim ~/.zshrc
 </code></pre></div><p>设置 <code>ZSH_THEME=&quot;powerlevel10k/powerlevel10k&quot;</code>，</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh"><span style="color:#366">source</span> ~/.zshrc
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh"><span style="color:#b58900">source</span> ~/.zshrc
 </code></pre></div><h3 id="4-oh-my-zsh插件">
   4. Oh My Zsh插件
   <a class="heading-link" href="#4-oh-my-zsh%e6%8f%92%e4%bb%b6">

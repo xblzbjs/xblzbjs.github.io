@@ -208,13 +208,13 @@
 <ol>
 <li>克隆远程仓库到本地</li>
 </ol>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone ssh://user@host/path/to/repo.git
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone ssh://user@host/path/to/repo.git
 </code></pre></div><ol start="2">
 <li>本地开发完后，提交代码</li>
 </ol>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git status	<span style="color:#09f;font-style:italic"># 查看仓库状态</span>
-git add &lt;some file&gt; <span style="color:#09f;font-style:italic">#</span>
-git commit -m <span style="color:#c30">&#34;...&#34;</span>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git status	<span style="color:#586e75"># 查看仓库状态</span>
+git add &lt;some file&gt; <span style="color:#586e75">#</span>
+git commit -m <span style="color:#2aa198">&#34;...&#34;</span>
 </code></pre></div><h4 id="优点">
   优点
   <a class="heading-link" href="#%e4%bc%98%e7%82%b9">
@@ -266,16 +266,16 @@ git commit -m <span style="color:#c30">&#34;...&#34;</span>
 <ol>
 <li>基于主分支新建一个功能分支</li>
 </ol>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git checkout -b feature-user
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git checkout -b feature-user
 </code></pre></div><ol start="2">
 <li>在功能分支上进行代码开发，开发完成后 commit 到功能分支</li>
 </ol>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git add &lt;some file&gt;
-git commit -m <span style="color:#c30">&#34;add some file&#34;</span>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git add &lt;some file&gt;
+git commit -m <span style="color:#2aa198">&#34;add some file&#34;</span>
 </code></pre></div><ol start="3">
 <li>将本地功能分支代码 push 到远程仓库</li>
 </ol>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git push origin feature-user
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git push origin feature-user
 </code></pre></div><ol start="4">
 <li>（可选）在远程仓库上创建 PR</li>
 <li>（可选）代码管理员或其他同时收到 PR 后，CR 代码</li>
@@ -338,50 +338,50 @@ git commit -m <span style="color:#c30">&#34;add some file&#34;</span>
 <ol>
 <li>基于 develop 分支，新建一个功能分支</li>
 </ol>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git checkout -b feature-&lt;your name&gt; <span style="color:#09f;font-style:italic"># or feature/&lt;your name&gt;</span>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git checkout -b feature-&lt;your name&gt; <span style="color:#586e75"># or feature/&lt;your name&gt;</span>
 </code></pre></div><ol start="2">
 <li>在功能分支上开发</li>
 <li>紧急修复 Bug</li>
 </ol>
 <p>假设我们正处于新功能的开发中，突然线上代码发现了一个 Bug，我们要立即停止手上的工作，修复线上的 Bug</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git stash <span style="color:#09f;font-style:italic"># 1. 开发工作只完成了一半，还不想提交，可以临时保存修改至堆栈区</span>
-git checkout -b hotfix/print-error master <span style="color:#09f;font-style:italic"># 2. 从 master 建立 hotfix 分支</span>
-vi main.go <span style="color:#09f;font-style:italic"># 3. 修复 bug，callmainfunction -&gt; call main function</span>
-git commit -a -m <span style="color:#c30">&#39;fix print message error bug&#39;</span> <span style="color:#09f;font-style:italic"># 4. 提交修复</span>
-git checkout develop <span style="color:#09f;font-style:italic"># 5. 切换到 develop 分支</span>
-git merge --no-ff hotfix/print-error <span style="color:#09f;font-style:italic"># 6. 把 hotfix 分支合并到 develop 分支</span>
-git checkout master <span style="color:#09f;font-style:italic"># 7. 切换到 master 分支</span>
-git merge --no-ff hotfix/print-error <span style="color:#09f;font-style:italic"># 8. 把 hotfix 分支合并到 master</span>
-git tag -a v0.9.1 -m <span style="color:#c30">&#34;fix log bug&#34;</span> <span style="color:#09f;font-style:italic"># 9. master 分支打 tag</span>
-go build -v . <span style="color:#09f;font-style:italic"># 10. 编译代码，并将编译好的二进制更新到生产环境</span>
-git branch -d hotfix/print-error <span style="color:#09f;font-style:italic"># 11. 修复好后，删除 hotfix/xxx 分支</span>
-git checkout feature/print-hello-world <span style="color:#09f;font-style:italic"># 12. 切换到开发分支下</span>
-git merge --no-ff develop <span style="color:#09f;font-style:italic"># 13. 因为 develop 有更新，这里最好同步更新下</span>
-git stash pop <span style="color:#09f;font-style:italic"># 14. 恢复到修复前的工作状态</span>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git stash <span style="color:#586e75"># 1. 开发工作只完成了一半，还不想提交，可以临时保存修改至堆栈区</span>
+git checkout -b hotfix/print-error master <span style="color:#586e75"># 2. 从 master 建立 hotfix 分支</span>
+vi main.go <span style="color:#586e75"># 3. 修复 bug，callmainfunction -&gt; call main function</span>
+git commit -a -m <span style="color:#2aa198">&#39;fix print message error bug&#39;</span> <span style="color:#586e75"># 4. 提交修复</span>
+git checkout develop <span style="color:#586e75"># 5. 切换到 develop 分支</span>
+git merge --no-ff hotfix/print-error <span style="color:#586e75"># 6. 把 hotfix 分支合并到 develop 分支</span>
+git checkout master <span style="color:#586e75"># 7. 切换到 master 分支</span>
+git merge --no-ff hotfix/print-error <span style="color:#586e75"># 8. 把 hotfix 分支合并到 master</span>
+git tag -a v0.9.1 -m <span style="color:#2aa198">&#34;fix log bug&#34;</span> <span style="color:#586e75"># 9. master 分支打 tag</span>
+go build -v . <span style="color:#586e75"># 10. 编译代码，并将编译好的二进制更新到生产环境</span>
+git branch -d hotfix/print-error <span style="color:#586e75"># 11. 修复好后，删除 hotfix/xxx 分支</span>
+git checkout feature/print-hello-world <span style="color:#586e75"># 12. 切换到开发分支下</span>
+git merge --no-ff develop <span style="color:#586e75"># 13. 因为 develop 有更新，这里最好同步更新下</span>
+git stash pop <span style="color:#586e75"># 14. 恢复到修复前的工作状态</span>
 </code></pre></div><ol start="4">
 <li>继续开发，完成后提交代码到功能分支上</li>
 <li>在功能分支上做 CR</li>
 <li>CR 通过后，由代码仓库 matainer 将功能分支合并到 develop 分支上</li>
 </ol>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git checkout develop
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git checkout develop
 git merge --no-ff feature-&lt;your name&gt;
 </code></pre></div><ol start="7">
 <li>基于 develop 分支，创建 release 分支，测试代码</li>
 </ol>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git checkout -b release-&lt;版本号&gt; develop
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git checkout -b release-&lt;版本号&gt; develop
 </code></pre></div><ol start="8">
 <li>测试失败的话，直接在 release 分支上修改代码，修改完成后，提交并编译部署。</li>
 </ol>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git commit -a -m <span style="color:#c30">&#34;fix bug&#34;</span>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git commit -a -m <span style="color:#2aa198">&#34;fix bug&#34;</span>
 go build -v .
 </code></pre></div><ol start="9">
 <li>测试通过后，将功能分支合并到主分支和 develop 分支</li>
 </ol>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git checkout develop
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git checkout develop
 git merge --no-ff release-&lt;版本号&gt;
 git checkout master
 git merge --no-ff release-&lt;版本号&gt;
-git tag -a v1.0.0 -m <span style="color:#c30">&#34;add &lt;your feature description&gt;&#34;</span> <span style="color:#09f;font-style:italic"># master 分支打 tag</span>
+git tag -a v1.0.0 -m <span style="color:#2aa198">&#34;add &lt;your feature description&gt;&#34;</span> <span style="color:#586e75"># master 分支打 tag</span>
 </code></pre></div><ol start="10">
 <li>删除原本的功能分支，也可以选择性删除对应的 release 分支</li>
 </ol>
@@ -508,7 +508,7 @@ git tag -a v1.0.0 -m <span style="color:#c30">&#34;add &lt;your feature descript
 </ul>
 <p>当前业界应用的比较广泛的是 <a href="https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-guidelines">Angular Git Commit Template</a></p>
 <p>具体格式为:</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;
 
 &lt;body&gt;
 
@@ -538,7 +538,7 @@ git tag -a v1.0.0 -m <span style="color:#c30">&#34;add &lt;your feature descript
     <i class="fa fa-link" aria-hidden="true"></i>
   </a>
 </h4>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"># 标题行：50个字符以内，描述主要变更内容
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"># 标题行：50个字符以内，描述主要变更内容
 #
 # 主体内容：更详细的说明文本，建议72个字符以内。 需要描述的信息包括:
 #

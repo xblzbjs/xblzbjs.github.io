@@ -197,31 +197,31 @@
 <li>可用for遍历各种Iterable的数据类型</li>
 <li>可以实现<code>__next__</code>和<code>__iter__</code>实现迭代器</li>
 </ul>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">Stack</span>(<span style="color:#366">object</span>): <span style="color:#09f;font-style:italic"># 使用组合的例子</span>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">class</span> <span style="color:#268bd2">Stack</span>(<span style="color:#b58900">object</span>): <span style="color:#586e75"># 使用组合的例子</span>
 	
-	<span style="color:#069;font-weight:bold">def</span> __init__(self):
-		self<span style="color:#555">.</span>_deque <span style="color:#555">=</span> deque()
+	<span style="color:#719e07">def</span> __init__(<span style="color:#268bd2">self</span>):
+		<span style="color:#268bd2">self</span><span style="color:#719e07">.</span>_deque <span style="color:#719e07">=</span> deque()
 	
-	<span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">push</span>(self, value):
-		<span style="color:#069;font-weight:bold">return</span> self<span style="color:#555">.</span>_deque<span style="color:#555">.</span>append(value)
+	<span style="color:#719e07">def</span> <span style="color:#268bd2">push</span>(<span style="color:#268bd2">self</span>, value):
+		<span style="color:#719e07">return</span> <span style="color:#268bd2">self</span><span style="color:#719e07">.</span>_deque<span style="color:#719e07">.</span>append(value)
 		
-	<span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">pop</span>(self):
-		<span style="color:#069;font-weight:bold">return</span> self<span style="color:#555">.</span>_deque<span style="color:#555">.</span>pop()
+	<span style="color:#719e07">def</span> <span style="color:#268bd2">pop</span>(<span style="color:#268bd2">self</span>):
+		<span style="color:#719e07">return</span> <span style="color:#268bd2">self</span><span style="color:#719e07">.</span>_deque<span style="color:#719e07">.</span>pop()
 	
-	<span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">empty</span>(self):
-		<span style="color:#069;font-weight:bold">return</span> <span style="color:#366">len</span>(self<span style="color:#555">.</span>_deque) <span style="color:#555">==</span> <span style="color:#f60">0</span>
+	<span style="color:#719e07">def</span> <span style="color:#268bd2">empty</span>(<span style="color:#268bd2">self</span>):
+		<span style="color:#719e07">return</span> <span style="color:#b58900">len</span>(<span style="color:#268bd2">self</span><span style="color:#719e07">.</span>_deque) <span style="color:#719e07">==</span> <span style="color:#2aa198">0</span>
 		
-	<span style="color:#069;font-weight:bold">def</span> __iter__(self):
-		res <span style="color:#555">=</span> []
-		<span style="color:#069;font-weight:bold">for</span> i <span style="color:#000;font-weight:bold">in</span> self<span style="color:#555">.</span>_deque:
-			res<span style="color:#555">.</span>append(i)
-		<span style="color:#069;font-weight:bold">for</span> i <span style="color:#000;font-weight:bold">in</span> <span style="color:#366">reversed</span>(res):
-			<span style="color:#069;font-weight:bold">yield</span> i 
-s <span style="color:#555">=</span> Stack()
-s<span style="color:#555">.</span>push(<span style="color:#f60">1</span>)
-s<span style="color:#555">.</span>push(<span style="color:#f60">2</span>)
-<span style="color:#069;font-weight:bold">for</span> i <span style="color:#000;font-weight:bold">in</span> s:
-	<span style="color:#069;font-weight:bold">print</span>(i)
+	<span style="color:#719e07">def</span> __iter__(<span style="color:#268bd2">self</span>):
+		res <span style="color:#719e07">=</span> []
+		<span style="color:#719e07">for</span> i <span style="color:#719e07">in</span> <span style="color:#268bd2">self</span><span style="color:#719e07">.</span>_deque:
+			res<span style="color:#719e07">.</span>append(i)
+		<span style="color:#719e07">for</span> i <span style="color:#719e07">in</span> <span style="color:#b58900">reversed</span>(res):
+			<span style="color:#719e07">yield</span> i 
+s <span style="color:#719e07">=</span> Stack()
+s<span style="color:#719e07">.</span>push(<span style="color:#2aa198">1</span>)
+s<span style="color:#719e07">.</span>push(<span style="color:#2aa198">2</span>)
+<span style="color:#719e07">for</span> i <span style="color:#719e07">in</span> s:
+	<span style="color:#719e07">print</span>(i)
 </code></pre></div><h3 id="观察者模式">
   观察者模式
   <a class="heading-link" href="#%e8%a7%82%e5%af%9f%e8%80%85%e6%a8%a1%e5%bc%8f">

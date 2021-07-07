@@ -257,7 +257,7 @@ PEP8中文翻译文档
     </item>
     
     <item>
-      <title>Django｜项目布局</title>
+      <title>Django｜设计</title>
       <link>https://xblzbjs.cn/posts/django/django%E9%A1%B9%E7%9B%AE%E5%B8%83%E5%B1%80/</link>
       <pubDate>Sat, 20 Mar 2021 00:00:00 +0000</pubDate>
       
@@ -304,7 +304,7 @@ mysite/ ├── manage.py ├── my_app │ ├── __init__.py │ ├
     </item>
     
     <item>
-      <title>zsh｜主题</title>
+      <title>zsh 主题推荐</title>
       <link>https://xblzbjs.cn/posts/linux/zsh-%E4%B8%BB%E9%A2%98%E6%8E%A8%E8%8D%90/</link>
       <pubDate>Fri, 19 Mar 2021 00:00:00 +0000</pubDate>
       
@@ -330,21 +330,6 @@ mysite/ ├── manage.py ├── my_app │ ├── __init__.py │ ├
       <description>环境：腾讯云CentOS7.5 64位
 1. 查看Python的位置并安装相关依赖    [root@centos ~]# whereis python python2: /usr/bin/python2 /usr/bin/python2.7 /usr/lib/python2.7 /usr/lib64/python2.7 /usr/include/python2.7 /usr/share/man/man1/python2.1.gz python指向的是python2，python2指向的是python2.7，因此我们可以装个python3，然后将python指向python3，然后python2指向python2.7，那么两个版本的python就能共存了。
 yum install zlib-devel libffi-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gcc make 2. 使用wget下载Python3源码包    wget http://npm.taobao.org/mirrors/python/3.7.9/Python-3.7.9.tar.xz # 如果提示wget未找到命令, 那么就先使用yum安装wget yum -y install wget 3. 编译Python3源码包    #解压 xz -d Python-3.7.9.tar.xz tar -xf Python-3.7.9.tar #进入解压后的目录，依次执行下面命令进行手动编译 cd Python-3.7.9 ./configure prefix=/usr/local/python3 make &amp;amp;&amp;amp; make install # 如果出现can&amp;#39;t decompress data; zlib not available这个错误，则需要安装相关库 #安装依赖zlib、zlib-devel yum install zlib zlib yum install zlib zlib-devel 4.</description>
-    </item>
-    
-    <item>
-      <title>Django｜第三方库</title>
-      <link>https://xblzbjs.cn/posts/django/django%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/</link>
-      <pubDate>Wed, 17 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://xblzbjs.cn/posts/django/django%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/</guid>
-      <description>模型层（model）      django-model-utils
-  django-extensions
-  Cookiecutter Django’s documentation
-  django-countries
-  django-crispy-forms
-  factory_boy
-  Markdown编辑器     django-mdeditor  用户注册     django-allauth: django-registration  后台管理     django-grappelli simpleui  </description>
     </item>
     
     <item>

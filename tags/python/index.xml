@@ -40,7 +40,7 @@ PEP8中文翻译文档
     </item>
     
     <item>
-      <title>Django｜项目布局</title>
+      <title>Django｜设计</title>
       <link>https://xblzbjs.cn/posts/django/django%E9%A1%B9%E7%9B%AE%E5%B8%83%E5%B1%80/</link>
       <pubDate>Sat, 20 Mar 2021 00:00:00 +0000</pubDate>
       
@@ -84,21 +84,6 @@ mysite/ ├── manage.py ├── my_app │ ├── __init__.py │ ├
       
       <guid>https://xblzbjs.cn/posts/design-patterns/go-python%E8%A1%8C%E4%B8%BA%E5%9E%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</guid>
       <description>常见学习行为型设计模式     迭代器模式（Iterator）：通过统一的接口迭代对象 观察者模式（Observer）：对象发生改变的时候，观察者执行相应动作 策略模式（Strategy）：针对不同规模输入使用不同的策略  迭代器模式     Python内置对迭代器模式的支持 可用for遍历各种Iterable的数据类型 可以实现__next__和__iter__实现迭代器  class Stack(object): # 使用组合的例子 def __init__(self): self._deque = deque() def push(self, value): return self._deque.append(value) def pop(self): return self._deque.pop() def empty(self): return len(self._deque) == 0 def __iter__(self): res = [] for i in self._deque: res.append(i) for i in reversed(res): yield i s = Stack() s.push(1) s.push(2) for i in s: print(i) 观察者模式     发布订阅是一种最常用的实现方式 发布订阅用于解耦逻辑 可以通过回调等方式实现，当发生事件，执行回调函数  ==TODO：代码实现==</description>
-    </item>
-    
-    <item>
-      <title>Django｜第三方库</title>
-      <link>https://xblzbjs.cn/posts/django/django%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/</link>
-      <pubDate>Wed, 17 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://xblzbjs.cn/posts/django/django%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/</guid>
-      <description>模型层（model）      django-model-utils
-  django-extensions
-  Cookiecutter Django’s documentation
-  django-countries
-  django-crispy-forms
-  factory_boy
-  Markdown编辑器     django-mdeditor  用户注册     django-allauth: django-registration  后台管理     django-grappelli simpleui  </description>
     </item>
     
   </channel>

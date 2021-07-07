@@ -23,7 +23,7 @@ mysite/ ├── manage.py ├── my_app │ ├── __init__.py │ ├
     <meta name="keywords" content="blog,developer,personal">
 
     <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Django｜项目布局"/>
+<meta name="twitter:title" content="Django｜设计"/>
 <meta name="twitter:description" content="有许多项目模板可以启动Django项目。这里有两个链接，可使用时，我们引导一个项目:
   cookiecutter-django
   Django包
@@ -32,7 +32,7 @@ mysite/ ├── manage.py ├── my_app │ ├── __init__.py │ ├
  Django项目根目录 django_project_root    如果使用 django-admin.py startproject，它生成的Django项目将成为项目根目录。
 mysite/ ├── manage.py ├── my_app │ ├── __init__.py │ ├── admin.py │ ├── apps.py │ ├── migrations │ │ └── __init__."/>
 
-    <meta property="og:title" content="Django｜项目布局" />
+    <meta property="og:title" content="Django｜设计" />
 <meta property="og:description" content="有许多项目模板可以启动Django项目。这里有两个链接，可使用时，我们引导一个项目:
   cookiecutter-django
   Django包
@@ -48,7 +48,7 @@ mysite/ ├── manage.py ├── my_app │ ├── __init__.py │ ├
 
 
     <title>
-  Django｜项目布局 · xblzbjs
+  Django｜设计 · xblzbjs
 </title>
 
     
@@ -156,7 +156,7 @@ mysite/ ├── manage.py ├── my_app │ ├── __init__.py │ ├
         <div class="post-title">
           <h1 class="title">
             <a class="title-link" href="https://xblzbjs.cn/posts/django/django%E9%A1%B9%E7%9B%AE%E5%B8%83%E5%B1%80/">
-              Django｜项目布局
+              Django｜设计
             </a>
           </h1>
         </div>
@@ -178,11 +178,11 @@ mysite/ ├── manage.py ├── my_app │ ├── __init__.py │ ├
           <div class="tags">
   <i class="fa fa-tag" aria-hidden="true"></i>
     <span class="tag">
-      <a href="/tags/django/">django</a>
+      <a href="/tags/django/">Django</a>
     </span>
       <span class="separator">•</span>
     <span class="tag">
-      <a href="/tags/python/">python</a>
+      <a href="/tags/python/">Python</a>
     </span></div>
 
         </div>
@@ -415,6 +415,59 @@ myproject_website
 │       ├── LICENSE  <span style="color:#586e75"># 开源许可证</span>
 │       └── manage<span style="color:#719e07">.</span>py<span style="color:#719e07">*</span>
 └── venv<span style="color:#719e07">/</span>
+</code></pre></div><h2 id="app-设计">
+  App 设计
+  <a class="heading-link" href="#app-%e8%ae%be%e8%ae%a1">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<blockquote>
+<p>“The art of creating and maintaining a good Django app is that it should follow the</p>
+<p>truncated Unix philosophy according to Douglas McIlroy: ‘Write programs that do one</p>
+<p>thing and do it well.”</p>
+</blockquote>
+<p>每个应用程序都应该专注于自己的任务</p>
+<h2 id="app命名">
+  App命名
+  <a class="heading-link" href="#app%e5%91%bd%e5%90%8d">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<blockquote>
+<p>不要太担心让应用程序设计完美。 这是一门艺术，而不是一门科学。 有时候你得重写它们或者把它们拆散。 没关系的。</p>
+</blockquote>
+<p>如果您希望站点的博客出现在http://www.example.com/weblog/，那么考虑应用程序命名为weblog，而不是blog、posts或blogposts。更容易看到哪个应用程序对应于站点的哪个部分。</p>
+<p>使用有效的、符合PEP8的、可导入的Python包名：短的、所有小写的名称，没有数字、破折号、句点、空格或特殊字符。 如果需要可读性，可以使用下划线来分隔单词，尽管不鼓励使用下划线</p>
+<p>这是99%的Django应用程序中常见的模块。以斜杠（‘/’）结尾的任何模块都表示Python包，它可以包含一个或多个模块。</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#586e75"># Common modules</span>
+scoops<span style="color:#719e07">/</span>
+├── __init__<span style="color:#719e07">.</span>py
+├── admin<span style="color:#719e07">.</span>py
+├── forms<span style="color:#719e07">.</span>py
+├── management<span style="color:#719e07">/</span>
+├── migrations<span style="color:#719e07">/</span>
+├── models<span style="color:#719e07">.</span>py
+├── templatetags<span style="color:#719e07">/</span>
+├── tests<span style="color:#719e07">/</span>
+├── urls<span style="color:#719e07">.</span>py
+├── views<span style="color:#719e07">.</span>py
+</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#586e75"># uncommon modules</span>
+scoops<span style="color:#719e07">/</span>
+├── api<span style="color:#719e07">/</span>		
+├── behaviors<span style="color:#719e07">.</span>py
+├── constants<span style="color:#719e07">.</span>py
+├── context_processors<span style="color:#719e07">.</span>py
+├── decorators<span style="color:#719e07">.</span>py
+├── db<span style="color:#719e07">/</span>
+├── exceptions<span style="color:#719e07">.</span>py
+├── fields<span style="color:#719e07">.</span>py
+├── factories<span style="color:#719e07">.</span>py
+├── helpers<span style="color:#719e07">.</span>py
+├── managers<span style="color:#719e07">.</span>py
+├── middleware<span style="color:#719e07">.</span>py
+├── signals<span style="color:#719e07">.</span>py
+├── utils<span style="color:#719e07">.</span>py
+├── viewmixins<span style="color:#719e07">.</span>py
 </code></pre></div>
       </div>
 

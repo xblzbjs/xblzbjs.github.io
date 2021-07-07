@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>django on xblzbjs</title>
+    <title>Django on xblzbjs</title>
     <link>https://xblzbjs.cn/tags/django/</link>
-    <description>Recent content in django on xblzbjs</description>
+    <description>Recent content in Django on xblzbjs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 20 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xblzbjs.cn/tags/django/index.xml" rel="self" type="application/rss+xml" />
@@ -26,7 +26,7 @@ PEP8中文翻译文档
     </item>
     
     <item>
-      <title>Django｜项目布局</title>
+      <title>Django｜设计</title>
       <link>https://xblzbjs.cn/posts/django/django%E9%A1%B9%E7%9B%AE%E5%B8%83%E5%B1%80/</link>
       <pubDate>Sat, 20 Mar 2021 00:00:00 +0000</pubDate>
       
@@ -38,21 +38,6 @@ PEP8中文翻译文档
  一些开发人员喜欢将&amp;lt;django_project_root&amp;gt;合并到项目的&amp;lt;repository_root&amp;gt;中。
  Django项目根目录 django_project_root    如果使用 django-admin.py startproject，它生成的Django项目将成为项目根目录。
 mysite/ ├── manage.py ├── my_app │ ├── __init__.py │ ├── admin.py │ ├── apps.py │ ├── migrations │ │ └── __init__.</description>
-    </item>
-    
-    <item>
-      <title>Django｜第三方库</title>
-      <link>https://xblzbjs.cn/posts/django/django%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/</link>
-      <pubDate>Wed, 17 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://xblzbjs.cn/posts/django/django%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/</guid>
-      <description>模型层（model）      django-model-utils
-  django-extensions
-  Cookiecutter Django’s documentation
-  django-countries
-  django-crispy-forms
-  factory_boy
-  Markdown编辑器     django-mdeditor  用户注册     django-allauth: django-registration  后台管理     django-grappelli simpleui  </description>
     </item>
     
   </channel>

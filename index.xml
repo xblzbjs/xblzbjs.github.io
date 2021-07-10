@@ -8,11 +8,11 @@
     <language>zh-cn</language>
     <lastBuildDate>Tue, 06 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xblzbjs.cn/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>优雅的查看文件内容</title>
-      <link>https://xblzbjs.cn/posts/linux/%E4%BC%98%E9%9B%85%E7%9A%84%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9/</link>
+      <title>Linux | 优雅的查看文件内容</title>
+      <link>https://xblzbjs.cn/posts/linux/linux-%E4%BC%98%E9%9B%85%E7%9A%84%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9/</link>
       <pubDate>Tue, 06 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://xblzbjs.cn/posts/linux/%E4%BC%98%E9%9B%85%E7%9A%84%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9/</guid>
+      <guid>https://xblzbjs.cn/posts/linux/linux-%E4%BC%98%E9%9B%85%E7%9A%84%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9/</guid>
       <description>Linux 下查阅文件内容，可以根据不同场景选择不同的指令。
 cat    当文件较小时，比如一个配置文件，想要快速浏览这个文件，可以用cat指令。下面 cat 指令帮助我们快速查看/etc/hosts文件。cat指令将文件连接到标准输出流并打印到屏幕上。
 cat /etc/hosts	标准输出流（Standard Output）也是一种文件，进程可以将要输出的内容写入标准输出流文件，这样就可以在屏幕中打印。
@@ -246,6 +246,21 @@ func TestMain(m *testing.M) 有什么作用🤔    如果测试文件中包含�
     </item>
     
     <item>
+      <title>Go &amp; Python｜单例模式</title>
+      <link>https://xblzbjs.cn/posts/design-patterns/go-python%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xblzbjs.cn/posts/design-patterns/go-python%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</guid>
+      <description>简介    单例模式（Singleton Pattern）是一种创建型设计模式。单例模式保证了在程序的不同位置都可以且仅可以取到同一个对象实例：如果实例不存在，会创建一个实例；如果已存在就会返回这个实例。
+优点     减少内存与性能开销 防止多个实例产生冲突  缺点     在代码中隐藏了程序的依赖项，而不是通过接口公开它们。 违反了单一职责原则 该模式在多线程环境下需要进行特殊处理， 避免多个线程多次创建单例对象。 单例的客户端代码单元测试可能会比较困难， 因为许多测试框架以基于继承的方式创建模拟对象。 由于单例类的构造函数是私有的， 而且绝大部分语言无法重写静态方法， 所以你需要想出仔细考虑模拟单例的方法。  适合场景    因为单例模式保证了实例的全局唯一性，而且只被初始化一次，所以比较适合全局共享一个实例，且只需要被初始化一次的场景。例如
+ 数据库实例配置 全局配置 全局任务池  饿汉方式与懒汉方式    单例模式又分为饿汉方式和懒汉方式。饿汉方式指全局的单例实例在包被加载时创建，而懒汉方式指全局的单例实例在第一次被使用时创建。接下来，我就来分别介绍下这两种方式。
+饿汉方式    饿汉方式指全局的单例实例在包被加载时创建。需要注意，采用饿汉方式初始化耗时，会导致程序加载时间比较长。
+懒汉方式    懒汉方式指全局的单例实例在第一次被使用时创建。
+工程项目中，懒汉方式使用的频率要更多一些。但它的缺点是非并发安全，在实际使用时需要加锁。
+饿汉方式 VS 懒汉方式        自动初始化 是否需要加锁 多线程安全 实现难度     饿汉方式 是 否 是 易   懒汉方式 否 是 是 中    Go最佳实践    饿汉方式    package singleton type singleton struct { } var ins *singleton = &amp;amp;singleton{} func GetInsOr() *singleton { return ins } func init() { GetInsOr() } 懒汉方式    type Singleton struct { data string } var ins *Singleton var once sync.</description>
+    </item>
+    
+    <item>
       <title>什么是基于令牌的身份认证</title>
       <link>https://xblzbjs.cn/posts/http/%E4%BB%80%E4%B9%88%E6%98%AF%E5%9F%BA%E4%BA%8E%E4%BB%A4%E7%89%8C%E7%9A%84%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81/</link>
       <pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate>
@@ -294,15 +309,12 @@ mysite/ ├── manage.py ├── my_app │ ├── __init__.py │ ├
     </item>
     
     <item>
-      <title>Go &amp; Python｜创建型设计模式</title>
-      <link>https://xblzbjs.cn/posts/design-patterns/go-python%E5%88%9B%E5%BB%BA%E5%9E%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link>
+      <title>Go &amp; Python｜工厂模式</title>
+      <link>https://xblzbjs.cn/posts/design-patterns/go-python%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</link>
       <pubDate>Sat, 20 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://xblzbjs.cn/posts/design-patterns/go-python%E5%88%9B%E5%BB%BA%E5%9E%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</guid>
-      <description>常见创建型设计模式     工厂模式（Factory）：解决对象创建问题 构造模式（Builder）：控制复杂对象的创建 原型模式（Prototype）：通过原型的克隆创建新的实例 单例（Borg/Singleton）：一个类只能创建同一个对象 对象池模式（Pool）：预先分配同一类型的一组实例 惰性计算模式（Lazy Evaluation）：延迟计算（python的property）  1.工厂模式    解决了什么问题：
- 解决对象创建问题 解耦对象的创建和使用 包括工厂方法和抽象工厂  # 工厂方法 class DogToy: def speak(self): print(&amp;#34;wang wang&amp;#34;) class CatToy: def speak(self): print(&amp;#34;miao miao&amp;#34;) def toy_factory(toy_type): if toy_type == &amp;#39;dog&amp;#39;: return DogToy() elif toy_type == &amp;#39;cat&amp;#39;: return CatToy() 2.构造模式    什么是构造模式：
- 用来控制复杂对象的构造 创建和表示分离。比如你要买电脑，工厂模式直接给你需要的电脑 但是构造模式允许你自己定义电脑的配置，组装完成后给你  3.原型模式    什么是原型模式：
- 通过克隆原型来创建新的实例 可以通过相同的原型，通过修改部分属性来创建新的实例 用途：对于一些创建实例开销比较高的地方可以用原型模式  4.</description>
+      <guid>https://xblzbjs.cn/posts/design-patterns/go-python%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</guid>
+      <description></description>
     </item>
     
     <item>

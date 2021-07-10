@@ -8,11 +8,11 @@
     <language>zh-cn</language>
     <lastBuildDate>Tue, 06 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xblzbjs.cn/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>优雅的查看文件内容</title>
-      <link>https://xblzbjs.cn/posts/linux/%E4%BC%98%E9%9B%85%E7%9A%84%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9/</link>
+      <title>Linux | 优雅的查看文件内容</title>
+      <link>https://xblzbjs.cn/posts/linux/linux-%E4%BC%98%E9%9B%85%E7%9A%84%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9/</link>
       <pubDate>Tue, 06 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://xblzbjs.cn/posts/linux/%E4%BC%98%E9%9B%85%E7%9A%84%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9/</guid>
+      <guid>https://xblzbjs.cn/posts/linux/linux-%E4%BC%98%E9%9B%85%E7%9A%84%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9/</guid>
       <description>Linux 下查阅文件内容，可以根据不同场景选择不同的指令。
 cat    当文件较小时，比如一个配置文件，想要快速浏览这个文件，可以用cat指令。下面 cat 指令帮助我们快速查看/etc/hosts文件。cat指令将文件连接到标准输出流并打印到屏幕上。
 cat /etc/hosts	标准输出流（Standard Output）也是一种文件，进程可以将要输出的内容写入标准输出流文件，这样就可以在屏幕中打印。

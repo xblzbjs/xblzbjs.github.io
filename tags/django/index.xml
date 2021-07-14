@@ -26,18 +26,15 @@ PEP8中文翻译文档
     </item>
     
     <item>
-      <title>Django｜设计</title>
-      <link>https://xblzbjs.cn/posts/django/django%E9%A1%B9%E7%9B%AE%E5%B8%83%E5%B1%80/</link>
+      <title>Django｜项目布局和App设计</title>
+      <link>https://xblzbjs.cn/posts/django/django%E9%A1%B9%E7%9B%AE%E5%B8%83%E5%B1%80%E5%92%8Capp%E8%AE%BE%E8%AE%A1/</link>
       <pubDate>Sat, 20 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://xblzbjs.cn/posts/django/django%E9%A1%B9%E7%9B%AE%E5%B8%83%E5%B1%80/</guid>
+      <guid>https://xblzbjs.cn/posts/django/django%E9%A1%B9%E7%9B%AE%E5%B8%83%E5%B1%80%E5%92%8Capp%E8%AE%BE%E8%AE%A1/</guid>
       <description>有许多项目模板可以启动Django项目。这里有两个链接，可使用时，我们引导一个项目:
   cookiecutter-django
   Django包
-  默认的项目布局和更好的项目布局    # 默认项目布局  &amp;lt;django_project_root&amp;gt; # 更好的项目布局 &amp;lt;repository_root&amp;gt;/ ├── &amp;lt;configuration_root&amp;gt;/ ├── &amp;lt;django_project_root&amp;gt;/ 仓库根目录 repository_root    &amp;lt;repository_root&amp;gt;目录是项目的绝对根目录. 除了&amp;lt;django_project_root&amp;gt; 和 &amp;lt;configuration_root&amp;gt;, 我们还包括其他关键组件像README.md, docs/ directory, manage.py, .gitignore, requirements.txt 文件和其他高级文件部署和运行项目所需的。
- 一些开发人员喜欢将&amp;lt;django_project_root&amp;gt;合并到项目的&amp;lt;repository_root&amp;gt;中。
- Django项目根目录 django_project_root    如果使用 django-admin.py startproject，它生成的Django项目将成为项目根目录。
-mysite/ ├── manage.py ├── my_app │ ├── __init__.py │ ├── admin.py │ ├── apps.py │ ├── migrations │ │ └── __init__.</description>
+  项目布局    默认的项目布局和更好的项目布局    # 默认项目布局  mysite/ ├── manage.py ├── my_app │ ├── __init__.py │ ├── admin.py │ ├── apps.py │ ├── migrations │ │ └── __init__.py │ ├── models.py │ ├── tests.py │ └── views.py └── mysite ├── __init__.py ├── asgi.py ├── settings.py ├── urls.py └── wsgi.py # 更好的项目布局 &amp;lt;repository_root&amp;gt;/ ├── &amp;lt;configuration_root&amp;gt;/ ├── &amp;lt;django_project_root&amp;gt;/ 仓库根目录 repository_root    &amp;lt;repository_root&amp;gt;目录是项目的绝对根目录.</description>
     </item>
     
   </channel>
